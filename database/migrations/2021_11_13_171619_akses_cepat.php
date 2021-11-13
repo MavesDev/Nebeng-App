@@ -17,7 +17,6 @@ class AksesCepat extends Migration
             $table->bigIncrements('id_akses_cepat');
             $table->string('alamat_jemput');
             $table->string('alamat_tujuan');
-            $table->timestamps();
         });
     }
 

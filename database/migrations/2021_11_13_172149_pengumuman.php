@@ -18,7 +18,7 @@ class Pengumuman extends Migration
             $table->string('gambar_pengumuman');
             $table->string('judul_pengumuman');
             $table->string('isi_pengumuman');
-            $table->timestamps('tanggal_pengumuman');
+            $table->dateTime('tanggal_pengumuman');
         });
     }
 

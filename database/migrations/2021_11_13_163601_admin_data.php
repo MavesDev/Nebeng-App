@@ -19,8 +19,8 @@ class AdminData extends Migration
             $table->string('nama_admin');
             $table->string('username_admin');
             $table->string('password_admin');
-            $table->timestamps('CreatedDate');
             $table->string('role');
+            $table->dateTime("CreatedDate");
         });
     }
 

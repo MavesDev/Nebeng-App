@@ -23,7 +23,7 @@ class UserData extends Migration
             $table->string('no_telp');
             $table->string('jenis_kelamin');
             $table->foreignId('kendaraan'); //foreign key to table kendaraan
-            $table->timestamps('tanggal_daftar');
+            $table->dateTime('tanggal_daftar');
             $table->float('rating');
             $table->string('role');
         });

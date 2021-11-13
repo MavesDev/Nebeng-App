@@ -33,3 +33,8 @@ Route::get('/setting', function () {
 Route::get('/data', function () {
     return view('content.Data');
 });
+
+Route::get('/data_user', function () {
+    return view('content.DataUser');
+});
+

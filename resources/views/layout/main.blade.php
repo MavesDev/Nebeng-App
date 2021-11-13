@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ url('css/dashboard.css') }}">
     <link rel="stylesheet" href="{{ url('css/setting.css') }}">
     <link rel="stylesheet" href="{{ url('css/data.css') }}">
+    <link rel="stylesheet" href="{{ url('css/dataUser.css') }}">
 </head>
 
 <body>

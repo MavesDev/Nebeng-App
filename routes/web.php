@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('layout.main');
+    return view('layout.main2');
 });
 
 Route::get('/dashboard', function () {
@@ -28,4 +28,8 @@ Route::get('/login', function () {
 
 Route::get('/setting', function () {
     return view('Setting');
+});
+
+Route::get('/data', function () {
+    return view('content.Data');
 });

@@ -28,8 +28,8 @@
 }
 
 .sidebar-brand img{
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 100px;
 }
 
@@ -43,7 +43,7 @@
     display: block;
     padding-left: 1rem;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     padding: 12px 0;
     margin: 5px 0;
 }
@@ -77,6 +77,7 @@
 
 .dropdown.active{
     visibility: visible;
+    background: none;
     position: relative;
     padding-left: 1.5rem;
     border-radius: 10px;

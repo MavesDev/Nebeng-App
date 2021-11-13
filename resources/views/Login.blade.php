@@ -28,7 +28,8 @@
             <div class="text">
                 <h1> Log in </h1>
             </div>
-            <form action="" method="post">
+            <form action="/login" method="post">
+                @csrf
                 <div class="txt-form">
                     <label for=""> Email </label>
                     <input type="text">

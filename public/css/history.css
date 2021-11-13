@@ -1,13 +1,13 @@
-.data-user .data-user-title{
+.history .history-title{
     margin: 20px 0;
 }
 
-.data-user .data-user-title h2{
+.history .history-title h2{
     color: #553C7B;
     font-size: 24px;
 }
 
-.data-user-table{
+.history-table{
     display: inline-block;
     overflow: scroll;
     overflow-x: hidden;
@@ -17,26 +17,26 @@
     background: #e8e8e8;
 }
 
-.data-user table{
+.history table{
     width: 900px;
     color: #fff;
     text-align: left;
     border-collapse: collapse;
 }
 
-.data-user thead tr th{
+.history thead tr th{
     background: #553C7B;
     padding: 20px 5px;
     border-bottom: #fff solid 2px;
 }
 
-.data-user tbody tr{
+.history tbody tr{
     width: 100%;
     border-bottom: #553C7B 1px solid;
 }
 
-.data-user tbody tr td,
-.data-user tbody tr th{
+.history tbody tr td,
+.history tbody tr th{
     background: #7d58b5;
     padding: 10px 5px;
     max-width: 30px;
@@ -44,28 +44,28 @@
     overflow: hidden;
 }
 
-.data-user tbody tr a{
+.history tbody tr a{
     color: #fff;
     padding-right: 10px;
 }
 
-.data-user-filter{
+.history-filter{
     width: 900px;
     margin: 10px 0;
 }
 
-.data-user-button{
+.history-button{
     margin-right: 20px;
     margin-bottom: 20px;
     float: left;
 }
 
-.data-user-search{
+.history-search{
     float: right;
     margin-right: 10px;
 }
 
-.data-user-filter button{
+.history-filter button{
     padding: 10px 15px;
     background: #fff;
     color: #7d58b5;
@@ -73,7 +73,7 @@
     border-radius: 5px;
 }
 
-.data-user-filter button:hover{
+.history-filter button:hover{
     background: #7d58b5;
     color: #fff;
     border: 1px #7d58b5 solid;
@@ -84,7 +84,7 @@
     color: #7d58b5;
 }
 
-.data-user-filter input{
+.history-filter input{
     padding: 10px 15px;
     background: #fff;
     color: #7d58b5;
@@ -92,12 +92,12 @@
     border-radius: 5px;
 }
 
-.data-user-filter i{
+.history-filter i{
     padding-left: 5px;
 }
 
 /* Ini Modal */
-.modal-form{
+.filter-form{
     position: absolute;   
     left: 50%;
     top: 50%;
@@ -111,29 +111,29 @@
     visibility:hidden;
 }
 
-.form h1{
+.filter-form .form h1{
     color: #7d58b5;
     text-align: center;
     font-size: 42px;
     padding: 30px 0px;
 }
 
-.form form{
+.filter-form .form form{
     padding: 0 40px;
     margin: 10px 0;
 }
 
-.form .txt-form{
+.filter-form .form .txt-form{
     margin: 20px 0;
 }
 
-.form .txt-form label{
+.filter-form .form .txt-form label{
     font-size: 16px;
     color: #7d58b5; 
     font-weight: bold;
 }
 
-.form .txt-form select{
+.filter-form .form .txt-form select{
     background: #7d58b5;
     color: #fff;
     text-align: left;
@@ -145,15 +145,15 @@
     border-radius: 5px;
 }
 
-.form .txt-form option{
+.filter-form .form .txt-form option{
     padding: 5px 0;
 }
 
-.form .button-form{
+.filter-form .form .button-form{
     margin: 10px 0px;
 }
 
-.form #button-submit{
+.filter-form .form #button-submit{
     color: #fff;
     position: relative;
     padding: 10px 25px;
@@ -163,27 +163,27 @@
     border: #fff 1px solid;
 }
 
-.form #button-submit:hover{
+.filter-form .form #button-submit:hover{
     color: #7d58b5;
     background: #fff;
     border: #7d58b5 1px solid;
     transition: 0.3s;
 }
 
-.form a{
+.filter-form .form a{
     color: #fff;
     font-size: 12px;
     text-decoration: none;
 }
 
-.modal-form.active{
+.filter-form.active{
     transition: 0.5s;
     opacity: 100%;
     visibility: visible;
 }
 
 /* Ini Modal Show */
-.show-form{
+.history-form{
     position: absolute;   
     left: 50%;
     top: 50%;
@@ -198,35 +198,35 @@
     /* overflow: scroll; */
 }
 
-.show-form .form h1{
+.history-form .form h1{
     color: #7d58b5;
     text-align: center;
     font-size: 42px;
     padding: 30px 0px;
 }
 
-.show-form.active{
+.history-form.active{
     transition: 0.5s;
     opacity: 100%;
     visibility: visible;
 }
 
-.show-form .form form{
+.history-form .form form{
     padding: 0 40px;
     margin: 10px 0;
 }
 
-.show-form .form .txt-form{
+.history-form .form .txt-form{
     margin: 20px 0;
 }
 
-.show-form .form .txt-form label{
+.history-form .form .txt-form label{
     font-size: 16px;
     color: #7d58b5; 
     font-weight: bold;
 }
 
-.show-form .form .txt-form input{
+.history-form .form .txt-form input{
     background: #7d58b5;
     color: #fff;
     text-align: left;
@@ -238,15 +238,15 @@
     border-radius: 5px;
 }
 
-.show-form .form .button-form{
+.history-form .form .button-form{
     margin: 10px 0px;
 }
 
-.show-form ::placeholder{
+.history-form ::placeholder{
     color: #dddddd;
 }
 
-.show-form .form #button-submit{
+.history-form .form #button-submit{
     color: #fff;
     position: relative;
     padding: 10px 25px;
@@ -256,11 +256,61 @@
     border: #fff 1px solid;
 }
 
-.show-form .form #button-submit:hover{
+.history-form .form #button-submit:hover{
     color: #7d58b5;
     background: #fff;
     border: #7d58b5 1px solid;
     transition: 0.3s;
 }
+
+/* Mulai Masuk List */
+
+.history-table{
+    width: 900px;
+    height: 320px;
+    margin: 20px 0;
+    background: #8c5cd3;
+    border-radius: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.history-content{
+    padding: 10px 12px;
+    display: inline-block;
+    width: 100%;
+    border-bottom: #553C7B 1px solid;
+}
+
+#history-image{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    min-width: 50px;
+    border-radius: 100px;
+    display: inline;
+    float: left;
+}
+
+.history-txt {
+    position: relative;
+    padding: 10px 10px;
+    float: left;
+}
+
+.history-txt p{
+    color: #fff;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.history-span a{
+    color: #fff;
+    position: relative;
+    padding: 10px 10px;
+    float: right;
+}
+
 
 

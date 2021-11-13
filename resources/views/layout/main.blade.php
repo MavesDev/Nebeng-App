@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ url('css/setting.css') }}">
     <link rel="stylesheet" href="{{ url('css/data.css') }}">
     <link rel="stylesheet" href="{{ url('css/dataUser.css') }}">
+    <link rel="stylesheet" href="{{ url('css/history.css') }}">
 </head>
 
 <body>
@@ -32,11 +33,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" onclick="dropdownToogle()">
+                    <a href="#">
                         <span class="fas fa-tasks" style="font-size: 20px;"></span>
                         <span id="txt">Kelola Data</span>
                     </a>
-                    <ul class="dropdown">
+                    <!-- <ul class="dropdown">
                         <li>
                             <a href="#">
                                 <span class="fas fa-tasks" style="font-size: 20px;"></span>
@@ -49,7 +50,7 @@
                                 <span id="txt">Kelola Data Driver</span>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <li>
                     <a href="#">
@@ -82,13 +83,13 @@
     <div>
         @yield('container')
     </div>
-
+<!-- 
     <script>
         function dropdownToogle() {
             var dropdown = document.querySelector('.dropdown');
             dropdown.classList.toggle('active')
         }
-    </script>
+    </script> -->
 
 </body>
 

@@ -38,3 +38,7 @@ Route::get('/data_user', function () {
     return view('content.DataUser');
 });
 
+
+Route::get('/history', function () {
+    return view('content.History');
+});

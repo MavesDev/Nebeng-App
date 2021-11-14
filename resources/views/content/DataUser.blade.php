@@ -9,6 +9,7 @@
         <h2> Kelola Data User</h2>
     </div>
 
+    <!-- Ini bagian buat button search dan filter -->
     <div class="data-user-filter">
         <div class="data-user-button">
             <button onclick="modalToogle()"> Filter <i class="fas fa-filter"></i> </button>
@@ -22,6 +23,7 @@
         </div>
     </div>
 
+    <!-- ini buat tabelnya -->
     <div class="data-user-table">
         <table>
             <thead>
@@ -89,6 +91,7 @@
         </div>
     </div>
 
+    <!-- Modal buat edit, maapkan males ganti class lagi :D -->
     <div class="show-form">
         <div class="form">
             <div class="text">

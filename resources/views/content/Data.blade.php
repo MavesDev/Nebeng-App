@@ -9,6 +9,7 @@
         <h2> Kelola Data </h2>
     </div>
 
+    <!-- Ini tuh buat button kelola data siapa, kalau mau dipisah bisa bikin lagi button nya -->
     <div class="data-button">
         <a href="#">
             <div class="data-button-driver">
@@ -25,6 +26,7 @@
     </div>
 </div>
 
+<!-- Tabel Pengguna Bulanan Katanya -->
 <div class="data-right">
     <div class="data-title">
         <h2> Jumlah Penggunaan Aplikasi </h2>

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ url('css/data.css') }}">
     <link rel="stylesheet" href="{{ url('css/dataUser.css') }}">
     <link rel="stylesheet" href="{{ url('css/history.css') }}">
+    <link rel="stylesheet" href="{{ url('css/feedback.css') }}">
 </head>
 
 <body>
@@ -83,7 +84,7 @@
     <div>
         @yield('container')
     </div>
-<!-- 
+    <!-- 
     <script>
         function dropdownToogle() {
             var dropdown = document.querySelector('.dropdown');

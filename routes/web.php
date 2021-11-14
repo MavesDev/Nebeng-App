@@ -42,3 +42,7 @@ Route::get('/data_user', function () {
 Route::get('/history', function () {
     return view('content.History');
 });
+
+Route::get('/feedback', function () {
+    return view('content.Feedback');
+});

@@ -13,11 +13,13 @@
         <div class="setting-title">
             <h2>Pengaturan Akun</h2>
 
+            <!-- Untuk Profil Si Akun -->
             <div class="setting-form">
                 <div class="setting-form-image">
                     <img src="{{ url('image/none.png') }}" alt="">
                 </div>
 
+                <!-- Form Buat Setting -->
                 <div class="setting-form-txt">
                     <form action="" method="post">
                         <h2>Informasi Pribadi</h2>

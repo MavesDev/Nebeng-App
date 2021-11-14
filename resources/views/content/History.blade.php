@@ -9,6 +9,7 @@
         <h2> History</h2>
     </div>
 
+    <!-- Sama buat filter ama search -->
     <div class="history-filter">
         <div class="history-button">
             <button onclick="filterToogle()"> Filter <i class="fas fa-filter"></i> </button>
@@ -23,7 +24,7 @@
     </div>
 
     <div class="history">
-        <!-- Bagian Tabel Aktivitas -->
+        <!-- Bagian Tabel History -->
         <div class="history-table">
             <ul>
                 <li>
@@ -81,6 +82,7 @@
         </div>
     </div>
 
+    <!-- Ini modal buat form detail history -->
     <div class="history-form">
         <div class="form">
             <div class="text">

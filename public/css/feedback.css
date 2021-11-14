@@ -1,0 +1,186 @@
+.feedback .feedback-title{
+    margin: 10px 0;
+}
+
+.feedback .feedback-title h2{
+    color: #553C7B;
+    font-size: 24px;
+}
+
+.feedback .chat-box{
+    float: left;
+    width: 400px;
+    height: 450px;
+    background-color: #dddddd;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.feedback .client{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 80px;
+    background-color: #7d58b5;
+    padding: 15px;
+}
+
+.feedback .client img{
+    width: 50px ;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.feedback .client-info{
+    color: #fff;
+    padding: 15px;
+}
+
+.feedback .client-info p{
+    color: #eeeeee;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.feedback .chats{
+    width: 100%;
+    padding: 0 15px;
+    color: #fff;
+    position: relative;
+    font-size: 14px;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 305px;
+}
+
+.feedback .client-chat{
+    width: 60%;
+    word-wrap: break-word;
+    background-color: #7d58b5;
+    padding: 7px 10px;
+    border-radius: 10px 10px 10px 0;
+    margin: 10px 0;
+}
+
+.feedback .my-chat{
+    width: 60%;
+    word-wrap: break-word;
+    background-color: #553C7B;
+    padding: 7px 10px;
+    border-radius: 10px 10px 0 10px;
+    margin: 5px 0 5px auto;
+}
+
+.feedback .chat-input{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    background-color: #7d58b5;
+    padding: 15px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+}
+
+.feedback .chat-input input{
+    width: calc(100% - 40px);
+    height: 100%;
+    background-color: #fff;
+    border-radius: 50px;
+    color: #000;
+    border: none;
+    font-size: 12px;
+    padding: 0 15px;
+}
+
+.feedback .chat-input ::placeholder{
+    color: #828282;
+}
+
+.feedback .send-btn{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    border-radius: 50%;
+    border: none;
+}
+
+.feedback .send-btn:active{
+    transform: scale(0.85);
+}
+
+.feedback .send-btn img{
+    width: 100%;
+    height: 100%;
+}
+
+.feedback .feedback-act-table{
+    width: 420px;
+    height: 450px;
+    margin-right: 80px;
+    background: #8c5cd3;
+    border-radius: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+    float: right;
+}
+
+.feedback .feedback-act-content{
+    padding: 10px 12px;
+    display: inline-block;
+    width: 100%;
+    border-bottom: #fff 2px solid;
+    border-radius: 10px;
+}
+
+.feedback #act-image{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    min-width: 50px;
+    border-radius: 100px;
+    display: inline;
+    float: left;
+}
+
+.feedback .feedback-act-txt {
+    position: relative;
+    padding: 10px 10px;
+    float: left;
+}
+
+.feedback-act-reply{
+    width: 260px;
+    height: 15px;
+    overflow: clip;
+}
+
+.feedback .feedback-act-txt h4{
+    color: #fff;
+    font-weight: bold;
+    padding: 0 10px;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+
+.feedback .feedback-act-txt p{
+    color: #fff;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.feedback .feedback-act-span a{
+    color: #fff;
+    position: relative;
+    padding: 0 10px;
+    line-height: 50px;
+    float: right;
+}

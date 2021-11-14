@@ -13,8 +13,8 @@ class Membatalkan extends Migration
      */
     public function up()
     {
-        Schema::table('membatalkan', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('membatalkan', function (Blueprint $table) {
+            $table->bigIncrements('id_membatalkan');
             $table->foreignId('id_pembatalan');
             $table->foreignId('id_pemesanan');
         });

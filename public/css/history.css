@@ -1,0 +1,316 @@
+.history .history-title{
+    margin: 20px 0;
+}
+
+.history .history-title h2{
+    color: #553C7B;
+    font-size: 24px;
+}
+
+.history-table{
+    display: inline-block;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-radius: 10px 10px 0 10px;
+    max-width: 900px;
+    height: 320px;
+    background: #e8e8e8;
+}
+
+.history table{
+    width: 900px;
+    color: #fff;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.history thead tr th{
+    background: #553C7B;
+    padding: 20px 5px;
+    border-bottom: #fff solid 2px;
+}
+
+.history tbody tr{
+    width: 100%;
+    border-bottom: #553C7B 1px solid;
+}
+
+.history tbody tr td,
+.history tbody tr th{
+    background: #7d58b5;
+    padding: 10px 5px;
+    max-width: 30px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.history tbody tr a{
+    color: #fff;
+    padding-right: 10px;
+}
+
+.history-filter{
+    width: 900px;
+    margin: 10px 0;
+}
+
+.history-button{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.history-search{
+    float: right;
+    margin-right: 10px;
+}
+
+.history-filter button{
+    padding: 10px 15px;
+    background: #fff;
+    color: #7d58b5;
+    border: 1px #7d58b5 solid;
+    border-radius: 5px;
+}
+
+.history-filter button:hover{
+    background: #7d58b5;
+    color: #fff;
+    border: 1px #7d58b5 solid;
+    transition: 0.2s;
+}
+
+::placeholder{
+    color: #7d58b5;
+}
+
+.history-filter input{
+    padding: 10px 15px;
+    background: #fff;
+    color: #7d58b5;
+    border: 1px #7d58b5 solid;
+    border-radius: 5px;
+}
+
+.history-filter i{
+    padding-left: 5px;
+}
+
+/* Ini Modal */
+.filter-form{
+    position: absolute;   
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    background:#fff;
+    border: #7d58b5 3px solid;
+    border-radius: 10px;
+    opacity: 0%;
+    visibility:hidden;
+}
+
+.filter-form .form h1{
+    color: #7d58b5;
+    text-align: center;
+    font-size: 42px;
+    padding: 30px 0px;
+}
+
+.filter-form .form form{
+    padding: 0 40px;
+    margin: 10px 0;
+}
+
+.filter-form .form .txt-form{
+    margin: 20px 0;
+}
+
+.filter-form .form .txt-form label{
+    font-size: 16px;
+    color: #7d58b5; 
+    font-weight: bold;
+}
+
+.filter-form .form .txt-form select{
+    background: #7d58b5;
+    color: #fff;
+    text-align: left;
+    padding-left: 10px;
+    width: 100%;
+    margin-top: 10px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.filter-form .form .txt-form option{
+    padding: 5px 0;
+}
+
+.filter-form .form .button-form{
+    margin: 10px 0px;
+}
+
+.filter-form .form #button-submit{
+    color: #fff;
+    position: relative;
+    padding: 10px 25px;
+    background: #7d58b5;
+    border: none;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+
+.filter-form .form #button-submit:hover{
+    color: #7d58b5;
+    background: #fff;
+    border: #7d58b5 1px solid;
+    transition: 0.3s;
+}
+
+.filter-form .form a{
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.filter-form.active{
+    transition: 0.5s;
+    opacity: 100%;
+    visibility: visible;
+}
+
+/* Ini Modal Show */
+.history-form{
+    position: absolute;   
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    background:#fff;
+    border: #7d58b5 3px solid;
+    border-radius: 10px;
+    opacity: 0%;
+    visibility:hidden;
+    /* overflow: scroll; */
+}
+
+.history-form .form h1{
+    color: #7d58b5;
+    text-align: center;
+    font-size: 42px;
+    padding: 30px 0px;
+}
+
+.history-form.active{
+    transition: 0.5s;
+    opacity: 100%;
+    visibility: visible;
+}
+
+.history-form .form form{
+    padding: 0 40px;
+    margin: 10px 0;
+}
+
+.history-form .form .txt-form{
+    margin: 20px 0;
+}
+
+.history-form .form .txt-form label{
+    font-size: 16px;
+    color: #7d58b5; 
+    font-weight: bold;
+}
+
+.history-form .form .txt-form input{
+    background: #7d58b5;
+    color: #fff;
+    text-align: left;
+    padding-left: 10px;
+    width: 100%;
+    margin-top: 10px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.history-form .form .button-form{
+    margin: 10px 0px;
+}
+
+.history-form ::placeholder{
+    color: #dddddd;
+}
+
+.history-form .form #button-submit{
+    color: #fff;
+    position: relative;
+    padding: 10px 25px;
+    background: #7d58b5;
+    border: none;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+
+.history-form .form #button-submit:hover{
+    color: #7d58b5;
+    background: #fff;
+    border: #7d58b5 1px solid;
+    transition: 0.3s;
+}
+
+/* Mulai Masuk List */
+
+.history-table{
+    width: 900px;
+    height: 320px;
+    margin: 20px 0;
+    background: #8c5cd3;
+    border-radius: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.history-content{
+    padding: 10px 12px;
+    display: inline-block;
+    width: 100%;
+    border-bottom: #553C7B 1px solid;
+}
+
+#history-image{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    min-width: 50px;
+    border-radius: 100px;
+    display: inline;
+    float: left;
+}
+
+.history-txt {
+    position: relative;
+    padding: 10px 10px;
+    float: left;
+}
+
+.history-txt p{
+    color: #fff;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.history-span a{
+    color: #fff;
+    position: relative;
+    padding: 10px 10px;
+    float: right;
+}
+
+
+

@@ -13,11 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::get('/','PagesController@beranda');
 
 Route::get('/login','PagesController@login');
+
+Route::get('/data', function () {
+    return view('content.Data');
+});
+
+Route::get('/data_user', function () {
+    return view('content.DataUser');
+});
+
+Route::get('/history', function () {
+    return view('content.History');
+});
+
+Route::get('/feedback', function () {
+    return view('content.Feedback');
+});
 
 Route::get('/settings','PagesController@settings');
 

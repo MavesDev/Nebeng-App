@@ -1,0 +1,81 @@
+.data-left{
+    float: left;
+    width: 350px;
+}
+
+.data-left .data-title{
+    margin: 20px 0;
+}
+
+.data-left .data-title h2{
+    color: #553C7B;
+    font-size: 24px;
+}
+
+.data-left .data-button{
+    margin: 10px 0;
+}
+
+.data-left .data-button .data-button-driver{
+    width: 150px;
+    margin-right: 20px;
+    padding: 40px 50px 50px 50px;
+    background: #fff;
+    border: #553C7B 3px solid;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.data-left .data-button .data-button-driver:hover{
+    background: #553C7B;
+    color: #fff;
+    border: #fff 3px solid;
+    transition: 0.4s;
+}
+
+.data-left .data-button .data-button-driver i{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.data-right{
+    display: inline-block;
+    width: 500px;
+    margin-left: 40px;
+}
+
+.data-right .data-title{
+    margin: 20px 0;
+}
+
+.data-right .data-title h2{
+    color: #553C7B;
+    font-size: 24px;
+}
+
+.data-right .data-act{
+    background: url('../image/Frame\ 39.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    text-align: center;
+    padding: 40px 0;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.data-right .data-act .data-act-title{
+    
+    padding: 15px;
+    display: inline-block;
+    border-radius: 20px;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.data-right .data-act h4{
+    color: #553C7B;
+    font-size: 20px;
+    font-weight: bold;
+}

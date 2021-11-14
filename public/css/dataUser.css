@@ -1,0 +1,266 @@
+.data-user .data-user-title{
+    margin: 20px 0;
+}
+
+.data-user .data-user-title h2{
+    color: #553C7B;
+    font-size: 24px;
+}
+
+.data-user-table{
+    display: inline-block;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-radius: 10px 10px 0 10px;
+    max-width: 900px;
+    height: 320px;
+    background: #e8e8e8;
+}
+
+.data-user table{
+    width: 900px;
+    color: #fff;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.data-user thead tr th{
+    background: #553C7B;
+    padding: 20px 5px;
+    border-bottom: #fff solid 2px;
+}
+
+.data-user tbody tr{
+    width: 100%;
+    border-bottom: #553C7B 1px solid;
+}
+
+.data-user tbody tr td,
+.data-user tbody tr th{
+    background: #7d58b5;
+    padding: 10px 5px;
+    max-width: 30px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.data-user tbody tr a{
+    color: #fff;
+    padding-right: 10px;
+}
+
+.data-user-filter{
+    width: 900px;
+    margin: 10px 0;
+}
+
+.data-user-button{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.data-user-search{
+    float: right;
+    margin-right: 10px;
+}
+
+.data-user-filter button{
+    padding: 10px 15px;
+    background: #fff;
+    color: #7d58b5;
+    border: 1px #7d58b5 solid;
+    border-radius: 5px;
+}
+
+.data-user-filter button:hover{
+    background: #7d58b5;
+    color: #fff;
+    border: 1px #7d58b5 solid;
+    transition: 0.2s;
+}
+
+::placeholder{
+    color: #7d58b5;
+}
+
+.data-user-filter input{
+    padding: 10px 15px;
+    background: #fff;
+    color: #7d58b5;
+    border: 1px #7d58b5 solid;
+    border-radius: 5px;
+}
+
+.data-user-filter i{
+    padding-left: 5px;
+}
+
+/* Ini Modal */
+.modal-form{
+    position: absolute;   
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    background:#fff;
+    border: #7d58b5 3px solid;
+    border-radius: 10px;
+    opacity: 0%;
+    visibility:hidden;
+}
+
+.form h1{
+    color: #7d58b5;
+    text-align: center;
+    font-size: 42px;
+    padding: 30px 0px;
+}
+
+.form form{
+    padding: 0 40px;
+    margin: 10px 0;
+}
+
+.form .txt-form{
+    margin: 20px 0;
+}
+
+.form .txt-form label{
+    font-size: 16px;
+    color: #7d58b5; 
+    font-weight: bold;
+}
+
+.form .txt-form select{
+    background: #7d58b5;
+    color: #fff;
+    text-align: left;
+    padding-left: 10px;
+    width: 100%;
+    margin-top: 10px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form .txt-form option{
+    padding: 5px 0;
+}
+
+.form .button-form{
+    margin: 10px 0px;
+}
+
+.form #button-submit{
+    color: #fff;
+    position: relative;
+    padding: 10px 25px;
+    background: #7d58b5;
+    border: none;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+
+.form #button-submit:hover{
+    color: #7d58b5;
+    background: #fff;
+    border: #7d58b5 1px solid;
+    transition: 0.3s;
+}
+
+.form a{
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.modal-form.active{
+    transition: 0.5s;
+    opacity: 100%;
+    visibility: visible;
+}
+
+/* Ini Modal Show */
+.show-form{
+    position: absolute;   
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    background:#fff;
+    border: #7d58b5 3px solid;
+    border-radius: 10px;
+    opacity: 0%;
+    visibility:hidden;
+    /* overflow: scroll; */
+}
+
+.show-form .form h1{
+    color: #7d58b5;
+    text-align: center;
+    font-size: 42px;
+    padding: 30px 0px;
+}
+
+.show-form.active{
+    transition: 0.5s;
+    opacity: 100%;
+    visibility: visible;
+}
+
+.show-form .form form{
+    padding: 0 40px;
+    margin: 10px 0;
+}
+
+.show-form .form .txt-form{
+    margin: 20px 0;
+}
+
+.show-form .form .txt-form label{
+    font-size: 16px;
+    color: #7d58b5; 
+    font-weight: bold;
+}
+
+.show-form .form .txt-form input{
+    background: #7d58b5;
+    color: #fff;
+    text-align: left;
+    padding-left: 10px;
+    width: 100%;
+    margin-top: 10px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.show-form .form .button-form{
+    margin: 10px 0px;
+}
+
+.show-form ::placeholder{
+    color: #dddddd;
+}
+
+.show-form .form #button-submit{
+    color: #fff;
+    position: relative;
+    padding: 10px 25px;
+    background: #7d58b5;
+    border: none;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+
+.show-form .form #button-submit:hover{
+    color: #7d58b5;
+    background: #fff;
+    border: #7d58b5 1px solid;
+    transition: 0.3s;
+}
+
+

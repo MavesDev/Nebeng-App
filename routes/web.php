@@ -13,22 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/','PagesController@beranda');
 
-Route::get('/', function () {
-    return view('layout.main2');
-});
-
-Route::get('/dashboard', function () {
-    return view('Dashboard');
-});
-
-Route::get('/login', function () {
-    return view('Login');
-});
-
-Route::get('/setting', function () {
-    return view('Setting');
-});
+Route::get('/login','PagesController@login');
 
 Route::get('/data', function () {
     return view('content.Data');
@@ -38,7 +25,6 @@ Route::get('/data_user', function () {
     return view('content.DataUser');
 });
 
-
 Route::get('/history', function () {
     return view('content.History');
 });
@@ -46,3 +32,9 @@ Route::get('/history', function () {
 Route::get('/feedback', function () {
     return view('content.Feedback');
 });
+
+Route::get('/settings','PagesController@settings');
+
+//post
+
+Route::post('/login','SystemController@loginSystem');

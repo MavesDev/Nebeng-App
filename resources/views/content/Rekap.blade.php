@@ -1,12 +1,12 @@
 @extends('layout.main2')
 
-@section('title', 'Kelola Data User')
+@section('title', 'Rekap')
 
 @section('content')
 
 <div class="data-user">
     <div class="data-user-title">
-        <h2> Kelola Data User</h2>
+        <h2> Rekap </h2>
     </div>
 
     <!-- Ini bagian buat button search dan filter -->
@@ -29,24 +29,15 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama</th>
-                    <th>NIS</th>
-                    <th>No Telepon</th>
-                    <th>Alamat</th>
-                    <th>Edit</th>
+                    <th>Bulan</th>
+                    <th>Keterangan</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th>1</th>
-                    <td>Mark</td>
-                    <td>092142621</td>
-                    <td>0951-4040-3210</td>
-                    <td>Washington DC</td>
-                    <td>
-                        <a class="fas fa-edit" href="#" onclick="showToogle()"></a>
-                        <a class="fas fa-trash" href="#"></a>
-                    </td>
+                    <td>September</td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, perspiciatis.</td>
                 </tr>
             </tbody>
         </table>
@@ -107,7 +98,7 @@
                     </div>
                     <div class="button-form">
                         <button id="button-submit" type="submit"> Edit </button>
-                        <a id="button-submit" onclick="showToogle()"> Kembali </a>
+                        <a id="button-submit" onclick="showToogle()"> Back </a>
                     </div>
                 </form>
             </div>

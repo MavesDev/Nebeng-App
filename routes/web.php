@@ -13,22 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/','PagesController@beranda');
 
-Route::get('/', function () {
-    return view('layout.main2');
-});
+Route::get('/login','PagesController@login');
 
-Route::get('/dashboard', function () {
-    return view('Dashboard');
-});
+Route::get('/settings','PagesController@settings');
 
-Route::get('/login', function () {
-    return view('Login');
-});
+//post
 
-Route::get('/setting', function () {
-    return view('Setting');
-});
+Route::post('/login','SystemController@loginSystem');
 
 Route::get('/data', function () {
     return view('content.Data');

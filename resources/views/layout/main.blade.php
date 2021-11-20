@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ url('css/dataUser.css') }}">
     <link rel="stylesheet" href="{{ url('css/history.css') }}">
     <link rel="stylesheet" href="{{ url('css/feedback.css') }}">
+    <link rel="stylesheet" href="{{ url('css/voucher.css') }}">
 </head>
 
 <body>

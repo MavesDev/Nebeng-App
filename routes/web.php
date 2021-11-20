@@ -38,6 +38,9 @@ Route::get('/data_user', function () {
     return view('content.DataUser');
 });
 
+Route::get('/voucher', function () {
+    return view('content.Voucher');
+});
 
 Route::get('/history', function () {
     return view('content.History');
@@ -45,4 +48,8 @@ Route::get('/history', function () {
 
 Route::get('/feedback', function () {
     return view('content.Feedback');
+});
+
+Route::get('/rekap', function () {
+    return view('content.Rekap');
 });

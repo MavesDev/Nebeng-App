@@ -16,11 +16,17 @@ class SystemController extends Controller
         if($user){
             // Auth::guard('admin')->login($user);
             //masalah login
+            Auth::login($user);
             if(Auth::check()){
                 return redirect('/')->with('status','Login Sukses');
             }
         }else{
             dd("Login Gagal");
         }
+    }
+
+    public function logoutSystem(){
+        Auth::logout();
+        return redirect('/login');
     }
 }

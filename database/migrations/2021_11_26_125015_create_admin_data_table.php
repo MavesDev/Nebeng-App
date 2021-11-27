@@ -20,7 +20,6 @@ class CreateAdminDataTable extends Migration
             $table->string('username_admin');
             $table->string('password_admin');
             $table->string('role');
-            $table->dateTime("CreatedDate");
             $table->timestamps();
         });
     }

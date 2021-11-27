@@ -12,7 +12,6 @@ use App\Http\Controllers\API\PembatalanAPI;
 use App\Http\Controllers\API\PemesananAPI;
 use App\Http\Controllers\API\PengumumanAPI;
 use App\Http\Controllers\API\UserDataAPI;
-use App\Models\AlasanPembatalan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,11 +38,11 @@ Route::post('/putaksescepat/{id}',[AksesCepatAPI::class,'Put']);
 Route::post('/deleteaksescepat/{id}',[AksesCepatAPI::class,'Delete']);
 
 //alasan pembatalan
-Route::get('/getalasanpembatalan',[AlasanPembatalan::class,'Get']);
-Route::get('/getalasanpembatalan/{id}',[AlasanPembatalan::class,'GetById']);
-Route::post('/postalasanpembatalan',[AlasanPembatalan::class,'Post']);
-Route::post('/putalasanpembatalan/{id}',[AlasanPembatalan::class,'Put']);
-Route::post('/deletealasanpembatalan/{id}',[AlasanPembatalan::class,'Delete']);
+Route::get('/getalasanpembatalan',[AlasanPembatalanAPI::class,'Get']);
+Route::get('/getalasanpembatalan/{id}',[AlasanPembatalanAPI::class,'GetById']);
+Route::post('/postalasanpembatalan',[AlasanPembatalanAPI::class,'Post']);
+Route::post('/putalasanpembatalan/{id}',[AlasanPembatalanAPI::class,'Put']);
+Route::post('/deletealasanpembatalan/{id}',[AlasanPembatalanAPI::class,'Delete']);
 
 //diskon
 Route::get('/getdiskon',[DiskonAPI::class,'Get']);

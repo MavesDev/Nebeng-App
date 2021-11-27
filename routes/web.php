@@ -24,3 +24,4 @@ Route::get('/settings','PagesController@settings');
 //post
 
 Route::post('/login','SystemController@loginSystem');
+Route::post('/logout','SystemController@logoutSystem');

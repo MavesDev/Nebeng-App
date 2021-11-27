@@ -31,12 +31,12 @@
             <form action="/login" method="post">
                 @csrf
                 <div class="txt-form">
-                    <label for=""> Email </label>
-                    <input type="text">
+                    <label for=""> Username </label>
+                    <input type="text" name="username">
                 </div>
                 <div class="txt-form">
                     <label for=""> Password </label>
-                    <input type="password">
+                    <input type="password" name="password">
                 </div>
                 <div class="check-form">
                     <label for=""> Keep Username </label>

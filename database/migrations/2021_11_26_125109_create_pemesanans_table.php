@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Pemesanan extends Migration
+class CreatePemesanansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class Pemesanan extends Migration
     public function up()
     {
         Schema::create('pemesanan', function (Blueprint $table) {
-            $table->bigIncrements('id_pesanan');
+            $table->id();
             $table->string('alamat_jemput');
             $table->string('alamat_tujuan');
             $table->dateTime('tanggal_pembatalan');
@@ -23,6 +23,7 @@ class Pemesanan extends Migration
             $table->decimal('total_bayar_diskon',8,2); //format money
             $table->decimal('komisi_driver',8,2); //format money
             $table->decimal('komisi_perusahaan',8,2); //format money
+            $table->timestamps();
         });
     }
 

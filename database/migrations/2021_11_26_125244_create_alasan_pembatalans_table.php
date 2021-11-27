@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Membatalkan extends Migration
+class CreateAlasanPembatalansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class Membatalkan extends Migration
      */
     public function up()
     {
-        Schema::create('membatalkan', function (Blueprint $table) {
-            $table->bigIncrements('id_membatalkan');
-            $table->foreignId('id_pembatalan');
-            $table->foreignId('id_pemesanan');
+        Schema::create('alasan_pembatalan', function (Blueprint $table) {
+            $table->id();
+            $table->string('faq_alasan');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +27,6 @@ class Membatalkan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('membatalkan');
+        Schema::dropIfExists('alasan_pembatalan');
     }
 }

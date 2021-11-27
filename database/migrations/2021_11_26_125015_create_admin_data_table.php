@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AdminData extends Migration
+class CreateAdminDataTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,14 @@ class AdminData extends Migration
     public function up()
     {
         Schema::create('admin_data', function (Blueprint $table) {
-            $table->bigIncrements('id_admin');
+            $table->id();
             $table->string('foto_profile');
             $table->string('nama_admin');
             $table->string('username_admin');
             $table->string('password_admin');
             $table->string('role');
             $table->dateTime("CreatedDate");
+            $table->timestamps();
         });
     }
 

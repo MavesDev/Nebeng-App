@@ -11,12 +11,14 @@ class SystemController extends Controller
     public function loginSystem(Request $request){
         $user = AdminData::where([
             'username_admin'=> $request->username,
-            'password'=> $request->password
+            'password_admin'=> $request->password
         ])->first();
-        dd($user);
         if($user){
-            Auth::login($user);
-            return redirect('/')->with('status','Login Sukses');
+            // Auth::guard('admin')->login($user);
+            //masalah login
+            if(Auth::check()){
+                return redirect('/')->with('status','Login Sukses');
+            }
         }else{
             dd("Login Gagal");
         }

@@ -3,10 +3,8 @@
 @section('title', 'Dashboard')
 
 @section('container')
-
 <!-- Halaman untuk Dashboard (Jangan Dulu Sentuh) -->
 <!-- Buat CSS nya Dashboard.css -->
-
 <body>
 
     <div class="main">

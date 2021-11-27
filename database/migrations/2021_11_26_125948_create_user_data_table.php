@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UserData extends Migration
+class CreateUserDataTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class UserData extends Migration
     public function up()
     {
         Schema::create('user_data', function (Blueprint $table) {
-            $table->bigIncrements('id_user');
+            $table->id();
             $table->string('nis');
             $table->string('foto_profile');
             $table->string('nama_lengkap');
@@ -22,10 +22,15 @@ class UserData extends Migration
             $table->string('password');
             $table->string('no_telp');
             $table->string('jenis_kelamin');
-            $table->foreignId('kendaraan'); //foreign key to table kendaraan
+            $table->unsignedBigInteger('kendaraan')->nullable();
             $table->dateTime('tanggal_daftar');
             $table->float('rating');
             $table->string('role');
+            $table->timestamps();
+        });
+
+        Schema::table('user_data', function (Blueprint $table) {
+            $table->foreign('kendaraan')->references('id')->on('kendaraan')->onDelete('set null')->onUpdate('set null'); //foreign key to table kendaraan
         });
     }
 

@@ -71,6 +71,25 @@
     padding-right: 0.3rem;
 }
 
+.profile-bar-menu form button{
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.profile-bar-menu form button:hover{
+    background: #553C7B;
+    border-radius: 10px 0 0 10px;
+    transition: 0.5s;
+}
+
+.profile-bar-menu form button span:first-child{
+    font-size: 1.5rem;
+    padding-right: 0.3rem;
+}
+
 .main{
     margin-left: 390px;
 }
@@ -175,7 +194,7 @@
     float: right;
 }
 
-@media (max-width: 768px) 
+@media (max-width: 768px)
 {
     .profile-bar{
         width: 60px;

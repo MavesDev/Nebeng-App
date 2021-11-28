@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Diskon extends Migration
+class CreateDiskonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,13 @@ class Diskon extends Migration
     public function up()
     {
         Schema::create('diskon', function (Blueprint $table) {
-            $table->bigIncrements('id_diskon');
+            $table->id();
             $table->string('kode_diskon');
             $table->string('status_diskon');
             $table->string('potongan_harga');
             $table->dateTime('diskon_mulai');
             $table->dateTime('diskon_berakhir');
+            $table->timestamps();
         });
     }
 

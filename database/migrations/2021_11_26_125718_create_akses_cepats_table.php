@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class JenisLaporan extends Migration
+class CreateAksesCepatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class JenisLaporan extends Migration
      */
     public function up()
     {
-        Schema::create('jenis_laporan', function (Blueprint $table) {
-            $table->bigIncrements('id_jenis_laporan');
-            $table->string('faq_laporan');
+        Schema::create('akses_cepat', function (Blueprint $table) {
+            $table->id();
+            $table->string('alamat_jemput');
+            $table->string('alamat_tujuan');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +28,6 @@ class JenisLaporan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jenis_laporan');
+        Schema::dropIfExists('akses_cepat');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Laporkan extends Migration
+class CreateLaporkansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,14 @@ class Laporkan extends Migration
     public function up()
     {
         Schema::create('laporkan', function (Blueprint $table) {
-            $table->bigIncrements('id_laporkan');
-            $table->foreignId('jenis_laporan');
+            $table->id();
+            $table->unsignedBigInteger('jenis_laporan')->nullable();
             $table->string('isi_laporan');
+            $table->timestamps();
+        });
+
+        Schema::table('laporkan', function (Blueprint $table) {
+            $table->foreign('jenis_laporan')->references('id')->on('jenis_laporan')->onDelete('set null')->onUpdate('set null');
         });
     }
 

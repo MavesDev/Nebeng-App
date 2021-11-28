@@ -47,6 +47,7 @@
     text-align: center;
 }
 
+
 .profile-bar-menu{
     width: 100%;
     margin-top: 2rem;
@@ -60,32 +61,34 @@
     text-align: center;
 }
 
+.profile-bar-menu form{
+    width: 100%;
+    margin-left: 0px auto;
+}
+
+.profile-bar-menu form{
+    display: flex;
+}
+
+.profile-bar-menu button{
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 10px;
+    text-align: center;
+    background: none;
+    border: none;
+    margin: auto;
+}
+
+.profile-bar-menu form:hover,
 .profile-bar-menu a:hover{
     background: #553C7B;
     border-radius: 10px 0 0 10px;
     transition: 0.5s;
 }
 
+.profile-bar-menu button span:first-child,
 .profile-bar-menu a span:first-child{
-    font-size: 1.5rem;
-    padding-right: 0.3rem;
-}
-
-.profile-bar-menu form button{
-    display: block;
-    color: #fff;
-    font-size: 14px;
-    padding: 10px 10px;
-    text-align: center;
-}
-
-.profile-bar-menu form button:hover{
-    background: #553C7B;
-    border-radius: 10px 0 0 10px;
-    transition: 0.5s;
-}
-
-.profile-bar-menu form button span:first-child{
     font-size: 1.5rem;
     padding-right: 0.3rem;
 }

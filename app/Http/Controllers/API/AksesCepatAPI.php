@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Models\AksesCepat;
-use App\Models\LogSystem;
 use Carbon\Carbon;
 use Illuminate\Routing\Controller as BaseController;
 

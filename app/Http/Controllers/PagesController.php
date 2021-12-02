@@ -24,6 +24,17 @@ class PagesController extends Controller
     }
 
     public function settings(){
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         return view('Setting');
+    }
+
+    public function kelolaData(){
+        if(!Auth::check()){
+            return redirect('/login');
+        }
+        $data = UserData::all();
+        return view('content.DataUser',compact('data'));
     }
 }

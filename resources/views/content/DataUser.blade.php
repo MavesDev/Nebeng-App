@@ -1,5 +1,4 @@
 @extends('layout.main2')
-
 @section('title', 'Kelola Data User')
 
 @section('content')
@@ -32,22 +31,25 @@
                     <th>Nama</th>
                     <th>NIS</th>
                     <th>No Telepon</th>
-                    <th>Alamat</th>
+                    <th>email</th>
                     <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach ($data as $dt)
                 <tr>
+                    {{-- Data yang ditampilkan dalam table kurang lengkap,tolong perluas--}}
                     <th>1</th>
-                    <td>Mark</td>
-                    <td>092142621</td>
-                    <td>0951-4040-3210</td>
-                    <td>Washington DC</td>
+                    <td>{{$dt->nama_lengkap}}</td>
+                    <td>{{$dt->nis}}</td>
+                    <td>{{$dt->no_telp}}</td>
+                    <td>{{$dt->email}}</td>
                     <td>
                         <a class="fas fa-edit" href="#" onclick="showToogle()"></a>
                         <a class="fas fa-trash" href="#"></a>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -60,7 +62,7 @@
             </div>
             <form action="" method="post">
                 <div class="txt-form">
-                    <label for=""> Filter Content </label>
+                    <label for=""> Jenis Kelamin </label>
                     <select>
                         <option value="2022" selected>2022</option>
                         <option value="2021">2021</option>
@@ -68,7 +70,7 @@
                     </select>
                 </div>
                 <div class="txt-form">
-                    <label for=""> Filter Content </label>
+                    <label for=""> Kendaraan </label>
                     <select>
                         <option value="2022" selected>2022</option>
                         <option value="2021">2021</option>
@@ -76,7 +78,7 @@
                     </select>
                 </div>
                 <div class="txt-form">
-                    <label for=""> Filter Content </label>
+                    <label for=""> Rating </label>
                     <select>
                         <option value="2022" selected>2022</option>
                         <option value="2021">2021</option>
@@ -114,7 +116,7 @@
         </div>
     </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     // Fungsi Keluarin Modals Filter
     function modalToogle() {

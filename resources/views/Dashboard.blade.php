@@ -110,7 +110,7 @@
         <!-- Bagian Profil Dashboard -->
         <div class="profile-bar-brand">
             <h2>Welcome</h2>
-            <img src="{{ url('image/none.png') }}" alt="">
+            <img src="{{ asset('image/face')}}/{{Auth::user()->foto_profile }}" alt="">
         </div>
 
         <div class="profile-bar-title">
@@ -121,7 +121,7 @@
         <div class="profile-bar-menu">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="/settings">
                         <span class="fas fa-cog" style="font-size: 20px;"></span>
                         <span id="txt-dash">Setting</span>
                     </a>

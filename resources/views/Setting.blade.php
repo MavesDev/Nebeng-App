@@ -7,7 +7,7 @@
 <body>
     <div class="setting">
         <div class="setting-date">
-            <p> Sabtu, 15 Oktober 2021 | 13:00 </p>
+            <p id="time_span">  </p>
         </div>
 
         <div class="setting-title">
@@ -16,7 +16,7 @@
             <!-- Untuk Profil Si Akun -->
             <div class="setting-form">
                 <div class="setting-form-image">
-                    <img src="{{ url('image/none.png') }}" alt="">
+                    <img src="{{ asset('image/face')}}/{{Auth::user()->foto_profile }}" alt="">
                 </div>
 
                 <!-- Form Buat Setting -->
@@ -24,10 +24,10 @@
                     <form action="" method="post">
                         <h2>Informasi Pribadi</h2>
                         <div class="txt-form">
-                            <input type="text" placeholder="Nephy-Kyun">
+                            <input type="text" placeholder="{{Auth::user()->nama_admin}}">
                         </div>
                         <div class="txt-form">
-                            <input type="text" placeholder="nephyhandsome@gmail.com">
+                            <input type="text" placeholder="{{Auth::user()->username_admin}}">
                         </div>
                         <h2>Ganti Password</h2>
                         <div class="txt-form">
@@ -41,13 +41,50 @@
                         </div>
 
                         <div class="button-form">
-                            <button type="submit"> Kembali </button>
-                            <button type="submit"> Konfirmasi </button>
+                            {{-- Saya ubah jadi link karena nggak kirim data,cuma desainnya jadi berubah,Tolong perbaiki --}}
+                            <a href="/"> Kembali </a>
+                            <form action="#" method="POST">
+                                <button type="submit"> Konfirmasi </button>
+                            </form>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+        <script>
+            timer();
+            function timer(){
+             var currentTime = new Date()
+            var hours = currentTime.getHours()
+            var minutes = currentTime.getMinutes()
+            var sec = currentTime.getSeconds()
+            if (minutes < 10){
+                minutes = "0" + minutes
+            }
+            if (sec < 10){
+                sec = "0" + sec
+            }
+            var t_str = hours + ":" + minutes + ":" + sec + " ";
+            if(hours > 11){
+                t_str += "PM";
+            } else {
+               t_str += "AM";
+            }
+
+            //day
+            const weekday = new Array(7);
+            weekday[0] = "Minggu";
+            weekday[1] = "Senin";
+            weekday[2] = "Selasa";
+            weekday[3] = "Rabu";
+            weekday[4] = "Kamis";
+            weekday[5] = "Jumat";
+            weekday[6] = "Sabtu";
+            let day = weekday[currentTime.getDay()];
+            document.getElementById('time_span').innerHTML = day+","+" "+currentTime.getDate()+"-"+currentTime.getMonth()+"-"+currentTime.getFullYear()+" "+ t_str;
+            setTimeout(timer,1000);
+            }
+        </script>
 </body>
 
 @endsection

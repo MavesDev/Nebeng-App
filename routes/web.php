@@ -19,6 +19,8 @@ Route::get('/login','PagesController@login');
 
 Route::get('/settings','PagesController@settings');
 
+Route::get('/keloladata','PagesController@kelolaData');
+
 //post
 
 Route::post('/login','SystemController@loginSystem');

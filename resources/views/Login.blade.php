@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <title> Nebeng | Login </title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -52,13 +53,23 @@
             </form>
         </div>
     </div>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
         // Fungsi Keluarin Modals
         function loginToogle(){
             var container = document.querySelector('.login-form');
             container.classList.toggle('active')
         }
+        const session = "{{Session::has('status')}}";
+            if(session){
+                Toastify({
+                    text: "{{Session::get('status')}}",
+                    className: "info",
+                    style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    }
+                }).showToast();
+            }
     </script>
 </body>
 

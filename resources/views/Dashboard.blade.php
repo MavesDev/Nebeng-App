@@ -1,7 +1,7 @@
 @extends('layout.main')
-
+{{-- {{dd(Session::has('status'))}} --}}
 @section('title', 'Dashboard')
-
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 @section('container')
 <!-- Halaman untuk Dashboard (Jangan Dulu Sentuh) -->
 <!-- Buat CSS nya Dashboard.css -->
@@ -110,7 +110,7 @@
         <!-- Bagian Profil Dashboard -->
         <div class="profile-bar-brand">
             <h2>Welcome</h2>
-            <img src="{{ asset('image/face')}}/{{Auth::user()->foto_profile }}" alt="">
+            <img src="{{ asset('storage/'.Auth::user()->foto_profile)}}" alt="">
         </div>
 
         <div class="profile-bar-title">
@@ -138,6 +138,7 @@
             </ul>
         </div>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     {{-- javascript live time --}}
     <script>
         timer();
@@ -168,10 +169,36 @@
         weekday[4] = "Kamis";
         weekday[5] = "Jumat";
         weekday[6] = "Sabtu";
+
+        //month
+        const moon = new Array(12);
+        moon[0] = "Januari";
+        moon[1] = "Februari";
+        moon[2] = "Maret";
+        moon[3] = "April";
+        moon[4] = "Mei";
+        moon[5] = "Juni";
+        moon[6] = "Juli";
+        moon[7] = "Agustus";
+        moon[8] = "September";
+        moon[9] = "Oktober";
+        moon[10] = "November";
+        moon[11] = "Desember";
+        let month = moon[currentTime.getMonth()];
         let day = weekday[currentTime.getDay()];
-        document.getElementById('time_span').innerHTML = day+","+" "+currentTime.getDate()+"-"+currentTime.getMonth()+"-"+currentTime.getFullYear()+" "+ t_str;
+        document.getElementById('time_span').innerHTML = day+","+" "+currentTime.getDate()+" "+month+" "+currentTime.getFullYear()+" "+ t_str;
         setTimeout(timer,1000);
         }
+        const session = "{{Session::has('status')}}";
+            if(session){
+                Toastify({
+                    text: "{{Session::get('status')}}",
+                    className: "info",
+                    style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    }
+                }).showToast();
+            }
     </script>
 </body>
 

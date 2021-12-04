@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{ url('css/history.css') }}">
     <link rel="stylesheet" href="{{ url('css/feedback.css') }}">
     <link rel="stylesheet" href="{{ url('css/voucher.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 </head>
 
 <body>
@@ -92,6 +94,8 @@
         }
     </script> -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 
 </body>
 

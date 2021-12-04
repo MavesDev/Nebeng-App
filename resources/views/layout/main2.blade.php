@@ -3,6 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('container')
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 <div class="main">
 
@@ -28,7 +29,7 @@
             </div>
 
             <div class="date-profile-img">
-                <img src="{{ asset('image/face')}}/{{Auth::user()->foto_profile }}" alt="" height="45px" width="45px">
+                <img src="{{ asset('storage/'.Auth::user()->foto_profile)}}" alt="" height="45px" width="45px">
             </div>
         </div>
     </section>
@@ -65,13 +66,29 @@
         weekday[4] = "Kamis";
         weekday[5] = "Jumat";
         weekday[6] = "Sabtu";
+
+        //month
+        const moon = new Array(12);
+        moon[0] = "Januari";
+        moon[1] = "Februari";
+        moon[2] = "Maret";
+        moon[3] = "April";
+        moon[4] = "Mei";
+        moon[5] = "Juni";
+        moon[6] = "Juli";
+        moon[7] = "Agustus";
+        moon[8] = "September";
+        moon[9] = "Oktober";
+        moon[10] = "November";
+        moon[11] = "Desember";
+        let month = moon[currentTime.getMonth()];
         let day = weekday[currentTime.getDay()];
-        document.getElementById('time_span').innerHTML = day+","+" "+currentTime.getDate()+"-"+currentTime.getMonth()+"-"+currentTime.getFullYear()+" "+ t_str;
+        document.getElementById('time_span').innerHTML = day+","+" "+currentTime.getDate()+" "+month+" "+currentTime.getFullYear()+" "+ t_str;
         setTimeout(timer,1000);
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </div>
 
 @endsection

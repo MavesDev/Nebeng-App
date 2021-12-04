@@ -25,3 +25,4 @@ Route::get('/keloladata','PagesController@kelolaData');
 
 Route::post('/login','SystemController@loginSystem');
 Route::post('/logout','SystemController@logoutSystem');
+Route::post('/settings','SystemController@settingsSystem');

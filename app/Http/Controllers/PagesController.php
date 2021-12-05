@@ -23,33 +23,18 @@ class PagesController extends Controller
         return view('Login');
     }
 
-    public function settings()
-    {
+    public function settings(){
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         return view('Setting');
     }
 
-    public function data_user(){
-        return view('content.DataUser');
+    public function kelolaData(){
+        if(!Auth::check()){
+            return redirect('/login');
+        }
+        $data = UserData::all();
+        return view('content.DataUser',compact('data'));
     }
-
-    public function feedback()
-    {
-        return view('content.Feedback');
-    }
-
-    public function history()
-    {
-        return view('content.History');
-    }
-
-    public function rekap()
-    {
-        return view('content.Rekap');
-    }
-
-    // ====> Dalam tahap pengembangan <====
-    // public function voucher()
-    // {
-    //     return view('Voucher');
-    // }
 }

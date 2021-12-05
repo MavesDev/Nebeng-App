@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -57,13 +58,23 @@
             </form>
         </div>
     </div>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
         // Fungsi Keluarin Modals
         function loginToogle() {
             var container = document.querySelector('.login-form');
             container.classList.toggle('active')
         }
+        const session = "{{Session::has('status')}}";
+            if(session){
+                Toastify({
+                    text: "{{Session::get('status')}}",
+                    className: "info",
+                    style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    }
+                }).showToast();
+            }
     </script>
 </body>
 

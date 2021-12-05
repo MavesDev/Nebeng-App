@@ -97,7 +97,7 @@
 }
 
 /* Buat Tablet */
-@media (max-width: 768px) 
+@media (max-width: 768px)
 {
     .setting{
         margin-left: 120px;
@@ -126,7 +126,7 @@
     .setting-form-image img{
         margin: 30px 25px;
         border-radius: 100px;
-        width: 150px;   
+        width: 150px;
         height: 150px;
         max-width: 150px;
         max-height: 150px;

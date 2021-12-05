@@ -23,7 +23,10 @@ Route::get('/data_user', 'PagesController@data_user');
 Route::get('/feedback', 'PagesController@feedback');
 Route::get('/history', 'PagesController@history');
 
+Route::get('/keloladata','PagesController@kelolaData');
+
 //post
 
 Route::post('/login','SystemController@loginSystem');
 Route::post('/logout','SystemController@logoutSystem');
+Route::post('/settings','SystemController@settingsSystem');

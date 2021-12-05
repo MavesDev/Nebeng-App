@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,24 +17,26 @@
     <link rel="stylesheet" href="{{ url('css/history.css') }}">
     <link rel="stylesheet" href="{{ url('css/feedback.css') }}">
     <link rel="stylesheet" href="{{ url('css/voucher.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 </head>
 
 <body>
     <div class="sidebar">
         <div class="sidebar-brand">
-            <img src="{{ url('image/none.png') }}" alt="">
+            <img src="{{ asset('image/logo-crop.png') }}" alt="">
         </div>
 
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="{{ url('/') }}">
+                    <a href="/" class="{{(request()->is('/')) ? 'active':''}}">
                         <span class="fas fa-home" style="font-size: 20px;"></span>
                         <span id="txt">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('/data_user') }}">
+                    <a href="/keloladata" class="{{(request()->is('keloladata')) ? 'active':''}}">
                         <span class="fas fa-tasks" style="font-size: 20px;"></span>
                         <span id="txt">Kelola Data</span>
                     </a>
@@ -85,13 +86,16 @@
     <div>
         @yield('container')
     </div>
-    <!-- 
+    <!--
     <script>
         function dropdownToogle() {
             var dropdown = document.querySelector('.dropdown');
             dropdown.classList.toggle('active')
         }
     </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 
 </body>
 

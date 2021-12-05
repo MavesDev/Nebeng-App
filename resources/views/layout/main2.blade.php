@@ -12,17 +12,17 @@
         </div>
 
         <div class="date-profile">
-            
+
             <div class="date-profile-setting">
-                <a class="fas fa-cog" href="#"></a>
-                <a class="fas fa-sign-out-alt" href="#"></a>
+                <a class="fas fa-cog" href="{{ url('/settings') }}"></a>
+                <a class="fas fa-sign-out-alt" href="{{ url('/logout') }}"></a>
             </div>
 
             <div class="date-profile-name">
-                <p> Your Name</p>
+                <p> John Smith </p>
                 <small> Administrator </small>
             </div>
-            
+
             <div class="date-profile-img">
                 <img src="{{ url('../image/none.png') }}" alt="" height="45px" width="45px">
             </div>

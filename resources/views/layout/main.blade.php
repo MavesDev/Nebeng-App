@@ -29,13 +29,13 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/') }}">
                         <span class="fas fa-home" style="font-size: 20px;"></span>
                         <span id="txt">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/data_user') }}">
                         <span class="fas fa-tasks" style="font-size: 20px;"></span>
                         <span id="txt">Kelola Data</span>
                     </a>
@@ -55,25 +55,25 @@
                     </ul> -->
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('#') }}">
                         <span class="fas fa-tags" style="font-size: 15px;"></span>
                         <span id="txt">Voucher</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/rekap') }}">
                         <span class="far fa-calendar" style="font-size: 20px;"></span>
                         <span id="txt">Rekap</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/history') }}">
                         <span class="fas fa-history" style="font-size: 20px;"></span>
                         <span id="txt">Riwayat</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/feedback') }}">
                         <span class="fas fa-comment-alt" style="font-size: 20px;"></span>
                         <span id="txt">Feedback</span>
                     </a>

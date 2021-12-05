@@ -6,6 +6,11 @@
 <head>
     <meta charset="utf-8">
     <title> Nebeng | Login </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="theme-color" content="#553C7B">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 
@@ -32,11 +37,11 @@
                 @csrf
                 <div class="txt-form">
                     <label for=""> Username </label>
-                    <input type="text" name="username">
+                    <input type="text" name="username" placeholder="John Smith">
                 </div>
                 <div class="txt-form">
                     <label for=""> Password </label>
-                    <input type="password" name="password">
+                    <input type="password" name="password" placeholder="Password">
                 </div>
                 <div class="check-form">
                     <label for=""> Keep Username </label>
@@ -47,7 +52,7 @@
                     <button type="submit"> Log in </button>
                 </div>
                 <div class="forgot-password">
-                    <a href="#"> Forget Password? </a>
+                    <p href="#"> "Give some Offer, same as Give <br>some help to people" </p>
                 </div>
             </form>
         </div>
@@ -55,7 +60,7 @@
 
     <script>
         // Fungsi Keluarin Modals
-        function loginToogle(){
+        function loginToogle() {
             var container = document.querySelector('.login-form');
             container.classList.toggle('active')
         }

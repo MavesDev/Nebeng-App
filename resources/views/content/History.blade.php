@@ -31,8 +31,8 @@
                     <div class="history-content">
                         <img src="{{ url('../image/none.png') }}" alt="" id="history-image">
                         <div class="history-txt">
-                            <p>Nama</p>
-                            <p>Ini keterangan</p>
+                            <p class="history-name">Puan Maharani</p>
+                            <p>Gedung Presiden Jl. Kemayoran 3 - 15 Juni 2021</p>
                         </div>
                         <div class="history-span">
                             <span><a class="fas fa-eye" href="#" onclick="showToogle()"></a></span>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="button-form">
                     <button id="button-submit" type="submit"> Lets Filter! </button>
-                    <a id="button-submit" onclick="modalToogle()"> Back </a>
+                    <a id="button-submit" onclick="filterToogle()"> Back </a>
                 </div>
             </form>
         </div>

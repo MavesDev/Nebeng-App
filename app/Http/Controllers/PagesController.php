@@ -23,7 +23,33 @@ class PagesController extends Controller
         return view('Login');
     }
 
-    public function settings(){
+    public function settings()
+    {
         return view('Setting');
     }
+
+    public function data_user(){
+        return view('content.DataUser');
+    }
+
+    public function feedback()
+    {
+        return view('content.Feedback');
+    }
+
+    public function history()
+    {
+        return view('content.History');
+    }
+
+    public function rekap()
+    {
+        return view('content.Rekap');
+    }
+
+    // ====> Dalam tahap pengembangan <====
+    // public function voucher()
+    // {
+    //     return view('Voucher');
+    // }
 }

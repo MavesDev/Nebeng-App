@@ -39,10 +39,10 @@
             <tbody>
                 <tr>
                     <th>1</th>
-                    <td>Mark</td>
+                    <td>Davin Albar Nephy</td>
                     <td>092142621</td>
                     <td>0951-4040-3210</td>
-                    <td>Washington DC</td>
+                    <td>Sanggar Indah Lestari Blok G2 No 3</td>
                     <td>
                         <a class="fas fa-edit" href="#" onclick="showToogle()"></a>
                         <a class="fas fa-trash" href="#"></a>

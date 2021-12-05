@@ -49,6 +49,17 @@
     padding-right: 10px;
 }
 
+.history .history-content .history-name{
+    font-weight: bold;
+    font-size: 15px;
+} 
+
+
+.history .history-content .history-txt p{
+    padding-bottom: 3px;
+    font-size: 13px;
+} 
+
 .history-filter{
     width: 900px;
     margin: 10px 0;

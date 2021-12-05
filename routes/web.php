@@ -18,6 +18,10 @@ Route::get('/','PagesController@beranda');
 Route::get('/login','PagesController@login');
 
 Route::get('/settings','PagesController@settings');
+Route::get('/rekap', 'PagesController@rekap');
+Route::get('/data_user', 'PagesController@data_user');
+Route::get('/feedback', 'PagesController@feedback');
+Route::get('/history', 'PagesController@history');
 
 Route::get('/keloladata','PagesController@kelolaData');
 

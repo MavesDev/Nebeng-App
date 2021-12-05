@@ -37,7 +37,7 @@
                 <tr>
                     <th>1</th>
                     <td>September</td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, perspiciatis.</td>
+                    <td>Terjadi 58 Transaksi</td>
                 </tr>
             </tbody>
         </table>

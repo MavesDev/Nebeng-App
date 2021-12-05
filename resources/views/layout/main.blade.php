@@ -56,25 +56,25 @@
                     </ul> -->
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('#') }}">
                         <span class="fas fa-tags" style="font-size: 15px;"></span>
                         <span id="txt">Voucher</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/rekap') }}">
                         <span class="far fa-calendar" style="font-size: 20px;"></span>
                         <span id="txt">Rekap</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/history') }}">
                         <span class="fas fa-history" style="font-size: 20px;"></span>
                         <span id="txt">Riwayat</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ url('/feedback') }}">
                         <span class="fas fa-comment-alt" style="font-size: 20px;"></span>
                         <span id="txt">Feedback</span>
                     </a>

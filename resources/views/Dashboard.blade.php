@@ -131,7 +131,7 @@
                         @csrf
                         <button>
                             <span class="fas fa-sign-out-alt" style="font-size: 20px;"></span>
-                            <span id="txt-dash">Log out</span>
+                            <span id="txt-dash" style="cursor: pointer;">Log out</span>
                         </button>
                     </form>
                 </li>
@@ -143,7 +143,7 @@
     <script>
         timer();
         function timer(){
-         var currentTime = new Date()
+        var currentTime = new Date()
         var hours = currentTime.getHours()
         var minutes = currentTime.getMinutes()
         var sec = currentTime.getSeconds()
@@ -186,6 +186,7 @@
         moon[11] = "Desember";
         let month = moon[currentTime.getMonth()];
         let day = weekday[currentTime.getDay()];
+        
         document.getElementById('time_span').innerHTML = day+","+" "+currentTime.getDate()+" "+month+" "+currentTime.getFullYear()+" "+ t_str;
         setTimeout(timer,1000);
         }

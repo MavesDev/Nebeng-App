@@ -84,6 +84,10 @@
     opacity: 100%;
 }
 
+.mobile-warning{
+    display: none;
+}
+
 
 /* Buat Tablet */
 @media (max-width: 768px) 
@@ -138,6 +142,29 @@
 
     .sidebar-menu #txt{
         display: none;
+    }
+
+    /* Error Tampilan Mobile */
+    .mobile-warning{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        flex-direction: column ;
+        text-align: center;
+    }
+
+    .mobile-warning i{
+        color: #8c5cd3;
+        margin-top: 35%;
+        font-size: 72px;
+        margin-bottom: 20px;
+    }
+
+    .mobile-warning h3{
+        font-size: 24px;
+        color: #8c5cd3;
+        margin: 0 40px;
     }
 }
 

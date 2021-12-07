@@ -93,31 +93,30 @@
     padding-right: 0.3rem;
 }
 
-.main{
+.dashboard{
     margin-left: 390px;
 }
 
-.main .main-date{
+.dashboard .dashboard-date{
     width: 580px;
     margin: 30px 0;
     background: #8c5cd3;
     border-radius: 10px;
 }
 
-.main .main-date p{
+.dashboard .dashboard-date p{
     color: #fff;
     font-size: 16px;
     padding: 12px 10px;
 }
 
-.main-dash h2{
+.dashboard-dash h2{
     color: #553C7B;
     font-size: 28px;
 }
 
-.main-dash-title{
+.dashboard-dash-title{
     width: 580px;
-    height: 100%;
     margin: 20px 0;
     padding: 20px 0;
     background: url('../image/dashboard1.jpeg');
@@ -127,7 +126,7 @@
     border-radius: 10px;
 }
 
-#main-costumer{
+#dashboard-costumer{
     color: #fff;
     font-weight: bold;
     text-align: center;
@@ -139,18 +138,18 @@
     min-width: 140px;
 }
 
-.main-dash-title p{
+.dashboard-dash-title p{
     color: #fff;
     font-size: 14px;
     padding: 12px 10px;
 }
 
-.main-act h2{
+.dashboard-act h2{
     color: #553C7B;
     font-size: 28px;
 }
 
-.main-act-table{
+.dashboard-act-table{
     width: 580px;
     height: 230px;
     margin: 20px 0;
@@ -160,7 +159,11 @@
     overflow-x: hidden;
 }
 
-.main-act-content{
+.dashboard-act-table::-webkit-scrollbar{
+    display: none;
+}
+
+.dashboard-act-content{
     padding: 10px 12px;
     display: inline-block;
     width: 100%;
@@ -178,26 +181,26 @@
     float: left;
 }
 
-.main-act-txt {
+.dashboard-act-txt {
     position: relative;
     padding: 10px 10px;
     float: left;
 }
 
-.main-act-txt p{
+.dashboard-act-txt p{
     color: #fff;
     padding: 0 10px;
     font-size: 14px;
 }
 
-.main-act-span a{
+.dashboard-act-span a{
     color: #fff;
     position: relative;
     padding: 10px 10px;
     float: right;
 }
 
-@media (max-width: 768px)
+@media (max-width: 1024px)
 {
     .profile-bar{
         width: 60px;
@@ -243,38 +246,43 @@
         padding-right: 0;
     }
 
-    .main{
-        margin-left: 120px;
+    .profile-bar-menu button{
+        padding: 15px 0;
+        padding-left: 5px;
     }
 
-    .main .main-date{
+    .dashboard{
+        margin-left: 390px;
+    }
+
+    .dashboard .dashboard-date{
         width: 80%;
     }
 
-    .main .main-date p{
+    .dashboard .dashboard-date p{
         font-size: 14px;
     }
 
-    .main-dash h2{
+    .dashboard-dash h2{
         color: #553C7B;
         font-size: 26px;
     }
 
-    .main-dash-title{
+    .dashboard-dash-title{
         width: 80%;
     }
 
-    #main-costumer{
+    #dashboard-costumer{
         max-width: 28%;
         min-width: 28%;
     }
 
-    .main-act h2{
+    .dashboard-act h2{
         color: #553C7B;
         font-size: 26px;
     }
 
-    .main-act-table{
+    .dashboard-act-table{
         width: 80%;
     }
 
@@ -285,14 +293,68 @@
         min-width: 45px;
     }
 
-    .main-act-txt {
+    .dashboard-act-txt {
         position: relative;
         padding: 5px 10px;
         float: left;
     }
 
-    .main-act-txt p{
+    .dashboard-act-txt p{
         font-size: 12px;
     }
-
 }
+
+@media (max-width: 768px){
+    .dashboard{
+        margin-left: 140px;
+    }
+
+    .sidebar{
+        display: none;
+    }
+
+    .profile-bar{
+        left: 0;
+
+    }
+
+    .profile-bar-menu ul li:first-child{
+        display: none;
+    }
+}
+
+@media (max-width: 425px){
+    .dashboard{
+        margin-left: 100px;
+    }
+
+    .dashboard-date{
+        display: none;
+    }
+
+    .dashboard-dash h2{
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .dashboard-dash-title{
+        width: 90%;
+    }
+
+    #dashboard-costumer{
+        width: 100%;
+        display: block;
+        max-width: 100%;
+        font-size: 26px;
+    }
+
+    .dashboard-act h2{
+        font-size: 24px;
+    }
+
+    .dashboard-act-table{
+        width: 90%;
+    }
+}
+
+

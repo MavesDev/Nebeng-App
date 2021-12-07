@@ -4,18 +4,18 @@
 
 @section('content')
 
-<div class="data-user">
-    <div class="data-user-title">
+<div class="rekap">
+    <div class="rekap-title">
         <h2> Rekap </h2>
     </div>
 
     <!-- Ini bagian buat button search dan filter -->
-    <div class="data-user-filter">
-        <div class="data-user-button">
+    <div class="rekap-filter">
+        <div class="rekap-button">
             <button onclick="modalToogle()"> Filter <i class="fas fa-filter"></i> </button>
         </div>
 
-        <div class="data-user-search">
+        <div class="rekap-search">
             <form action="">
                 <input type="text" placeholder="Search here....">
                 <button type="submit">Search <i class="fas fa-search"></i></button>
@@ -24,20 +24,37 @@
     </div>
 
     <!-- ini buat tabelnya -->
-    <div class="data-user-table">
+    <div class="rekap-table">
         <table>
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Bulan</th>
-                    <th>Keterangan</th>
+                    <th>Nama</th>
+                    <th>Tanggal</th>
+                    <th>Alamat Jemput</th>
+                    <th>Tujuan</th>
+                    <th>Harga</th>
+                    <th>Kendaraan</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th>1</th>
-                    <td>September</td>
-                    <td>Terjadi 58 Transaksi</td>
+                    <td>John Smith</td>
+                    <td>11 Oktober 2021</td>
+                    <td>SMKN 1 KATAPANG</td>
+                    <td>Miko mall jalan sayati no 3 Bandung, Indonesia</td>
+                    <td>Rp12.0000</td>
+                    <td>NMAX</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td>Adam Manhattan</td>
+                    <td>4 Oktober 2021</td>
+                    <td>SMKN 1 KATAPANG</td>
+                    <td>Ramen Bajuri, Gandasoli No 3</td>
+                    <td>Rp19.0000</td>
+                    <td>Vario</td>
                 </tr>
             </tbody>
         </table>
@@ -51,23 +68,24 @@
             </div>
             <form action="" method="post">
                 <div class="txt-form">
-                    <label for=""> Filter Content </label>
+                    <label for=""> Bulan </label>
                     <select>
-                        <option value="2022" selected>2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
                     </select>
                 </div>
                 <div class="txt-form">
-                    <label for=""> Filter Content </label>
-                    <select>
-                        <option value="2022" selected>2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                    </select>
-                </div>
-                <div class="txt-form">
-                    <label for=""> Filter Content </label>
+                    <label for=""> Tahun </label>
                     <select>
                         <option value="2022" selected>2022</option>
                         <option value="2021">2021</option>
@@ -75,8 +93,8 @@
                     </select>
                 </div>
                 <div class="button-form">
-                    <button id="button-submit" type="submit"> Lets Filter! </button>
-                    <a id="button-submit" onclick="modalToogle()"> Back </a>
+                    <button id="button-submit" type="submit"> Filter </button>
+                    <a id="button-submit" onclick="modalToogle()"> Kembali </a>
                 </div>
             </form>
         </div>
@@ -104,6 +122,11 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="mobile-warning">
+    <i class="fas fa-exclamation-circle"></i>
+    <h3>Halaman Ini Tidak Mendukung Ukuran Web Ini</h3>
 </div>
 
 <script>

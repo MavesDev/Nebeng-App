@@ -1,3 +1,4 @@
+/* Judul bagian history */
 .history .history-title{
     margin: 20px 0;
 }
@@ -7,58 +8,7 @@
     font-size: 24px;
 }
 
-.history-table{
-    display: inline-block;
-    overflow: scroll;
-    overflow-x: hidden;
-    border-radius: 10px 10px 0 10px;
-    max-width: 900px;
-    height: 320px;
-    background: #e8e8e8;
-}
-
-.history table{
-    width: 900px;
-    color: #fff;
-    text-align: left;
-    border-collapse: collapse;
-}
-
-.history thead tr th{
-    background: #553C7B;
-    padding: 20px 5px;
-    border-bottom: #fff solid 2px;
-}
-
-.history tbody tr{
-    width: 100%;
-    border-bottom: #553C7B 1px solid;
-}
-
-.history tbody tr td,
-.history tbody tr th{
-    background: #7d58b5;
-    padding: 10px 5px;
-    max-width: 30px;
-    font-size: 14px;
-    overflow: hidden;
-}
-
-.history tbody tr a{
-    color: #fff;
-    padding-right: 10px;
-}
-
-.history .history-content .history-name{
-    font-weight: bold;
-    font-size: 15px;
-} 
-
-
-.history .history-content .history-txt p{
-    padding-bottom: 3px;
-    font-size: 13px;
-} 
+/* Konten atas history */
 
 .history-filter{
     width: 900px;
@@ -93,6 +43,104 @@
 
 ::placeholder{
     color: #7d58b5;
+}
+
+/* Card user history */
+
+.history-card{
+    float: left;
+    width: calc(50% - 50px);
+    height: 420px;
+    overflow: scroll;
+}
+
+.history-card::-webkit-scrollbar{
+    display: none;
+}
+
+.history-card .card-content{
+    width: 100%;
+    height: 70px;
+    background: #7d58b5;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    margin: 10px 0;
+}
+
+.history-card .card-content img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin: 0 20px;
+}
+
+.history-card .card-content .card-status{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 65%;
+    color: #fff;
+}
+
+.history-card .card-content .card-status h2{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.history-card .card-content .card-status p{
+    font-size: 12px;
+}
+
+.history-card .card-content a{
+    margin: 0 20px;
+    float: right;
+    color: #fff;
+}
+
+/* Detail history */
+
+.history-detail{
+    float: right;
+    width: calc(50% - 50px);
+    height: 420px;
+    margin-right: 80px;
+    border-radius: 10px;
+    background: #7d58b5;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.history-detail::-webkit-scrollbar{
+    display: none;
+}
+
+.history-detail h2{
+    margin: 25px 0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.history-detail .detail-content{
+    width: 100%;
+    color: #fff;
+    padding: 0 30px;
+}
+
+.history-detail .detail-content .detail-item{
+    margin: 15px 0;
+    width: 100%;
+}
+
+.history-detail .detail-content label{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.history-detail .detail-content p{
+    font-size: 12px;
 }
 
 .history-filter input{
@@ -193,134 +241,15 @@
     visibility: visible;
 }
 
-/* Ini Modal Show */
-.history-form{
-    position: absolute;   
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 500px;
-    background:#fff;
-    border: #7d58b5 3px solid;
-    border-radius: 10px;
-    opacity: 0%;
-    visibility:hidden;
-    /* overflow: scroll; */
-}
 
-.history-form .form h1{
-    color: #7d58b5;
-    text-align: center;
-    font-size: 42px;
-    padding: 30px 0px;
-}
+@media(max-width: 768px){
+    .history{
+        display: none;
+    }
 
-.history-form.active{
-    transition: 0.5s;
-    opacity: 100%;
-    visibility: visible;
-}
-
-.history-form .form form{
-    padding: 0 40px;
-    margin: 10px 0;
-}
-
-.history-form .form .txt-form{
-    margin: 20px 0;
-}
-
-.history-form .form .txt-form label{
-    font-size: 16px;
-    color: #7d58b5; 
-    font-weight: bold;
-}
-
-.history-form .form .txt-form input{
-    background: #7d58b5;
-    color: #fff;
-    text-align: left;
-    padding-left: 10px;
-    width: 100%;
-    margin-top: 10px;
-    height: 30px;
-    border: none;
-    border-radius: 5px;
-}
-
-.history-form .form .button-form{
-    margin: 10px 0px;
-}
-
-.history-form ::placeholder{
-    color: #dddddd;
-}
-
-.history-form .form #button-submit{
-    color: #fff;
-    position: relative;
-    padding: 10px 25px;
-    background: #7d58b5;
-    border: none;
-    border-radius: 5px;
-    border: #fff 1px solid;
-}
-
-.history-form .form #button-submit:hover{
-    color: #7d58b5;
-    background: #fff;
-    border: #7d58b5 1px solid;
-    transition: 0.3s;
-}
-
-/* Mulai Masuk List */
-
-.history-table{
-    width: 900px;
-    height: 320px;
-    margin: 20px 0;
-    background: #8c5cd3;
-    border-radius: 10px;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-.history-content{
-    padding: 10px 12px;
-    display: inline-block;
-    width: 100%;
-    border-bottom: #553C7B 1px solid;
-}
-
-#history-image{
-    position: relative;
-    width: 50px;
-    height: 50px;
-    max-width: 50px;
-    min-width: 50px;
-    border-radius: 100px;
-    display: inline;
-    float: left;
-}
-
-.history-txt {
-    position: relative;
-    padding: 10px 10px;
-    float: left;
-}
-
-.history-txt p{
-    color: #fff;
-    padding: 0 10px;
-    font-size: 14px;
-}
-
-.history-span a{
-    color: #fff;
-    position: relative;
-    padding: 10px 10px;
-    float: right;
+    .main{
+        margin-left: 0;
+    }
 }
 
 

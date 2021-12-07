@@ -10,7 +10,7 @@
     </div>
 
     <!-- Sama buat filter ama search -->
-    <div class="history-filter">
+    <!-- <div class="history-filter">
         <div class="history-button">
             <button onclick="filterToogle()"> Filter <i class="fas fa-filter"></i> </button>
         </div>
@@ -21,25 +21,50 @@
                 <button type="submit">Search <i class="fas fa-search"></i></button>
             </form>
         </div>
+    </div> -->
+
+    <div class="history-card">
+        <div class="card-content">
+            <img src="{{ asset('image/None.png') }}" alt="">
+            <div class="card-status">
+                <h2>Ulfric Stormcloak</h2>
+                <p>Isi riwayat</p>
+            </div>
+            <a href="#"><i class="fas fa-arrow-right"></i></a>
+        </div>
     </div>
 
-    <div class="history">
-        <!-- Bagian Tabel History -->
-        <div class="history-table">
-            <ul>
-                <li>
-                    <div class="history-content">
-                        <img src="{{ url('../image/none.png') }}" alt="" id="history-image">
-                        <div class="history-txt">
-                            <p class="history-name">Puan Maharani</p>
-                            <p>Gedung Presiden Jl. Kemayoran 3 - 15 Juni 2021</p>
-                        </div>
-                        <div class="history-span">
-                            <span><a class="fas fa-eye" href="#" onclick="showToogle()"></a></span>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+    <div class="history-detail">
+        <h2> Info lengkap Pengantaran </h2>
+        <div class="detail-content">
+            <div class="detail-item">
+                <label for="">Nama :</label>
+                <p>Ulfric Stormcloak</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Plat Kendaraan :</label>
+                <p>S TRMCLK</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Nama Penumpang :</label>
+                <p>General Tulius</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Alamat Penjemputan :</label>
+                <p>Solitude</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Alamat Tujuan :</label>
+                <p>Windhelm</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Tanggal & Waktu :</label>
+                <p>Morndas, 12 Heartfire 1233 | 12.00</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Jarak :</label>
+                <p>2560 KM</p>
+            </div>
         </div>
     </div>
 
@@ -81,28 +106,11 @@
             </form>
         </div>
     </div>
+</div>
 
-    <!-- Ini modal buat form detail history -->
-    <div class="history-form">
-        <div class="form">
-            <div class="text">
-                <h1> Detail History </h1>
-                <form action="" method="post">
-                    <div class="txt-form">
-                        <label for=""> History Content </label>
-                        <input type="text" value="This Form is Full!" disabled>
-                    </div>
-                    <div class="txt-form">
-                        <label for=""> History Content </label>
-                        <input type="text" value="This Form is Full!" disabled>
-                    </div>
-                    <div class="button-form">
-                        <a id="button-submit" onclick="showToogle()"> Back </a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+<div class="mobile-warning">
+    <i class="fas fa-exclamation-circle"></i>
+    <h3>Halaman Ini Tidak Mendukung Ukuran Web Ini</h3>
 </div>
 
 <script>

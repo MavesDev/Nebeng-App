@@ -29,6 +29,11 @@
     font-size: 24px;
 }
 
+.setting-title h3{
+    color: #553C7B;
+    font-size: 20px;
+}
+
 .setting-form{
     width: 725px;
     height: 480px;
@@ -81,16 +86,33 @@
     color: #fff;
 }
 
+.setting-form-txt .txt-form ::-webkit-file-upload-button{
+    padding: 5px 10px;
+    color: #ffff;
+    background: #553C7B;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.setting-form-txt .txt-form ::-webkit-file-upload-button:hover{
+    background: #422c63;
+}
+
+.setting-form-txt a,
 .setting-form-txt button{
+    font-size: 12px;
     float: right;
     color: #fff;
     background  : #553C7B;
     border: none;
     border-radius: 5px;
     margin: 10px 5px;
-    padding: 5px 10px;
+    padding: 10px 10px;
+    cursor: pointer;
 }
 
+.setting-form-txt a:hover,
 .setting-form-txt button:hover{
     background: #422c63;
     transition: 0.5s;
@@ -167,4 +189,9 @@
         background: #422c63;
         transition: 0.5s;
     }
+
+    .setting{
+        display: none;
+    }
 }
+

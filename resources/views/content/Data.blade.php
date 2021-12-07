@@ -4,49 +4,133 @@
 
 @section('content')
 
-<div class="data-left">
-    <div class="data-title">
-        <h2> Kelola Data </h2>
+<div class="data">
+    <h2>Kelola Data</h2>
+
+    <!-- Bagian Search -->
+    <div class="data-search">
+        <form action="" method="get">
+            <input type="text" placeholder="Cari berdasarkan nama atau id...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
     </div>
 
-    <!-- Ini tuh buat button kelola data siapa, kalau mau dipisah bisa bikin lagi button nya -->
-    <div class="data-button">
-        <a href="#">
-            <div class="data-button-driver">
-                <i class="fas fa-biking" href="#"></i>
-                <p>Driver</p>
+    <!-- Bagian card user -->
+    <div class="card">
+        <div class="data-card">
+            <div class="card-photo">
+                <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
             </div>
-        </a>
-        <a href="#">
-            <div class="data-button-driver">
-                <i class="fas fa-user" href="#"></i>
-                <p>User</p>
+            <div class="card-name">
+                <h4>Muhammad Abdurohman Rio Kurniawan</h4>
+                <p>089510260540</p>
             </div>
-        </a>
+            <div class="card-link">
+                <a href="#"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="data-card">
+            <div class="card-photo">
+                <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
+            </div>
+            <div class="card-name">
+                <h4>Muhammad Abdurohman Rio Kurniawan</h4>
+                <p>089510260540</p>
+            </div>
+            <div class="card-link">
+                <a href="#"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="data-card">
+            <div class="card-photo">
+                <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
+            </div>
+            <div class="card-name">
+                <h4>Muhammad Abdurohman Rio Kurniawan</h4>
+                <p>089510260540</p>
+            </div>
+            <div class="card-link">
+                <a href="#"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="data-card">
+            <div class="card-photo">
+                <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
+            </div>
+            <div class="card-name">
+                <h4>Muhammad Abdurohman Rio Kurniawan</h4>
+                <p>089510260540</p>
+            </div>
+            <div class="card-link">
+                <a href="#"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="data-card">
+            <div class="card-photo">
+                <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
+            </div>
+            <div class="card-name">
+                <h4>Muhammad Abdurohman Rio Kurniawan</h4>
+                <p>089510260540</p>
+            </div>
+            <div class="card-link">
+                <a href="#"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="data-card">
+            <div class="card-photo">
+                <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
+            </div>
+            <div class="card-name">
+                <h4>Muhammad Abdurohman Rio Kurniawan</h4>
+                <p>089510260540</p>
+            </div>
+            <div class="card-link">
+                <a href="#"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="data-card">
+            <div class="card-photo">
+                <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
+            </div>
+            <div class="card-name">
+                <h4>Muhammad Abdurohman Rio Kurniawan</h4>
+                <p>089510260540</p>
+            </div>
+            <div class="card-link">
+                <a href="#"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="data-card">
+            <div class="card-photo">
+                <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
+            </div>
+            <div class="card-name">
+                <h4>Muhammad Abdurohman Rio Kurniawan</h4>
+                <p>089510260540</p>
+            </div>
+            <div class="card-link">
+                <a href="#"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="data-card">
+            <div class="card-photo">
+                <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
+            </div>
+            <div class="card-name">
+                <h4>Muhammad Abdurohman Rio Kurniawan</h4>
+                <p>089510260540</p>
+            </div>
+            <div class="card-link">
+                <a href="#"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- Tabel Pengguna Bulanan Katanya -->
-<div class="data-right">
-    <div class="data-title">
-        <h2> Jumlah Penggunaan Aplikasi </h2>
-    </div>
-
-    <div class="data-act">
-        <div class="data-act-title">
-            <h4> 100 </h4>
-        </div>
-        <h3> User </h3>
-        <small>Penebeng Bulan Ini</small>
-    </div>
-
-    <div class="data-act">
-        <div class="data-act-title">
-            <h4> 100 </h4>
-        </div>
-        <h3> Driver </h3>
-        <small>Nebengers Bulan Ini</small>
-    </div>
+<div class="mobile-warning">
+    <i class="fas fa-exclamation-circle"></i>
+    <h3>Halaman Ini Tidak Mendukung Ukuran Web Ini</h3>
 </div>
 
 @endsection

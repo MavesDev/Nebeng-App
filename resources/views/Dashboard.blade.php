@@ -7,96 +7,96 @@
 <!-- Buat CSS nya Dashboard.css -->
 <body>
 
-    <div class="main">
+    <div class="dashboard">
         <!-- Bagian Tanggal -->
-        <div class="main-date">
+        <div class="dashboard-date">
             <p id="time_span"></p>
         </div>
 
-        <div class="main-dash">
+        <div class="dashboard-dash">
             <!-- Bagian Riwayat Pemakai -->
             <h2>Dashboard</h2>
 
-            <div class="main-dash-title">
-                <p id="main-costumer">{{$userCount}}</p>
+            <div class="dashboard-dash-title">
+                <p id="dashboard-costumer">{{$userCount}}</p>
                 <p style="font-weight: bold;">Total Riwayat Penggunaan Aplikasi</p>
                 <p>Jumlah ini berdasarkan berapa banyak nebengers yang menggunakan aplikasi dalam sebulan terakhir</p>
             </div>
         </div>
 
-        <div class="main-act">
+        <div class="dashboard-act">
             <!-- Bagian Tabel Aktivitas -->
             <h2>Activities</h2>
-            <div class="main-act-table">
+            <div class="dashboard-act-table">
                 <ul>
                     <li>
-                        <div class="main-act-content">
+                        <div class="dashboard-act-content">
                             <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="main-act-txt">
+                            <div class="dashboard-act-txt">
                                 <p>Nama</p>
                                 <p>Ini keterangan</p>
                             </div>
-                            <div class="main-act-span">
+                            <div class="dashboard-act-span">
                                 <span><a class="fas fa-exclamation-circle" href="#"></a></span>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <div class="main-act-content">
+                        <div class="dashboard-act-content">
                             <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="main-act-txt">
+                            <div class="dashboard-act-txt">
                                 <p>Nama</p>
                                 <p>Ini keterangan</p>
                             </div>
-                            <div class="main-act-span">
+                            <div class="dashboard-act-span">
                                 <span><a class="fas fa-exclamation-circle" href="#"></a></span>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <div class="main-act-content">
+                        <div class="dashboard-act-content">
                             <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="main-act-txt">
+                            <div class="dashboard-act-txt">
                                 <p>Nama</p>
                                 <p>Ini keterangan</p>
                             </div>
-                            <div class="main-act-span">
+                            <div class="dashboard-act-span">
                                 <span><a class="fas fa-exclamation-circle" href="#"></a></span>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <div class="main-act-content">
+                        <div class="dashboard-act-content">
                             <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="main-act-txt">
+                            <div class="dashboard-act-txt">
                                 <p>Nama</p>
                                 <p>Ini keterangan</p>
                             </div>
-                            <div class="main-act-span">
+                            <div class="dashboard-act-span">
                                 <span><a class="fas fa-exclamation-circle" href="#"></a></span>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <div class="main-act-content">
+                        <div class="dashboard-act-content">
                             <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="main-act-txt">
+                            <div class="dashboard-act-txt">
                                 <p>Nama</p>
                                 <p>Ini keterangan</p>
                             </div>
-                            <div class="main-act-span">
+                            <div class="dashboard-act-span">
                                 <span><a class="fas fa-exclamation-circle" href="#"></a></span>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <div class="main-act-content">
+                        <div class="dashboard-act-content">
                             <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="main-act-txt">
+                            <div class="dashboard-act-txt">
                                 <p>Nama</p>
                                 <p>Ini keterangan</p>
                             </div>
-                            <div class="main-act-span">
+                            <div class="dashboard-act-span">
                                 <span><a class="fas fa-exclamation-circle" href="#"></a></span>
                             </div>
                         </div>

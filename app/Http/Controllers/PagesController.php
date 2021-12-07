@@ -35,6 +35,42 @@ class PagesController extends Controller
             return redirect('/login');
         }
         $data = UserData::all();
-        return view('content.DataUser',compact('data'));
+        return view('content.Data',compact('data'));
+    }
+
+    public function detail()
+    {
+        if (!Auth::check()) {
+            return redirect('/login');
+        }
+        $data = UserData::all();
+        return view('content.Detail', compact('data'));
+    }
+
+    public function rekap()
+    {
+        if (!Auth::check()) {
+            return redirect('/rekap');
+        }
+        $data = UserData::all();
+        return view('content.Rekap', compact('data'));
+    }
+
+    public function feedback()
+    {
+        if (!Auth::check()) {
+            return redirect('/feedback');
+        }
+        $data = UserData::all();
+        return view('content.Feedback', compact('data'));
+    }
+
+    public function history()
+    {
+        if (!Auth::check()) {
+            return redirect('/history');
+        }
+        $data = UserData::all();
+        return view('content.History', compact('data'));
     }
 }

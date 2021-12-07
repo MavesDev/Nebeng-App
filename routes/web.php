@@ -20,9 +20,10 @@ Route::get('/login','PagesController@login');
 Route::get('/settings','PagesController@settings');
 Route::get('/rekap', 'PagesController@rekap');
 Route::get('/data_user', 'PagesController@data_user');
-Route::get('/feedback', 'PagesController@feedback');
+// Route::get('/feedback', 'PagesController@feedback');
 Route::get('/history', 'PagesController@history');
 
+Route::get('/keloladata/detail', 'PagesController@detail');
 Route::get('/keloladata','PagesController@kelolaData');
 
 //post

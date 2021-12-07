@@ -1,81 +1,121 @@
-.data-left{
-    float: left;
-    width: 350px;
+.data{
+    width: 92%;
+    margin-top: 20px;
 }
 
-.data-left .data-title{
-    margin: 20px 0;
-}
-
-.data-left .data-title h2{
-    color: #553C7B;
+.data h2{
     font-size: 24px;
-}
-
-.data-left .data-button{
-    margin: 10px 0;
-}
-
-.data-left .data-button .data-button-driver{
-    width: 150px;
-    margin-right: 20px;
-    padding: 40px 50px 50px 50px;
-    background: #fff;
-    border: #553C7B 3px solid;
-    border-radius: 20px;
-    display: inline-block;
-    text-align: center;
-}
-
-.data-left .data-button .data-button-driver:hover{
-    background: #553C7B;
-    color: #fff;
-    border: #fff 3px solid;
-    transition: 0.4s;
-}
-
-.data-left .data-button .data-button-driver i{
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.data-right{
-    display: inline-block;
-    width: 500px;
-    margin-left: 40px;
-}
-
-.data-right .data-title{
-    margin: 20px 0;
-}
-
-.data-right .data-title h2{
+    margin-bottom: 30px;
     color: #553C7B;
-    font-size: 24px;
 }
 
-.data-right .data-act{
-    background: url('../image/Frame\ 39.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 20px;
-    text-align: center;
-    padding: 40px 0;
-    color: #fff;
+/* Style bagian search */
+.data-search{
     margin-bottom: 20px;
 }
 
-.data-right .data-act .data-act-title{
-    
-    padding: 15px;
-    display: inline-block;
-    border-radius: 20px;
-    background: #fff;
-    margin-bottom: 10px;
+.data-search form{
+    width: 100%;
+    display: flex;    
 }
 
-.data-right .data-act h4{
-    color: #553C7B;
-    font-size: 20px;
+.data-search input{
+    background: #fff;
+    border: 1px solid #7d58b5;
+    border-radius: 8px;
+    color: #7d58b5;
+    padding: 10px 15px;
+    width: 320px;
+}
+
+.data-search form button{
+    background: #fff;
+    color: #7d58b5;
+    margin-left: 10px;
+    width: 80px;
+    border: #7d58b5 solid 1px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Ini bagian card */
+.card{
+    display: flex;
+    width: 100%;
+    height: 325px;
+    overflow: scroll;
+    overflow-x: hidden;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card::-webkit-scrollbar{
+    display: none;
+}
+
+.card .data-card{
+    display: flex;
+    margin-top: 10px;
+    height: 65px;
+    width: 430px;
+    background: #7d58b5;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 15px;
+}
+
+.card .data-card .card-photo img{
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 20px;
+}
+
+.card .data-card .card-name{
+    margin: 0 10px;
+    max-width: 65%;
+    width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card .data-card .card-name h4{
+    font-size: 14px;
+    color: #fff;
     font-weight: bold;
+}
+
+.card .data-card .card-name p{
+    font-size: 12px;
+    color: #fff;
+}
+
+.card .data-card .card-link{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.card .data-card .card-link a{
+    text-align: center;
+    cursor: pointer;
+}
+
+.card .data-card .card-link i{
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Ini bagian detail */
+
+.detail{
+    background: #cccc;
+    width: 100%;
+}
+
+@media (max-width: 768px){
+    .data{
+        display: none;
+    }
 }

@@ -184,3 +184,13 @@
     line-height: 50px;
     float: right;
 }
+
+@media(max-width: 768px){
+    .feedback{
+        display: none;
+    }
+
+    .main{
+        margin-left: 0;
+    }
+}

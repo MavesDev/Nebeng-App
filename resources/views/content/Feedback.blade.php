@@ -85,4 +85,9 @@
 
 </div>
 
+<div class="mobile-warning">
+    <i class="fas fa-exclamation-circle"></i>
+    <h3>Halaman Ini Tidak Mendukung Ukuran Web Ini</h3>
+</div>
+
 @endsection

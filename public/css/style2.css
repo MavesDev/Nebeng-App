@@ -70,3 +70,42 @@
     font-size: 14px;
     line-height: 20px;
 }
+
+.date .date-profile .date-profile-setting form button{
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    background: none;
+    border: none;
+    padding-left: 1px;
+}
+
+@media (max-width: 768px){
+    /* Error Tampilan Mobile */
+    .mobile-warning{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        flex-direction: column ;
+        text-align: center;
+    }
+
+    .mobile-warning i{
+        color: #8c5cd3;
+        margin-top: 35%;
+        font-size: 72px;
+        margin-bottom: 20px;
+    }
+
+    .mobile-warning h3{
+        font-size: 24px;
+        color: #8c5cd3;
+        margin: 0 40px;
+    }
+
+    .date{
+        display: none;
+    }
+}

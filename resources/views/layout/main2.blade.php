@@ -16,7 +16,6 @@
 
             <div class="date-profile-setting">
                 <a class="fas fa-cog" href="/settings"></a>
-                {{-- saya ubah jadi tombol malah ubah desain juga --}}
                 <form action="/logout" method="POST">
                     @csrf
                     <button class="fas fa-sign-out-alt"></button>

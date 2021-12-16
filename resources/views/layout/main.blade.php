@@ -67,13 +67,13 @@
                     </a>
                 </li> -->
                 <li>
-                    <a href="{{ url('/rekap') }}">
+                    <a href="/rekap" class="{{(request()->is('rekap')) ? 'active':''}}">
                         <span class="far fa-calendar" style="font-size: 20px;"></span>
                         <span id="txt">Rekap</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('/history') }}">
+                    <a href="/history" class="{{(request()->is('history')) ? 'active':''}}">
                         <span class="fas fa-history" style="font-size: 20px;"></span>
                         <span id="txt">Riwayat</span>
                     </a>

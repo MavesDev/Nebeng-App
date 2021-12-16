@@ -13,21 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','PagesController@beranda');
+Route::get('/','PagesController@beranda')->middleware('auth');
 
-Route::get('/login','PagesController@login');
+Route::get('/login','PagesController@login')->middleware('guest')->name('login');
 
-Route::get('/settings','PagesController@settings');
-Route::get('/rekap', 'PagesController@rekap');
-Route::get('/data_user', 'PagesController@data_user');
+Route::get('/settings','PagesController@settings')->middleware('auth');
+Route::get('/rekap', 'PagesController@rekap')->middleware('auth');
+Route::get('/data_user', 'PagesController@data_user')->middleware('auth');
 // Route::get('/feedback', 'PagesController@feedback');
-Route::get('/history', 'PagesController@history');
+Route::get('/history', 'PagesController@history')->middleware('auth');
+Route::get('/history/{id}', 'PagesController@detailhistory')->middleware('auth');
 
-Route::get('/keloladata/detail', 'PagesController@detail');
-Route::get('/keloladata','PagesController@kelolaData');
+
+Route::get('/keloladata/detail', 'PagesController@detail')->middleware('auth');
+Route::get('/keloladata','PagesController@kelolaData')->middleware('auth');
+Route::get('/keloladata/detail/{id}','PagesController@detail')->middleware('auth');
+Route::post('/keloladata/edit/{id}','SystemController@edituser')->middleware('auth');
+Route::post('/keloladata/hapus/{id}','SystemController@hapususer')->middleware('auth');
 
 //post
 
-Route::post('/login','SystemController@loginSystem');
-Route::post('/logout','SystemController@logoutSystem');
-Route::post('/settings','SystemController@settingsSystem');
+Route::post('/login','SystemController@loginSystem')->middleware('guest');
+Route::post('/logout','SystemController@logoutSystem')->middleware('auth');
+Route::post('/settings','SystemController@settingsSystem')->middleware('auth');

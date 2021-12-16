@@ -186,7 +186,7 @@
         moon[11] = "Desember";
         let month = moon[currentTime.getMonth()];
         let day = weekday[currentTime.getDay()];
-        
+
         document.getElementById('time_span').innerHTML = day+","+" "+currentTime.getDate()+" "+month+" "+currentTime.getFullYear()+" "+ t_str;
         setTimeout(timer,1000);
         }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AdminData;
+use App\Models\UserData;
 use Illuminate\Support\Facades\Auth;
 
 class SystemController extends Controller
@@ -50,5 +51,33 @@ class SystemController extends Controller
     public function logoutSystem(){
         Auth::logout();
         return redirect('/login')->with('status','Logout Sukses');
+    }
+
+
+    public function edituser(Request $request,$id){
+        $user = [
+            'nis'=>$request->nis,
+            'nama_lengkap'=>$request->nama_lengkap,
+            'email'=>$request->email,
+            'password'=>$request->password,
+            'no_telp'=>$request->no_telp,
+            'jenis_kelamin'=>$request->jenis_kelamin,
+            'password'=>$request->password
+        ];
+        $data = UserData::where('id',$id)->update($user);
+        if($data){
+            return redirect('/keloladata/detail/'.$id)->with('status','Data Berhasil Diubah');
+        }else{
+            return redirect('/keloladata/detail/'.$id)->with('status','Data Gagal Diubah');
+        }
+    }
+
+    public function hapususer($id){
+        $data = UserData::where('id',$id)->delete();
+        if($data){
+            return redirect('/keloladata')->with('status','Data Berhasil Dihapus');
+        }else{
+            return redirect('/keloladata')->with('status','Data Gagal Dihapus');
+        }
     }
 }

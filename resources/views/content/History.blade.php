@@ -22,51 +22,90 @@
             </form>
         </div>
     </div> -->
-
+    @foreach ($data as $dt )
     <div class="history-card">
         <div class="card-content">
             <img src="{{ asset('image/None.png') }}" alt="">
             <div class="card-status">
-                <h2>Ulfric Stormcloak</h2>
+                <h2>{{$dt->User->nama_lengkap}}</h2>
                 <p>Isi riwayat</p>
             </div>
-            <a href="#"><i class="fas fa-arrow-right"></i></a>
+            <form action="/history/{{$dt->id}}" method="GET">
+                <button><i class="fas fa-arrow-right"></i></button>
+            </form>
         </div>
     </div>
+    @endforeach
 
+    @if ($dataonce != null)
     <div class="history-detail">
         <h2> Info lengkap Pengantaran </h2>
         <div class="detail-content">
             <div class="detail-item">
                 <label for="">Nama :</label>
-                <p>Ulfric Stormcloak</p>
+                <p>{{$dataonce->User->nama_lengkap}}</p>
             </div>
             <div class="detail-item">
                 <label for="">Plat Kendaraan :</label>
-                <p>S TRMCLK</p>
+                <p>{{$dataonce->Kendaraan->nomor_kendaraan}}</p>
             </div>
             <div class="detail-item">
                 <label for="">Nama Penumpang :</label>
-                <p>General Tulius</p>
+                <p>{{$dataonce->UserPenumpang->nama_lengkap}}</p>
             </div>
             <div class="detail-item">
                 <label for="">Alamat Penjemputan :</label>
-                <p>Solitude</p>
+                <p>{{$dataonce->Pesanan->alamat_jemput}}</p>
             </div>
             <div class="detail-item">
                 <label for="">Alamat Tujuan :</label>
-                <p>Windhelm</p>
+                <p>{{$dataonce->Pesanan->alamat_tujuan}}</p>
             </div>
             <div class="detail-item">
                 <label for="">Tanggal & Waktu :</label>
-                <p>Morndas, 12 Heartfire 1233 | 12.00</p>
+                <p>{{$dataonce->Pesanan->created_at}}</p>
             </div>
             <div class="detail-item">
                 <label for="">Jarak :</label>
-                <p>2560 KM</p>
+                <p>masih kosong harus selesai andro dlu</p>
             </div>
         </div>
     </div>
+    @else
+    <div class="history-detail">
+        <h2> Info lengkap Pengantaran </h2>
+        <div class="detail-content">
+            <div class="detail-item">
+                <label for="">Nama :</label>
+                <p>-</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Plat Kendaraan :</label>
+                <p>-</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Nama Penumpang :</label>
+                <p>-</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Alamat Penjemputan :</label>
+                <p>-</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Alamat Tujuan :</label>
+                <p>-</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Tanggal & Waktu :</label>
+                <p>-</p>
+            </div>
+            <div class="detail-item">
+                <label for="">Jarak :</label>
+                <p>-</p>
+            </div>
+        </div>
+    </div>
+    @endif
 
     <!-- Modals untuk filter -->
     <div class="filter-form">

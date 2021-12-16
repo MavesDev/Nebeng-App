@@ -38,16 +38,18 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($data as $dt )
                 <tr>
                     <th>1</th>
-                    <td>John Smith</td>
-                    <td>11 Oktober 2021</td>
-                    <td>SMKN 1 KATAPANG</td>
-                    <td>Miko mall jalan sayati no 3 Bandung, Indonesia</td>
-                    <td>Rp12.0000</td>
-                    <td>NMAX</td>
+                    <td>{{$dt->User->nama_lengkap}}</td>
+                    <td>{{$dt->Pesanan->created_at}}</td>
+                    <td>{{$dt->Pesanan->alamat_jemput}}</td>
+                    <td>{{$dt->Pesanan->alamat_tujuan}}</td>
+                    <td>{{$dt->Pesanan->total_bayar}}</td>
+                    <td>{{$dt->Kendaraan->merk_kendaraan}}</td>
                 </tr>
-                <tr>
+                @endforeach
+                {{-- <tr>
                     <th>2</th>
                     <td>Adam Manhattan</td>
                     <td>4 Oktober 2021</td>
@@ -55,7 +57,7 @@
                     <td>Ramen Bajuri, Gandasoli No 3</td>
                     <td>Rp19.0000</td>
                     <td>Vario</td>
-                </tr>
+                </tr> --}}
             </tbody>
         </table>
     </div>

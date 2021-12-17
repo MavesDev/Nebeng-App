@@ -9,8 +9,9 @@
 
     <!-- Bagian Search -->
     <div class="data-search">
-        <form action="" method="get">
-            <input type="text" placeholder="Cari berdasarkan nama atau id...">
+        <form action="/keloladata" method="POST">
+            @csrf
+            <input type="text" name="search" placeholder="Cari berdasarkan nama atau No Telepon...">
             <button type="submit"><i class="fas fa-search"></i></button>
         </form>
 
@@ -42,33 +43,34 @@
         <div class="form">
             <div class="text">
                 <h1> Tambah User </h1>
-                <form action="" method="post">
+                <form action="/keloladata/tambah" method="POST">
+                    @csrf
                     <div class="txt-form">
                         <label for=""> NIS </label>
-                        <input type="text" placeholder="Nis..." value="NULL" name="nis">
+                        <input type="text" placeholder="Nis..." name="nis">
                     </div>
                     <div class="txt-form">
                         <label for=""> Nama Lengkap </label>
-                        <input type="text" placeholder="Nama..." value="NULL" name="nama_lengkap">
+                        <input type="text" placeholder="Nama..." name="nama_lengkap">
                     </div>
                     <div class="txt-form">
                         <label for=""> Email </label>
-                        <input type="text" placeholder="Email..." value="NULL" name="email">
+                        <input type="text" placeholder="Email..." name="email">
                     </div>
                     <div class="txt-form">
                         <label for=""> No Telepon </label>
-                        <input type="text" placeholder="NoTelepon..." value="NULL" name="no_telp">
+                        <input type="text" placeholder="NoTelepon..." name="no_telp">
                     </div>
                     <div class="txt-form">
                         <label for=""> Jenis Kelamin </label>
                         <select name="jenis_kelamin" id="">
-                            <option value="NULL">Laki-Laki</option>
-                            <option value="NULL">Perempuan</option>
+                            <option value="laki-laki">Laki-Laki</option>
+                            <option value="perempuan">Perempuan</option>
                         </select>
                     </div>
                     <div class="txt-form">
                         <label for=""> Password </label>
-                        <input type="password" placeholder="Password..." value="NULL" name="password">
+                        <input type="password" placeholder="Password..." name="password">
                     </div>
                     <div class="button-form">
                         <button id="button-submit" type="submit"> Tambah </button>

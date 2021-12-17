@@ -3,6 +3,9 @@
 @section('title', 'Rekap')
 
 @section('content')
+@php
+    $year = date('Y');
+@endphp
 
 <div class="rekap">
     <div class="rekap-title">
@@ -13,11 +16,15 @@
     <div class="rekap-filter">
         <div class="rekap-button">
             <button onclick="modalToogle()"> Filter <i class="fas fa-filter"></i> </button>
+            @if (request()->is('rekap/filter'))
+            <a href="/rekap">Cancel</a>
+            @endif
         </div>
 
         <div class="rekap-search">
-            <form action="">
-                <input type="text" placeholder="Search here....">
+            <form action="/rekap" method="POST">
+                @csrf
+                <input type="text" name="search" placeholder="Cari Nama....">
                 <button type="submit">Search <i class="fas fa-search"></i></button>
             </form>
         </div>
@@ -68,30 +75,31 @@
             <div class="text">
                 <h1> Filter </h1>
             </div>
-            <form action="" method="post">
+            <form action="/rekap/filter" method="POST">
+                @csrf
                 <div class="txt-form">
                     <label for=""> Bulan </label>
-                    <select>
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
+                    <select name="bulan">
+                        <option value="1" selected>Januari</option>
+                        <option value="2">Februari</option>
+                        <option value="3">Maret</option>
+                        <option value="4">April</option>
+                        <option value="5">Mei</option>
+                        <option value="6">Juni</option>
+                        <option value="7">Juli</option>
+                        <option value="8">Agustus</option>
+                        <option value="9">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">Desember</option>
                     </select>
                 </div>
                 <div class="txt-form">
                     <label for=""> Tahun </label>
-                    <select>
-                        <option value="2022" selected>2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
+                    <select name="tahun">
+                        @for ($i = 2021; $i <= $year; $i++)
+                        <option value="{{$i}}" selected>{{$i}}</option>
+                        @endfor
                     </select>
                 </div>
                 <div class="button-form">

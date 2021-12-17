@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AdminData;
 use App\Models\UserData;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redis;
+use App\Models\Riwayat;
 
 class SystemController extends Controller
 {
@@ -79,5 +82,42 @@ class SystemController extends Controller
         }else{
             return redirect('/keloladata')->with('status','Data Gagal Dihapus');
         }
+    }
+
+    public function tambahuser(Request $request){
+        $data = [
+            'nis'=>$request->nis,
+            'nama_lengkap'=>$request->nama_lengkap,
+            'email'=>$request->email,
+            'no_telp'=>$request->no_telp,
+            'jenis_kelamin'=>$request->jenis_kelamin,
+            'password'=>$request->password,
+            'tanggal_daftar'=>date('Y-m-d H:i:s')
+        ];
+        $user = UserData::create($data);
+        if($user){
+            return redirect('/keloladata')->with('status','Data Berhasil Ditambah');
+        }else{
+            return redirect('/keloladata')->with('status','Data Gagal Ditambah');
+        }
+    }
+
+    public function searchuser(Request $request){
+        $data = UserData::where('nama_lengkap','like','%'.$request->search.'%')->get();
+        return view('content.Data',compact('data'));
+    }
+
+    public function searchrekap(Request $request){
+        //where has yang dipanggil nama relasi function bukan nama table
+        $data = Riwayat::whereHas('User',function($query) use($request){
+            $query->where('nama_lengkap','like','%'.$request->search.'%');
+        })->get();
+        return view('content.Rekap',compact('data'));
+    }
+    public function filterrekap(Request $request){
+        $data = Riwayat::whereMonth('created_at','=',$request->bulan)
+                        ->whereYear('created_at','=',$request->tahun)
+                        ->get();
+        return view('content.Rekap',compact('data'));
     }
 }

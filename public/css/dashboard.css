@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,51 +9,50 @@
 
 /* Masih belum dirapihin jadi belum di komentar */
 
-.profile-bar{
+.profile-bar {
     position: fixed;
     width: 345px;
     height: 100%;
     top: 0;
     right: 0;
-    background: url('../image/profil1.png');
+    background: url("../image/profil1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.profile-bar h2{
+.profile-bar h2 {
     color: #fff;
     padding: 10px 0;
     font-size: 28px;
     text-align: center;
 }
 
-.profile-bar-brand{
+.profile-bar-brand {
     position: relative;
     text-align: center;
     margin: 30px 0 0 0;
     padding: 20px 0;
 }
 
-.profile-bar-brand img{
+.profile-bar-brand img {
     width: 160px;
     height: 160px;
     margin-top: 10px;
     border-radius: 100px;
 }
 
-.profile-bar-title{
+.profile-bar-title {
     color: #fff;
     text-align: center;
 }
 
-
-.profile-bar-menu{
+.profile-bar-menu {
     width: 100%;
     margin-top: 2rem;
 }
 
-.profile-bar-menu a{
+.profile-bar-menu a {
     display: block;
     color: #fff;
     font-size: 14px;
@@ -61,16 +60,16 @@
     text-align: center;
 }
 
-.profile-bar-menu form{
+.profile-bar-menu form {
     width: 100%;
     margin-left: 0px auto;
 }
 
-.profile-bar-menu form{
+.profile-bar-menu form {
     display: flex;
 }
 
-.profile-bar-menu button{
+.profile-bar-menu button {
     color: #fff;
     font-size: 14px;
     padding: 10px 10px;
@@ -81,52 +80,52 @@
 }
 
 .profile-bar-menu form:hover,
-.profile-bar-menu a:hover{
-    background: #553C7B;
+.profile-bar-menu a:hover {
+    background: #553c7b;
     border-radius: 10px 0 0 10px;
     transition: 0.5s;
 }
 
 .profile-bar-menu button span:first-child,
-.profile-bar-menu a span:first-child{
+.profile-bar-menu a span:first-child {
     font-size: 1.5rem;
     padding-right: 0.3rem;
 }
 
-.dashboard{
+.dashboard {
     margin-left: 390px;
 }
 
-.dashboard .dashboard-date{
+.dashboard .dashboard-date {
     width: 580px;
     margin: 30px 0;
-    background: #8c5cd3;
+    background: #b08fdb;
     border-radius: 10px;
 }
 
-.dashboard .dashboard-date p{
+.dashboard .dashboard-date p {
     color: #fff;
     font-size: 16px;
     padding: 12px 10px;
 }
 
-.dashboard-dash h2{
-    color: #553C7B;
+.dashboard-dash h2 {
+    color: #553c7b;
     font-size: 28px;
 }
 
-.dashboard-dash-title{
+.dashboard-dash-title {
     width: 580px;
     margin: 20px 0;
     padding: 20px 0;
-    background: url('../image/dashboard1.jpeg');
+    background: url("../image/dashboard1.jpeg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
 }
 
-#dashboard-costumer{
+#dashboard-costumer {
     color: #fff;
     font-weight: bold;
     text-align: center;
@@ -138,39 +137,39 @@
     min-width: 140px;
 }
 
-.dashboard-dash-title p{
+.dashboard-dash-title p {
     color: #fff;
     font-size: 14px;
     padding: 12px 10px;
 }
 
-.dashboard-act h2{
-    color: #553C7B;
+.dashboard-act h2 {
+    color: #553c7b;
     font-size: 28px;
 }
 
-.dashboard-act-table{
+.dashboard-act-table {
     width: 580px;
     height: 230px;
     margin: 20px 0;
-    background: #8c5cd3;
+    background: #b08fdb;
     border-radius: 10px;
     overflow: scroll;
     overflow-x: hidden;
 }
 
-.dashboard-act-table::-webkit-scrollbar{
+.dashboard-act-table::-webkit-scrollbar {
     display: none;
 }
 
-.dashboard-act-content{
+.dashboard-act-content {
     padding: 10px 12px;
     display: inline-block;
     width: 100%;
-    border-bottom: #553C7B 1px solid;
+    border-bottom: #9f70d4 1px solid;
 }
 
-#act-image{
+#act-image {
     position: relative;
     width: 50px;
     height: 50px;
@@ -187,106 +186,105 @@
     float: left;
 }
 
-.dashboard-act-txt p{
+.dashboard-act-txt p {
     color: #fff;
     padding: 0 10px;
     font-size: 14px;
 }
 
-.dashboard-act-span a{
+.dashboard-act-span a {
     color: #fff;
     position: relative;
     padding: 10px 10px;
     float: right;
 }
 
-@media (max-width: 1024px)
-{
-    .profile-bar{
+@media (max-width: 1024px) {
+    .profile-bar {
         width: 60px;
     }
 
-    .profile-bar h2{
+    .profile-bar h2 {
         display: none;
     }
 
-    .profile-bar-brand{
+    .profile-bar-brand {
         padding: 20px 0;
     }
 
-    .profile-bar-brand img{
+    .profile-bar-brand img {
         width: 40px;
         height: 40px;
     }
 
-    .profile-bar-title{
+    .profile-bar-title {
         display: none;
     }
 
-    .profile-bar-menu{
+    .profile-bar-menu {
         width: 100%;
         margin-top: 2rem;
     }
 
-    .profile-bar-menu #txt-dash{
+    .profile-bar-menu #txt-dash {
         display: none;
     }
 
-    .profile-bar-menu a{
+    .profile-bar-menu a {
         padding: 15px 0;
     }
 
-    .profile-bar-menu a:hover{
-        background: #553C7B;
+    .profile-bar-menu a:hover {
+        background: #553c7b;
         border-radius: 10px 0 0 10px;
         transition: 0.5s;
     }
 
-    .profile-bar-menu a span:first-child{
+    .profile-bar-menu a span:first-child {
         padding-right: 0;
     }
 
-    .profile-bar-menu button{
+    .profile-bar-menu button {
         padding: 15px 0;
         padding-left: 5px;
     }
 
-    .dashboard{
+    .dashboard {
         margin-left: 390px;
     }
 
-    .dashboard .dashboard-date{
+    .dashboard .dashboard-date {
         width: 80%;
     }
 
-    .dashboard .dashboard-date p{
+    .dashboard .dashboard-date p {
         font-size: 14px;
     }
 
-    .dashboard-dash h2{
-        color: #553C7B;
+    .dashboard-dash h2 {
+        color: #553c7b;
         font-size: 26px;
     }
 
-    .dashboard-dash-title{
+    .dashboard-dash-title {
         width: 80%;
     }
 
-    #dashboard-costumer{
+    #dashboard-costumer {
         max-width: 28%;
         min-width: 28%;
     }
 
-    .dashboard-act h2{
-        color: #553C7B;
+    .dashboard-act h2 {
+        color: #553c7b;
         font-size: 26px;
     }
 
-    .dashboard-act-table{
+    .dashboard-act-table {
         width: 80%;
     }
 
-    #act-image{
+    #act-image {
         width: 45px;
         height: 45px;
         max-width: 45px;
@@ -299,62 +297,59 @@
         float: left;
     }
 
-    .dashboard-act-txt p{
+    .dashboard-act-txt p {
         font-size: 12px;
     }
 }
 
-@media (max-width: 768px){
-    .dashboard{
+@media (max-width: 768px) {
+    .dashboard {
         margin-left: 140px;
     }
 
-    .sidebar{
+    .sidebar {
         display: none;
     }
 
-    .profile-bar{
+    .profile-bar {
         left: 0;
-
     }
 
-    .profile-bar-menu ul li:first-child{
+    .profile-bar-menu ul li:first-child {
         display: none;
     }
 }
 
-@media (max-width: 425px){
-    .dashboard{
+@media (max-width: 425px) {
+    .dashboard {
         margin-left: 100px;
     }
 
-    .dashboard-date{
+    .dashboard-date {
         display: none;
     }
 
-    .dashboard-dash h2{
+    .dashboard-dash h2 {
         font-size: 24px;
         margin-top: 20px;
     }
 
-    .dashboard-dash-title{
+    .dashboard-dash-title {
         width: 90%;
     }
 
-    #dashboard-costumer{
+    #dashboard-costumer {
         width: 100%;
         display: block;
         max-width: 100%;
         font-size: 26px;
     }
 
-    .dashboard-act h2{
+    .dashboard-act h2 {
         font-size: 24px;
     }
 
-    .dashboard-act-table{
+    .dashboard-act-table {
         width: 90%;
     }
 }
-
-

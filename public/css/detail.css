@@ -1,22 +1,22 @@
-.show{
+.show {
     margin-top: 20px;
 }
 
-.show h2{
+.show h2 {
     font-size: 24px;
-    color: #553C7B;
+    color: #553c7b;
     margin-bottom: 40px;
 }
 
 /* Bagian Detail */
-.show-bg{
+.show-bg {
     width: 93%;
     height: 420px;
     background: #7d58b5;
     border-radius: 15px;
 }
 
-.show-bg .show-title{
+.show-bg .show-title {
     display: flex;
     margin-top: 10px;
     height: 150px;
@@ -25,8 +25,8 @@
     padding: 0 10px;
 }
 
-.show-bg .show-title .show-photo img{
-    width: 100px; 
+.show-bg .show-title .show-photo img {
+    width: 100px;
     height: 100px;
     display: flex;
     align-items: center;
@@ -34,7 +34,7 @@
     margin: 0 20px;
 }
 
-.show-bg .show-title .show-name{
+.show-bg .show-title .show-name {
     margin: 0 10px;
     max-width: 65%;
     width: 65%;
@@ -43,114 +43,117 @@
     white-space: nowrap;
 }
 
-.show-bg .show-title .show-name h4{
+.show-bg .show-title .show-name h4 {
     font-size: 20px;
     color: #fff;
     font-weight: bold;
     padding: 5px 0;
 }
 
-.show-bg .show-title .show-name p{
+.show-bg .show-title .show-name p {
     padding: 5px 0;
     font-size: 16px;
     color: #fff;
 }
 
-.show-bg .show-title .show-link{
+.show-bg .show-title .show-link {
     width: 10%;
     display: flex;
     justify-content: center;
 }
 
-.show-bg .show-title .show-link a{
+.show-bg .show-title .show-link a {
     padding-right: 20px;
     text-align: center;
     cursor: pointer;
 }
 
-.show-bg .show-title .show-link i{
+.show-bg .show-title .show-link i {
     font-size: 20px;
     color: #fff;
 }
 
-.show-bg .show-title .show-link button{
+.show-bg .show-title .show-link button {
     background: none;
     border: none;
     cursor: pointer;
 }
 
 /* Bagian konten */
-.show-bg .show-content{
+.show-bg .show-content {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
-.show-bg .show-content .show-desc{
+.show-bg .show-content .show-desc {
     width: 40%;
     margin-top: 30px;
 }
 
-.show-bg .show-content .show-desc label{
+.show-bg .show-content .show-desc label {
     color: #fff;
     font-weight: bold;
     font-size: 18px;
 }
 
-.show-bg .show-content .show-desc p{
+.show-bg .show-content .show-desc p {
     color: #fff;
     font-size: 14px;
     padding-top: 8px;
 }
 
-
 /* Ini Modal Show */
-.show-form{
-    position: absolute;   
+.show-form {
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 600px;
     height: 500px;
-    background:#fff;
+    background: #fff;
     border: #7d58b5 3px solid;
     border-radius: 10px;
     opacity: 0%;
-    visibility:hidden;
+    visibility: hidden;
     overflow: scroll;
     overflow-x: hidden;
 }
 
-.show-form .form h1{
+::-webkit-scrollbar {
+    display: none;
+}
+
+.show-form .form h1 {
     color: #7d58b5;
     text-align: center;
     font-size: 42px;
     padding: 30px 0px;
 }
 
-.show-form.active{
+.show-form.active {
     transition: 0.5s;
     opacity: 100%;
     visibility: visible;
 }
 
-.show-form .form form{
+.show-form .form form {
     padding: 0 40px;
     margin: 10px 0;
 }
 
-.show-form .form .txt-form{
+.show-form .form .txt-form {
     margin: 20px 0;
 }
 
-.show-form .form .txt-form label{
+.show-form .form .txt-form label {
     font-size: 16px;
-    color: #7d58b5; 
+    color: #7d58b5;
     font-weight: bold;
 }
 
-.show-form .form .txt-form input{
+.show-form .form .txt-form input {
     background: #7d58b5;
     color: #fff;
     text-align: left;
@@ -162,15 +165,15 @@
     border-radius: 5px;
 }
 
-.show-form .form .button-form{
+.show-form .form .button-form {
     margin: 10px 0px;
 }
 
-.show-form ::placeholder{
+.show-form ::placeholder {
     color: #dddddd;
 }
 
-.show-form .form #button-submit{
+.show-form .form #button-submit {
     color: #fff;
     position: relative;
     padding: 10px 25px;
@@ -180,7 +183,7 @@
     border: #fff 1px solid;
 }
 
-.show-form .form #button-submit:hover{
+.show-form .form #button-submit:hover {
     color: #7d58b5;
     background: #fff;
     border: #7d58b5 1px solid;

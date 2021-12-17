@@ -1,25 +1,44 @@
-.data{
+.data {
     width: 92%;
     margin-top: 20px;
 }
 
-.data h2{
+.data h2 {
     font-size: 24px;
     margin-bottom: 30px;
-    color: #553C7B;
+    color: #553c7b;
 }
 
 /* Style bagian search */
-.data-search{
-    margin-bottom: 20px;
-}
-
-.data-search form{
+.data-search {
     width: 100%;
-    display: flex;    
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.data-search input{
+.data-search .data-add {
+    display: flex;
+    background: transparent;
+    border: 1px solid #7d58b5;
+    border-radius: 10px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.data-search a {
+    font-size: 16px;
+    color: #7d58b5;
+}
+
+.data-search form {
+    width: 80%;
+    display: flex;
+}
+
+.data-search input {
     background: #fff;
     border: 1px solid #7d58b5;
     border-radius: 8px;
@@ -28,7 +47,7 @@
     width: 320px;
 }
 
-.data-search form button{
+.data-search form button {
     background: #fff;
     color: #7d58b5;
     margin-left: 10px;
@@ -39,7 +58,7 @@
 }
 
 /* Ini bagian card */
-.card{
+.card {
     display: flex;
     width: 100%;
     height: 325px;
@@ -49,11 +68,11 @@
     flex-wrap: wrap;
 }
 
-.card::-webkit-scrollbar{
+.card::-webkit-scrollbar {
     display: none;
 }
 
-.card .data-card{
+.card .data-card {
     display: flex;
     margin-top: 10px;
     height: 65px;
@@ -64,14 +83,14 @@
     border-radius: 15px;
 }
 
-.card .data-card .card-photo img{
+.card .data-card .card-photo img {
     display: flex;
     align-items: center;
     border-radius: 50%;
     margin: 0 20px;
 }
 
-.card .data-card .card-name{
+.card .data-card .card-name {
     margin: 0 10px;
     max-width: 65%;
     width: 65%;
@@ -80,42 +99,43 @@
     white-space: nowrap;
 }
 
-.card .data-card .card-name h4{
+.card .data-card .card-name h4 {
     font-size: 14px;
     color: #fff;
     font-weight: bold;
+    margin-bottom: 2px;
 }
 
-.card .data-card .card-name p{
+.card .data-card .card-name p {
     font-size: 12px;
-    color: #fff;
+    color: rgb(221, 221, 221);
 }
 
-.card .data-card .card-link{
+.card .data-card .card-link {
     width: 10%;
     display: flex;
     justify-content: center;
 }
 
-.card .data-card .card-link a{
+.card .data-card .card-link a {
     text-align: center;
     cursor: pointer;
 }
 
-.card .data-card .card-link i{
+.card .data-card .card-link i {
     font-size: 20px;
     color: #fff;
 }
 
 /* Ini bagian detail */
 
-.detail{
+.detail {
     background: #cccc;
     width: 100%;
 }
 
-@media (max-width: 768px){
-    .data{
+@media (max-width: 768px) {
+    .data {
         display: none;
     }
 }

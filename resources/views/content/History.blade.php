@@ -8,22 +8,9 @@
     <div class="history-title">
         <h2> History</h2>
     </div>
-
-    <!-- Sama buat filter ama search -->
-    <!-- <div class="history-filter">
-        <div class="history-button">
-            <button onclick="filterToogle()"> Filter <i class="fas fa-filter"></i> </button>
-        </div>
-
-        <div class="history-search">
-            <form action="">
-                <input type="text" placeholder="Search here....">
-                <button type="submit">Search <i class="fas fa-search"></i></button>
-            </form>
-        </div>
-    </div> -->
-    @foreach ($data as $dt )
+    
     <div class="history-card">
+        @foreach ($data as $dt )
         <div class="card-content">
             <img src="{{ asset('image/None.png') }}" alt="">
             <div class="card-status">
@@ -34,8 +21,8 @@
                 <button><i class="fas fa-arrow-right"></i></button>
             </form>
         </div>
+        @endforeach
     </div>
-    @endforeach
 
     @if ($dataonce != null)
     <div class="history-detail">

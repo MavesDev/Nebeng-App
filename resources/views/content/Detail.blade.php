@@ -59,7 +59,7 @@
     <div class="show-form">
         <div class="form">
             <div class="text">
-                <h1> Edit User </h1>
+                <h1> Detail User </h1>
                 <form action="/keloladata/edit/{{$data->id}}" method="POST">
                     @csrf
                     <div class="txt-form">

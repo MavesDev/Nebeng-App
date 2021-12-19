@@ -21,21 +21,23 @@
     </div>
 
     <!-- Bagian card user -->
-    <div class="card">
-        @foreach ($data as $dt )
-        <div class="data-card">
-            <div class="card-photo">
-                <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
+    <div class="card-data">
+        <div class="card">
+            @foreach ($data as $dt )
+            <div class="data-card">
+                <div class="card-photo">
+                    <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
+                </div>
+                <div class="card-name">
+                    <h4>{{$dt->nama_lengkap}}</h4>
+                    <p>{{$dt->no_telp}}</p>
+                </div>
+                <div class="card-link">
+                    <a href="/keloladata/detail/{{$dt->id}}"><i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-            <div class="card-name">
-                <h4>{{$dt->nama_lengkap}}</h4>
-                <p>{{$dt->no_telp}}</p>
-            </div>
-            <div class="card-link">
-                <a href="/keloladata/detail/{{$dt->id}}"><i class="fas fa-arrow-right"></i></a>
-            </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
 
     <!-- Modal buat tambah | value belum diisi -->

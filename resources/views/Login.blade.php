@@ -16,48 +16,51 @@
 </head>
 
 <body>
-    <div class="center">
-        <!-- Bagian Landing Page Sebelum Modals Login Muncul -->
-        <div class="text">
+    <!-- Hero Start -->
+    <section class="login-hero">
+        <div class="login-content">
             <p>A Friendly Ojek Online For Student</p>
             <h1> NEBENG </h1>
-        </div>
-        <div class="button">
-            <!-- Buat Keluarin Modals -->
-            <button onclick="loginToogle()"> Login </button>
-        </div>
-    </div>
-
-    <div class="login-form">
-        <!-- Bagian Modals Form Login -->
-        <div class="form">
-            <div class="text">
-                <h1> Log in </h1>
+            <div class="login-button">
+                <button onclick="loginToogle()"> Login </button> 
             </div>
-            <form action="/login" method="post">
-                @csrf
-                <div class="txt-form">
-                    <label for=""> Username </label>
-                    <input type="text" name="username" placeholder="John Smith">
-                </div>
-                <div class="txt-form">
-                    <label for=""> Password </label>
-                    <input type="password" name="password" placeholder="Password">
-                </div>
-                <div class="check-form">
-                    <label for=""> Keep Username </label>
-                    <input type="checkbox">
-                </div>
-
-                <div class="button-form">
-                    <button type="submit"> Log in </button>
-                </div>
-                <div class="forgot-password">
-                    <p href="#"> "Give some Offer, same as Give <br>some help to people" </p>
-                </div>
-            </form>
         </div>
-    </div>
+    </section>  
+    <!-- Hero End -->
+
+    <!-- Form Start -->
+    <section class="login-form">
+        <div class="form-bg">    
+            <div class="form">
+                <form action="/login" method="post">
+                    @csrf
+                    <h1> Log In </h1>
+                    <div class="txt-form">
+                        <label for="username"> Username </label>
+                        <input type="text" id="username" name="username" placeholder="John Smith" autocomplete="off">
+                    </div>
+                    <div class="txt-form">
+                        <label for="password"> Password </label>
+                        <input type="password" id="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="check-form">
+                        <label for="checkbox"> Keep Username </label>
+                        <input type="checkbox" id="checkbox">
+                    </div>
+    
+                    <div class="button-form">
+                        <button type="submit"> Login </button>
+                    </div>
+                    <div class="quote-form">
+                        <p> "Give some Offer, same as Give <br>some help to people" </p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-toogle" onclick="loginToogle()"></div>
+        </div>
+    </section>
+    <!-- Form End -->
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
         // Fungsi Keluarin Modals

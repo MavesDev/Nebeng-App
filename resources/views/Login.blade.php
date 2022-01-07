@@ -1,6 +1,6 @@
-<!-- Halaman Login (Boleh Disentuh) -->
+Halaman Login (Boleh Disentuh)
 <!-- Nama CSS nya login.css -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -81,4 +81,4 @@
     </script>
 </body>
 
-</html>
+</html> -->

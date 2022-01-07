@@ -9,8 +9,8 @@
 
     <!-- Bagian Search -->
     <div class="data-search">
-        <form action="/keloladata" method="POST">
-            @csrf
+        <form action="/keloladata" method="POST">   
+            @csrf           
             <input type="text" name="search" placeholder="Cari berdasarkan nama atau No Telepon...">
             <button type="submit"><i class="fas fa-search"></i></button>
         </form>

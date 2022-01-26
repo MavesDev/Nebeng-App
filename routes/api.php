@@ -12,6 +12,8 @@ use App\Http\Controllers\API\PembatalanAPI;
 use App\Http\Controllers\API\PemesananAPI;
 use App\Http\Controllers\API\PengumumanAPI;
 use App\Http\Controllers\API\UserDataAPI;
+use App\Http\Controllers\API\LoginAPI;
+use App\Http\Controllers\API\ProsesPemesananAPI;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -114,7 +116,15 @@ Route::post('/postuserdata',[UserDataAPI::class,'Post']);
 Route::post('/putuserdata/{id}',[UserDataAPI::class,'Put']);
 Route::post('/deleteuserdata/{id}',[UserDataAPI::class,'Delete']);
 
+//Login
+Route::post('/login',[LoginAPI::class,'login']);
 
+//proses pemesanan
+Route::get('/getprosespemesanan',[ProsesPemesananAPI::class,'Get']);
+Route::get('/getprosespemesanan/{id}',[ProsesPemesananAPI::class,'GetById']);
+Route::post('/postprosespemesanan',[ProsesPemesananAPI::class,'Post']);
+Route::post('/putprosespemesanan/{id}',[ProsesPemesananAPI::class,'Put']);
+Route::post('/deleteprosespemesanan/{id}',[ProsesPemesananAPI::class,'Delete']);
 
 
 

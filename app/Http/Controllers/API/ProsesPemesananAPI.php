@@ -1,17 +1,14 @@
 <?php
-
 namespace App\Http\Controllers\API;
-
 use Illuminate\Http\Request;
-use App\Models\Pemesanan;
-use Carbon\Carbon;
+use App\Models\ProsesPemesanan;
+use Illuminate\Support\Carbon;
 use Illuminate\Routing\Controller as BaseController;
 
-class PemesananAPI extends BaseController
-{
+class ProsesPemesananAPI extends BaseController{
     public function Get()
     {
-        $data = Pemesanan::with('Driver')->get();
+        $data = ProsesPemesanan::with(['Driver','Penumpang'])->get();
         return response()->json([
             'message'=>'Data Terambil',
             'DataPemesanan'=>$data
@@ -20,7 +17,7 @@ class PemesananAPI extends BaseController
 
     public function GetById($id)
     {
-        $data = Pemesanan::find($id);
+        $data = ProsesPemesanan::find($id);
         return response()->json([
             'message'=>'Data Terambil',
             'DataPemesanan'=>$data
@@ -30,15 +27,13 @@ class PemesananAPI extends BaseController
     public function Post(Request $request)
     {
         $data = [
-            'alamat_jemput' => $request->alamat_jemput,
-            'alamat_tujuan' => $request->alamat_tujuan,
-            'user_id' => $request->user_id,
-            'total_bayar'=>$request->total_bayar,
-            'tanggal_pemesanan'=>Carbon::now(),
+            'pemesanan_id' => $request->pemesanan_id,
+            'driver_id' => $request->driver_id,
+            'penumpang_id' => $request->penumpang_id,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ];
-        Pemesanan::create($data);
+        ProsesPemesanan::create($data);
         return response()->json([
             'message'=>'Data Berhasil Ditambahkan',
             'DataPemesanan'=>$data
@@ -48,12 +43,13 @@ class PemesananAPI extends BaseController
     public function Put(Request $request, $id)
     {
         $data = [
-            'alamat_jemput' => $request->alamat_jemput,
-            'alamat_tujuan' => $request->alamat_tujuan,
+            'pemesanan_id' => $request->pemesanan_id,
+            'driver_id' => $request->driver_id,
+            'penumpang_id' => $request->penumpang_id,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ];
-        $dataupdate = Pemesanan::find($id);
+        $dataupdate = ProsesPemesanan::find($id);
         $dataupdate->update($data);
         return response()->json([
             'message'=>'Data Berhasil Diubah',
@@ -63,7 +59,7 @@ class PemesananAPI extends BaseController
 
     public function Delete($id)
     {
-        Pemesanan::destroy($id);
+        ProsesPemesanan::destroy($id);
         return response()->json([
             'message'=>'Data Berhasil Dihapus'
         ]);

@@ -3,193 +3,61 @@
 @section('title', 'Dashboard')
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 @section('container')
-<!-- Halaman untuk Dashboard (Jangan Dulu Sentuh) -->
-<!-- Buat CSS nya Dashboard.css -->
 <body>
 
-    <div class="dashboard">
-        <!-- Bagian Tanggal -->
-        <div class="dashboard-date">
-            <p id="time_span"></p>
-        </div>
-
-        <div class="dashboard-dash">
-            <!-- Bagian Riwayat Pemakai -->
-            <h2>Dashboard</h2>
-
-            <div class="dashboard-dash-title">
-                <p id="dashboard-costumer">{{$userCount}}</p>
-                <p style="font-weight: bold;">Total Riwayat Penggunaan Aplikasi</p>
-                <p>Jumlah ini berdasarkan berapa banyak nebengers yang menggunakan aplikasi dalam sebulan terakhir</p>
-            </div>
-        </div>
-
-        <div class="dashboard-act">
-            <!-- Bagian Tabel Aktivitas -->
-            <h2>Activities</h2>
-            <div class="dashboard-act-table">
-                <ul>
-                    <li>
-                        <div class="dashboard-act-content">
-                            <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="dashboard-act-txt">
-                                <p>Nama</p>
-                                <p>Ini keterangan</p>
-                            </div>
-                            <div class="dashboard-act-span">
-                                <span><a class="fas fa-exclamation-circle" href="#"></a></span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dashboard-act-content">
-                            <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="dashboard-act-txt">
-                                <p>Nama</p>
-                                <p>Ini keterangan</p>
-                            </div>
-                            <div class="dashboard-act-span">
-                                <span><a class="fas fa-exclamation-circle" href="#"></a></span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dashboard-act-content">
-                            <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="dashboard-act-txt">
-                                <p>Nama</p>
-                                <p>Ini keterangan</p>
-                            </div>
-                            <div class="dashboard-act-span">
-                                <span><a class="fas fa-exclamation-circle" href="#"></a></span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dashboard-act-content">
-                            <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="dashboard-act-txt">
-                                <p>Nama</p>
-                                <p>Ini keterangan</p>
-                            </div>
-                            <div class="dashboard-act-span">
-                                <span><a class="fas fa-exclamation-circle" href="#"></a></span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dashboard-act-content">
-                            <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="dashboard-act-txt">
-                                <p>Nama</p>
-                                <p>Ini keterangan</p>
-                            </div>
-                            <div class="dashboard-act-span">
-                                <span><a class="fas fa-exclamation-circle" href="#"></a></span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dashboard-act-content">
-                            <img src="{{ url('../image/none.png') }}" alt="" id="act-image">
-                            <div class="dashboard-act-txt">
-                                <p>Nama</p>
-                                <p>Ini keterangan</p>
-                            </div>
-                            <div class="dashboard-act-span">
-                                <span><a class="fas fa-exclamation-circle" href="#"></a></span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<section class="dashboard">
+    <div class="dashboard-info">
+        <div class="info-costumer">
+            <h4>Selamat datang, John!</h4>
+            <p class="title">Informasi Pelanggan :</p>
+            <p>Jumlah total pengguna : 23</p>
+            <p>Jumlah total transaksi : 46</p>
+        </div>  
+        <div class="info-app">
+            <h4>Ini adalah aplikasi Nebeng Admin</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, placeat! Laborum similique saepe veritatis ipsum doloremque sequi tempore sunt asperiores culpa architecto?</p>
+        </div>  
     </div>
-
-    <div class="profile-bar">
-        <!-- Bagian Profil Dashboard -->
-        <div class="profile-bar-brand">
-            <h2>Welcome</h2>
-            <img src="{{ asset('storage/'.Auth::user()->foto_profile)}}" alt="">
-        </div>
-
-        <div class="profile-bar-title">
-            <h2>{{Auth::user()->nama_admin}}</h2>
-            <p>{{Auth::user()->role}}</p>
-        </div>
-
-        <div class="profile-bar-menu">
-            <ul>
-                <li>
-                    <a href="/settings">
-                        <span class="fas fa-cog" style="font-size: 20px;"></span>
-                        <span id="txt-dash">Setting</span>
-                    </a>
-                </li>
-                <li>
-                    <form action="/logout" method="POST">
-                        @csrf
-                        <button>
-                            <span class="fas fa-sign-out-alt" style="font-size: 20px;"></span>
-                            <span id="txt-dash" style="cursor: pointer;">Log out</span>
-                        </button>
-                    </form>
-                </li>
-            </ul>
-        </div>
+    <h4> Aktivitas Terbaru </h4>
+    <div class="dashboard-activity">
+        <table>
+                <thead>
+                    <tr class="none">
+                        <th></th>
+                        <th>Nama</th>
+                        <th>Nomor Transaksi</th>
+                        <th>Alamat</th>
+                        <th>Biaya</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>Raqhin Kusmanadinata</td>
+                        <td>098689765</td>
+                        <td>Sanggar indah banjaran blok G2</td>
+                        <td>Rp.5000</td>
+                    </tr>
+                    <tr>
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>Raqhin Kusmanadinata</td>
+                        <td>098689765</td>
+                        <td>Sanggar indah banjaran blok G2</td>
+                        <td>Rp.5000</td>
+                    </tr>
+                    <tr>
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>Raqhin Kusmanadinata</td>
+                        <td>098689765</td>
+                        <td>Sanggar indah banjaran blok G2</td>
+                        <td>Rp.5000</td>
+                    </tr>
+                </tbody>
+        </table>
     </div>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    {{-- javascript live time --}}
-    <script>
-        timer();
-        function timer(){
-        var currentTime = new Date()
-        var hours = currentTime.getHours()
-        var minutes = currentTime.getMinutes()
-        var sec = currentTime.getSeconds()
-        if (minutes < 10){
-            minutes = "0" + minutes
-        }
-        if (sec < 10){
-            sec = "0" + sec
-        }
-        var t_str = hours + ":" + minutes + ":" + sec + " ";
-        if(hours > 11){
-            t_str += "PM";
-        } else {
-           t_str += "AM";
-        }
+</section>
 
-        //day
-        const weekday = new Array(7);
-        weekday[0] = "Minggu";
-        weekday[1] = "Senin";
-        weekday[2] = "Selasa";
-        weekday[3] = "Rabu";
-        weekday[4] = "Kamis";
-        weekday[5] = "Jumat";
-        weekday[6] = "Sabtu";
-
-        //month
-        const moon = new Array(12);
-        moon[0] = "Januari";
-        moon[1] = "Februari";
-        moon[2] = "Maret";
-        moon[3] = "April";
-        moon[4] = "Mei";
-        moon[5] = "Juni";
-        moon[6] = "Juli";
-        moon[7] = "Agustus";
-        moon[8] = "September";
-        moon[9] = "Oktober";
-        moon[10] = "November";
-        moon[11] = "Desember";
-        let month = moon[currentTime.getMonth()];
-        let day = weekday[currentTime.getDay()];
-
-        document.getElementById('time_span').innerHTML = day+","+" "+currentTime.getDate()+" "+month+" "+currentTime.getFullYear()+" "+ t_str;
-        setTimeout(timer,1000);
-        }
+    <!-- <script>
         const session = "{{Session::has('status')}}";
             if(session){
                 Toastify({
@@ -197,10 +65,11 @@
                     className: "info",
                     style: {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
-                    }
-                }).showToast();
-            }
-    </script>
+                }
+            }).showToast();
+        }
+    </script> -->
+
 </body>
 
 @endsection

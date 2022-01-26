@@ -1,156 +1,107 @@
-@extends('layout.main2')
+@extends('layout.main')
 
-@section('title', 'History')
+@section('title', 'Riwayat')
 
-@section('content')
+@section('container')
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
-<div class="history">
-    <div class="history-title">
-        <h2> History</h2>
-    </div>
-    
-    <div class="history-card">
-        @foreach ($data as $dt )
-        <div class="card-content">
-            <img src="{{ asset('image/None.png') }}" alt="">
-            <div class="card-status">
-                <h2>{{$dt->User->nama_lengkap}}</h2>
-                <p>Isi riwayat</p>
+<section class="data">
+    <h4> Riwayat </h4>
+    <div class="data-search">
+        <div class="data-filter">
+            <div class="filters">
+                <div class="filter">
+                    <select name="" id="">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <select name="" id="">
+                        <option value="">All</option>
+                    </select>
+                </div>
             </div>
-            <form action="/history/{{$dt->id}}" method="GET">
-                <button><i class="fas fa-arrow-right"></i></button>
+            <form action="">
+                <input type="text" placeholder="Cari disini">
+                <button><i class="fas fa-search"></i></button>
             </form>
         </div>
-        @endforeach
-    </div>
-
-    @if ($dataonce != null)
-    <div class="history-detail">
-        <h2> Info lengkap Pengantaran </h2>
-        <div class="detail-content">
-            <div class="detail-item">
-                <label for="">Nama :</label>
-                <p>{{$dataonce->User->nama_lengkap}}</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Plat Kendaraan :</label>
-                <p>{{$dataonce->Kendaraan->nomor_kendaraan}}</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Nama Penumpang :</label>
-                <p>{{$dataonce->UserPenumpang->nama_lengkap}}</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Alamat Penjemputan :</label>
-                <p>{{$dataonce->Pesanan->alamat_jemput}}</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Alamat Tujuan :</label>
-                <p>{{$dataonce->Pesanan->alamat_tujuan}}</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Tanggal & Waktu :</label>
-                <p>{{$dataonce->Pesanan->created_at}}</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Jarak :</label>
-                <p>masih kosong harus selesai andro dlu</p>
-            </div>
+        <div class="data-plus">
+            <button onclick="showRiwayat()">Filter</button>
         </div>
     </div>
-    @else
-    <div class="history-detail">
-        <h2> Info lengkap Pengantaran </h2>
-        <div class="detail-content">
-            <div class="detail-item">
-                <label for="">Nama :</label>
-                <p>-</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Plat Kendaraan :</label>
-                <p>-</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Nama Penumpang :</label>
-                <p>-</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Alamat Penjemputan :</label>
-                <p>-</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Alamat Tujuan :</label>
-                <p>-</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Tanggal & Waktu :</label>
-                <p>-</p>
-            </div>
-            <div class="detail-item">
-                <label for="">Jarak :</label>
-                <p>-</p>
-            </div>
-        </div>
+    <div class="data-table">
+        <table>
+                <thead>
+                    <tr class="none">
+                        <th></th>
+                        <th>Nama</th>
+                        <th>Nomor Transaksi</th>
+                        <th>Alamat</th>
+                        <th>Biaya</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>Raqhin Kusmanadinata</td>
+                        <td>098689765</td>
+                        <td>Sanggar indah banjaran blok G2</td>
+                        <td>Rp.5000</td>
+                    </tr>
+                    <tr>
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>Raqhin Kusmanadinata</td>
+                        <td>098689765</td>
+                        <td>Sanggar indah banjaran blok G2</td>
+                        <td>Rp.5000</td>
+                    </tr>
+                    <tr>
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>Raqhin Kusmanadinata</td>
+                        <td>098689765</td>
+                        <td>Sanggar indah banjaran blok G2</td>
+                        <td>Rp.5000</td>
+                    </tr>
+                </tbody>
+        </table>
     </div>
-    @endif
 
-    <!-- Modals untuk filter -->
-    <div class="filter-form">
-        <div class="form">
-            <div class="text">
-                <h1> Filter </h1>
+    <div class="riwayat-popup">
+        <form class="popup">
+            <div class="popup-title">
+                <h3>Filter Data</h3>
             </div>
-            <form action="" method="post">
-                <div class="txt-form">
-                    <label for=""> Filter Content </label>
-                    <select>
-                        <option value="2022" selected>2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                    </select>
-                </div>
-                <div class="txt-form">
-                    <label for=""> Filter Content </label>
-                    <select>
-                        <option value="2022" selected>2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                    </select>
-                </div>
-                <div class="txt-form">
-                    <label for=""> Filter Content </label>
-                    <select>
-                        <option value="2022" selected>2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                    </select>
-                </div>
-                <div class="button-form">
-                    <button id="button-submit" type="submit"> Lets Filter! </button>
-                    <a id="button-submit" onclick="filterToogle()"> Back </a>
-                </div>
-            </form>
-        </div>
+            <div class="popup-data">
+                <label for="">Bulan</label>
+                <select name="" id="">
+                    <option value="" selected>Juni</option>
+                    <option value="">Mei</option>
+                </select>
+            </div>
+            <div class="popup-data">
+                <label for="">Tahun</label>
+                <select name="" id="">
+                    <option value="" selected>2022</option>
+                    <option value="">2021</option>
+                </select>
+            </div>
+            <div class="popup-submit">
+                <button> Filter </button>
+                <a href="#"  onclick="showRiwayat()">Kembali</a>
+            </div>
+        </form>
+        <div class="popup-bg" onclick="showRiwayat()"></div>
     </div>
-</div>
+</section>
 
-<div class="mobile-warning">
-    <i class="fas fa-exclamation-circle"></i>
-    <h3>Halaman Ini Tidak Mendukung Ukuran Web Ini</h3>
-</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
+<!--  Fungsi Keluarin Modals Show -->
 <script>
-    // Fungsi Keluarin Modals Filter
-    function filterToogle() {
-        var container = document.querySelector('.filter-form');
-        container.classList.toggle('active')
-    }
-
-    // Fungsi Keluarin Modals Show
-    function showToogle() {
-        var container = document.querySelector('.history-form');
+    function showRiwayat() {
+        var container = document.querySelector('.riwayat-popup');
         container.classList.toggle('active')
     }
 </script>
-
 @endsection

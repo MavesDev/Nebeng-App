@@ -1,197 +1,72 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style-type: none;
-    text-decoration: none;
-    font-family: sans-serif;
+.setting h4 {
+    font-size: 1.2rem;
+    padding-bottom: 1em;
 }
 
-.setting{
-    margin-left: 390px;
-}
-
-.setting .setting-date{
+.setting-image {
     width: 100%;
-    margin: 30px 0;
-    background: #8c5cd3;
-    border-radius: 10px;
+    display: flex;
+    justify-content: center;
 }
 
-.setting .setting-date p{
-    color: #fff;
-    font-size: 16px;
-    padding: 12px 10px;
-}
-
-.setting-title h2{
-    color: #553C7B;
-    font-size: 24px;
-}
-
-.setting-title h3{
-    color: #553C7B;
-    font-size: 20px;
-}
-
-.setting-form{
-    width: 725px;
-    height: 480px;
-    margin: 5px 0;
-    border-radius: 10px;
-}
-
-.setting-form p{
-    color: #fff;
-    font-size: 14px;
-    padding: 12px 10px;
-}
-
-.setting-form-image{
-    position: relative;
-    display: inline;
-    float: left;
-    width: 180px;
-    height: 100%;
-}
-
-.setting-form-image img{
-    margin: 50px 40px;
-    border-radius: 100px;
+.setting-image img {
     width: 100px;
     height: 100px;
-    max-width: 100px;
-    max-height: 100px;
+    border-radius: 100%;
 }
 
-.setting-form-txt{
-    padding: 30px 20px;
+.setting-form h3 {
+    font-size: 15px;
 }
 
-.setting-form-txt h2{
-    padding: 15px;
+.txt-form {
+    margin: 1em 0;
 }
 
-.setting-form-txt input{
-    width: 520px;
-    margin: 10px 0;
-    padding: 10px 15px;
+.txt-form input {
+    width: 100%;
+    padding: 0.8em 0.5em;
     border: none;
+    background-color: rgb(242, 242, 242);
+}
+
+.txt-form ::-webkit-file-upload-button {
+    border: none;
+    background-color: #d8d8d8;
+    padding: 0.8em 1.5em;
+    margin-right: 1em;
     border-radius: 5px;
-    color: #fff;
-    background: #8c5cd3;
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
-.setting-form-txt .txt-form ::placeholder{
-    color: #fff;
+.txt-form ::-webkit-file-upload-button:hover {
+    background-color: #c4c4c4;
 }
 
-.setting-form-txt .txt-form ::-webkit-file-upload-button{
-    padding: 5px 10px;
-    color: #ffff;
-    background: #553C7B;
-    border-radius: 15px;
-    border: none;
+.button-form {
+    padding-bottom: 2em;
+    padding-top: 1em;
+}
+
+.button-form button {
+    padding: 0.8em 1.5em;
+    border: 1px solid transparent;
+    color: #fff;
+    background: #9f70d4;
+    transition: 0.2s ease;
+    margin-right: 2.5em;
     cursor: pointer;
 }
 
-.setting-form-txt .txt-form ::-webkit-file-upload-button:hover{
-    background: #422c63;
+.button-form button:hover {
+    border: 1px solid #9f70d4;
+    color: #9f70d4;
+    background: #fff;
 }
 
-.setting-form-txt a,
-.setting-form-txt button{
-    font-size: 12px;
-    float: right;
-    color: #fff;
-    background  : #553C7B;
-    border: none;
-    border-radius: 5px;
-    margin: 10px 5px;
-    padding: 10px 10px;
-    cursor: pointer;
+.button-form a {
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
 }
-
-.setting-form-txt a:hover,
-.setting-form-txt button:hover{
-    background: #422c63;
-    transition: 0.5s;
-}
-
-/* Buat Tablet */
-@media (max-width: 768px)
-{
-    .setting{
-        margin-left: 120px;
-    }
-
-    .setting-title h2{
-        color: #553C7B;
-        font-size: 24px;
-    }
-
-    .setting-form{
-        width: 30%;
-        height: 480px;
-        margin: 5px 0;
-        border-radius: 10px;
-    }
-
-    .setting-form-image{
-        position: relative;
-        display: inline;
-        float: left;
-        width: 180px;
-        height: 50%;
-    }
-
-    .setting-form-image img{
-        margin: 30px 25px;
-        border-radius: 100px;
-        width: 150px;
-        height: 150px;
-        max-width: 150px;
-        max-height: 150px;
-    }
-
-    .setting-form-txt{
-        padding: 30px 0;
-    }
-
-    .setting-form-txt h2{
-        width: 250px;
-        padding: 0;
-    }
-
-    .setting-form-txt input{
-        width: 425px;
-        margin: 10px 0;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 5px;
-        color: #fff;
-        background: #8c5cd3;
-    }
-
-    .button-form{
-        width: 220px;
-        float: left;
-        display: inline;
-    }
-
-    .setting-form-txt button{
-        float: left;
-        margin: 10px 5px;
-        padding: 5px 10px;
-    }
-
-    .setting-form-txt button:hover{
-        background: #422c63;
-        transition: 0.5s;
-    }
-
-    .setting{
-        display: none;
-    }
-}
-

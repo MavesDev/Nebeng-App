@@ -22,6 +22,7 @@ class SystemController extends Controller
             if(Auth::check()){
                 return redirect('/')->with('status','Login Sukses');
             }
+            
         }else{
                 return redirect('/login')->with('status','Login Gagal');
         }

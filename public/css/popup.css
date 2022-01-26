@@ -1,0 +1,134 @@
+.riwayat-detail,
+.rekap-detail,
+.data-detail,
+.riwayat-popup,
+.rekap-popup,
+.data-popup {
+    display: none;
+}
+
+.riwayat-detail.active,
+.rekap-detail.active,
+.data-detail.active,
+.riwayat-popup.active,
+.rekap-popup.active,
+.data-popup.active {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.275);
+    z-index: 1;
+}
+
+.detail-bg,
+.popup-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.275);
+    z-index: -1;
+    cursor: pointer;
+}
+
+.detail,
+.popup {
+    background: #fff;
+    width: 520px;
+    height: 480px;
+    overflow: scroll;
+}
+
+.detail ::-webkit-scrollbar,
+.popup ::-webkit-scrollbar {
+    display: none;
+}
+
+.detail-title,
+.popup-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: #9f70d4;
+    color: #fff;
+    margin: 0;
+}
+
+.detail-title a,
+.popup-title a {
+    margin: 0 1.5em;
+    padding: 1em 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.detail-title h3,
+.popup-title h3 {
+    margin: 0 1.5em;
+    padding: 1em 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.detail-data,
+.popup-data {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 1.5em;
+}
+
+.detail-data label,
+.popup-data label {
+    font-size: 14px;
+    margin-bottom: 0.5em;
+}
+
+.detail-data select,
+.detail-data input,
+.popup-data select,
+.popup-data input {
+    border: none;
+    background: rgb(235, 235, 235);
+    padding: 0.5em 1.5em;
+}
+
+.detail-submit,
+.popup-submit {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 2em 1.5em;
+    align-items: center;
+}
+
+.detail-submit button,
+.popup-submit button {
+    width: 120px;
+    padding: 0.5em 2em;
+    border: 1px solid transparent;
+    background: #9f70d4;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.detail-submit button:hover,
+.popup-submit button:hover {
+    background: #fff;
+    border: 1px solid #9f70d4;
+    color: #9f70d4;
+}
+
+.detail-submit a,
+.popup-submit a {
+    margin-right: 2em;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    color: rgb(202, 53, 232);
+}

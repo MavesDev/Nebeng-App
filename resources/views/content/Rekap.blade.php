@@ -1,156 +1,107 @@
-@extends('layout.main2')
+@extends('layout.main')
 
 @section('title', 'Rekap')
 
-@section('content')
-@php
-    $year = date('Y');
-@endphp
+@section('container')
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
-<div class="rekap">
-    <div class="rekap-title">
-        <h2> Rekap </h2>
-    </div>
-
-    <!-- Ini bagian buat button search dan filter -->
-    <div class="rekap-filter">
-        <div class="rekap-button">
-            <button onclick="modalToogle()"> Filter <i class="fas fa-filter"></i> </button>
-            @if (request()->is('rekap/filter'))
-            <a href="/rekap">Cancel</a>
-            @endif
-        </div>
-
-        <div class="rekap-search">
-            <form action="/rekap" method="POST">
-                @csrf
-                <input type="text" name="search" placeholder="Cari Nama....">
-                <button type="submit">Search <i class="fas fa-search"></i></button>
+<section class="data">
+    <h4> Rekap </h4>
+    <div class="data-search">
+        <div class="data-filter">
+            <div class="filters">
+                <div class="filter">
+                    <select name="" id="">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <select name="" id="">
+                        <option value="">All</option>
+                    </select>
+                </div>
+            </div>
+            <form action="">
+                <input type="text" placeholder="Cari disini">
+                <button><i class="fas fa-search"></i></button>
             </form>
         </div>
+        <div class="data-plus">
+            <button onclick="showRekap()">Filter</button>
+        </div>
     </div>
-
-    <!-- ini buat tabelnya -->
-    <div class="rekap-table">
+    <div class="data-table">
         <table>
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Tanggal</th>
-                    <th>Alamat Jemput</th>
-                    <th>Tujuan</th>
-                    <th>Harga</th>
-                    <th>Kendaraan</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($data as $dt )
-                <tr>
-                    <th>1</th>
-                    <td>{{$dt->User->nama_lengkap}}</td>
-                    <td>{{$dt->Pesanan->created_at}}</td>
-                    <td>{{$dt->Pesanan->alamat_jemput}}</td>
-                    <td>{{$dt->Pesanan->alamat_tujuan}}</td>
-                    <td>{{$dt->Pesanan->total_bayar}}</td>
-                    <td>{{$dt->Kendaraan->merk_kendaraan}}</td>
-                </tr>
-                @endforeach
-                {{-- <tr>
-                    <th>2</th>
-                    <td>Adam Manhattan</td>
-                    <td>4 Oktober 2021</td>
-                    <td>SMKN 1 KATAPANG</td>
-                    <td>Ramen Bajuri, Gandasoli No 3</td>
-                    <td>Rp19.0000</td>
-                    <td>Vario</td>
-                </tr> --}}
-            </tbody>
+                <thead>
+                    <tr class="none">
+                        <th></th>
+                        <th>Nama</th>
+                        <th>Nomor Transaksi</th>
+                        <th>Alamat</th>
+                        <th>Biaya</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>Raqhin Kusmanadinata</td>
+                        <td>098689765</td>
+                        <td>Sanggar indah banjaran blok G2</td>
+                        <td>Rp.5000</td>
+                    </tr>
+                    <tr>
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>Raqhin Kusmanadinata</td>
+                        <td>098689765</td>
+                        <td>Sanggar indah banjaran blok G2</td>
+                        <td>Rp.5000</td>
+                    </tr>
+                    <tr>
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>Raqhin Kusmanadinata</td>
+                        <td>098689765</td>
+                        <td>Sanggar indah banjaran blok G2</td>
+                        <td>Rp.5000</td>
+                    </tr>
+                </tbody>
         </table>
     </div>
 
-    <!-- Modals untuk filter -->
-    <div class="modal-form">
-        <div class="form">
-            <div class="text">
-                <h1> Filter </h1>
+    <div class="rekap-popup">
+        <form class="popup">
+            <div class="popup-title">
+                <h3>Filter Data</h3>
             </div>
-            <form action="/rekap/filter" method="POST">
-                @csrf
-                <div class="txt-form">
-                    <label for=""> Bulan </label>
-                    <select name="bulan">
-                        <option value="1" selected>Januari</option>
-                        <option value="2">Februari</option>
-                        <option value="3">Maret</option>
-                        <option value="4">April</option>
-                        <option value="5">Mei</option>
-                        <option value="6">Juni</option>
-                        <option value="7">Juli</option>
-                        <option value="8">Agustus</option>
-                        <option value="9">September</option>
-                        <option value="10">Oktober</option>
-                        <option value="11">November</option>
-                        <option value="12">Desember</option>
-                    </select>
-                </div>
-                <div class="txt-form">
-                    <label for=""> Tahun </label>
-                    <select name="tahun">
-                        @for ($i = 2021; $i <= $year; $i++)
-                        <option value="{{$i}}" selected>{{$i}}</option>
-                        @endfor
-                    </select>
-                </div>
-                <div class="button-form">
-                    <button id="button-submit" type="submit"> Filter </button>
-                    <a id="button-submit" onclick="modalToogle()"> Kembali </a>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal buat edit, maapkan males ganti class lagi :D -->
-    <div class="show-form">
-        <div class="form">
-            <div class="text">
-                <h1> Edit User </h1>
-                <form action="" method="post">
-                    <div class="txt-form">
-                        <label for=""> User Profile </label>
-                        <input type="text" placeholder="Please fill this form...">
-                    </div>
-                    <div class="txt-form">
-                        <label for=""> User Profile </label>
-                        <input type="text" placeholder="Please fill this form...">
-                    </div>
-                    <div class="button-form">
-                        <button id="button-submit" type="submit"> Edit </button>
-                        <a id="button-submit" onclick="showToogle()"> Back </a>
-                    </div>
-                </form>
+            <div class="popup-data">
+                <label for="">Bulan</label>
+                <select name="" id="">
+                    <option value="" selected>Juni</option>
+                    <option value="">Mei</option>
+                </select>
             </div>
-        </div>
+            <div class="popup-data">
+                <label for="">Tahun</label>
+                <select name="" id="">
+                    <option value="" selected>2022</option>
+                    <option value="">2021</option>
+                </select>
+            </div>
+            <div class="popup-submit">
+                <button> Filter </button>
+                <a href="#"  onclick="showRekap()">Kembali</a>
+            </div>
+        </form>
+        <div class="popup-bg" onclick="showRekap()"></div>
     </div>
-</div>
+</section>
 
-<div class="mobile-warning">
-    <i class="fas fa-exclamation-circle"></i>
-    <h3>Halaman Ini Tidak Mendukung Ukuran Web Ini</h3>
-</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
+<!--  Fungsi Keluarin Modals Show -->
 <script>
-    // Fungsi Keluarin Modals Filter
-    function modalToogle() {
-        var container = document.querySelector('.modal-form');
-        container.classList.toggle('active')
-    }
-
-    // Fungsi Keluarin Modals Show
-    function showToogle() {
-        var container = document.querySelector('.show-form');
+    function showRekap() {
+        var container = document.querySelector('.rekap-popup');
         container.classList.toggle('active')
     }
 </script>
-
 @endsection

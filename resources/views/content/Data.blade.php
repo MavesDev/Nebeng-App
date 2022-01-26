@@ -1,117 +1,160 @@
-@extends('layout.main2')
+@extends('layout.main')
 
 @section('title', 'Kelola Data')
 
-@section('content')
+@section('container')
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-<div class="data">
-    <h2>Kelola Data</h2>
 
-    <!-- Bagian Search -->
+<section class="data">
+    <h4> Kelola Data </h4>
     <div class="data-search">
-        <form action="/keloladata" method="POST">   
-            @csrf           
-            <input type="text" name="search" placeholder="Cari berdasarkan nama atau No Telepon...">
-            <button type="submit"><i class="fas fa-search"></i></button>
+        <div class="data-filter">
+            <div class="filters">
+                <div class="filter">
+                    <select name="" id="">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <select name="" id="">
+                        <option value="">All</option>
+                    </select>
+                </div>
+            </div>
+            <form action="/keloladata" method="POST">
+                @csrf
+                <input type="text" name="search" placeholder="Cari disini">
+                <button><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="data-plus">
+            <button onclick="showToogle()">Tambah</button>
+        </div>
+    </div>
+    <div class="data-table">
+        <table>
+                <thead>
+                    <tr class="none">
+                        <th></th>
+                        <th>Nama</th>
+                        <th>Nomor Transaksi</th>
+                        <th>Biaya</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($data as $dt)
+                    <tr onclick="editToogle()">
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>{{$dt->nama_lengkap}}</td>
+                        <td>{{$dt->no_telp}}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+        </table>
+    </div>
+
+    <div class="data-detail">
+        <form class="detail">
+            <div class="detail-title">
+                <h3>Detail Data</h3>
+                <a href="" class="fas fa-trash"></a>
+            </div>
+            <div class="detail-data">
+                <label for="">NIS</label>
+                <input type="text" placeholder="Masukan NIS">
+            </div>
+            <div class="detail-data">
+                <label for="">Nama</label>
+                <input type="text" placeholder="Masukan Nama">
+            </div>
+            <div class="detail-data">
+                <label for="">Email</label>
+                <input type="email" placeholder="Masukan Email">
+            </div>
+            <div class="detail-data">
+                <label for="">Password</label>
+                <input type="text" placeholder="Masukan Password">
+            </div>
+            <div class="detail-data">
+                <label for="">Kendaraan</label>
+                <input type="text" placeholder="Masukan Kendaraan">
+            </div>
+            <div class="detail-data">
+                <label for="">No Telepon</label>
+                <input type="text" placeholder="Masukan Nomor Telepon">
+            </div>
+            <div class="detail-data">
+                <label for="">Jenis Kelamin</label>
+                <select name="" id="">
+                    <option value="" selected>Laki laki</option>
+                    <option value="">Perempuan</option>
+                </select>
+            </div>
+            <div class="detail-submit">
+                <button> Edit </button>
+                <a href="#"  onclick="editToogle()">Kembali</a>
+            </div>
         </form>
-
-        <div class="data-add" onclick="showToogle()">
-            <a href="#" id="data-add">Tambah</a>
-        </div>
+        <div class="popup-bg" onclick="editToogle()"></div>
     </div>
 
-    <!-- Bagian card user -->
-    <div class="card-data">
-        <div class="card">
-            @foreach ($data as $dt )
-            <div class="data-card">
-                <div class="card-photo">
-                    <img src="{{ asset('/image/None.png') }}" alt="" style="width: 45px; height: 45px;">
-                </div>
-                <div class="card-name">
-                    <h4>{{$dt->nama_lengkap}}</h4>
-                    <p>{{$dt->no_telp}}</p>
-                </div>
-                <div class="card-link">
-                    <a href="/keloladata/detail/{{$dt->id}}"><i class="fas fa-arrow-right"></i></a>
-                </div>
+    <div class="data-popup">
+        <form class="popup">
+            <div class="popup-title">
+                <h3>Tambah Data</h3>
             </div>
-            @endforeach
-        </div>
-    </div>
-
-    <!-- Modal buat tambah | value belum diisi -->
-    <div class="show-form">
-        <div class="form">
-            <div class="text">
-                <h1> Tambah User </h1>
-                <form action="/keloladata/tambah" method="POST">
-                    @csrf
-                    <div class="txt-form">
-                        <label for=""> NIS </label>
-                        <input type="text" placeholder="Nis..." name="nis">
-                    </div>
-                    <div class="txt-form">
-                        <label for=""> Nama Lengkap </label>
-                        <input type="text" placeholder="Nama..." name="nama_lengkap">
-                    </div>
-                    <div class="txt-form">
-                        <label for=""> Email </label>
-                        <input type="text" placeholder="Email..." name="email">
-                    </div>
-                    <div class="txt-form">
-                        <label for=""> No Telepon </label>
-                        <input type="text" placeholder="NoTelepon..." name="no_telp">
-                    </div>
-                    <div class="txt-form">
-                        <label for=""> Jenis Kelamin </label>
-                        <select name="jenis_kelamin" id="">
-                            <option value="laki-laki">Laki-Laki</option>
-                            <option value="perempuan">Perempuan</option>
-                        </select>
-                    </div>
-                    <div class="txt-form">
-                        <label for=""> Password </label>
-                        <input type="password" placeholder="Password..." name="password">
-                    </div>
-                    <div class="button-form">
-                        <button id="button-submit" type="submit"> Tambah </button>
-                        <a id="button-submit" onclick="showToogle()"> Back </a>
-                    </div>
-                </form>
+            <div class="popup-data">
+                <label for="">NIS</label>
+                <input type="text" placeholder="Masukan NIS">
             </div>
-        </div>
+            <div class="popup-data">
+                <label for="">Nama</label>
+                <input type="text" placeholder="Masukan Nama">
+            </div>
+            <div class="popup-data">
+                <label for="">Email</label>
+                <input type="email" placeholder="Masukan Email">
+            </div>
+            <div class="popup-data">
+                <label for="">Password</label>
+                <input type="text" placeholder="Masukan Password">
+            </div>
+            <div class="popup-data">
+                <label for="">Kendaraan</label>
+                <input type="text" placeholder="Masukan Kendaraan">
+            </div>
+            <div class="popup-data">
+                <label for="">No Telepon</label>
+                <input type="text" placeholder="Masukan Nomor Telepon">
+            </div>
+            <div class="popup-data">
+                <label for="">Jenis Kelamin</label>
+                <select name="" id="">
+                    <option value="" selected>Laki laki</option>
+                    <option value="">Perempuan</option>
+                </select>
+            </div>
+            <div class="popup-submit">
+                <button> Tambah </button>
+                <a href="#"  onclick="showToogle()">Kembali</a>
+            </div>
+        </form>
+        <div class="popup-bg" onclick="showToogle()"></div>
     </div>
-
-</div>
-
-<div class="mobile-warning">
-    <i class="fas fa-exclamation-circle"></i>
-    <h3>Halaman Ini Tidak Mendukung Ukuran Web Ini</h3>
-</div>
-
+</section>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 <!--  Fungsi Keluarin Modals Show -->
 <script>
     function showToogle() {
-        var container = document.querySelector('.show-form');
+        var container = document.querySelector('.data-popup');
         container.classList.toggle('active')
     }
-</script>
 
-<!-- Fungsi Modal -->
-<script>
-    const session = "{{Session::has('status')}}";
-        if(session){
-            Toastify({
-                text: "{{Session::get('status')}}",
-                className: "info",
-                style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
-                }
-            }).showToast();
-        }
+    function editToogle() {
+        var container = document.querySelector('.data-detail');
+        container.classList.toggle('active')
+    }
 </script>
 @endsection

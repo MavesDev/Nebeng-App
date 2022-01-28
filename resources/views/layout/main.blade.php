@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-    
+
     <!-- Toast CDN -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
@@ -17,7 +18,8 @@
     <link rel="stylesheet" href="css/setting.css">
     <link rel="stylesheet" href="css/data.css">
     <link rel="stylesheet" href="css/popup.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>@yield('title') | Nebeng Admin</title>
   </head>
   <body>
@@ -38,23 +40,23 @@
                 <p class="link-title">Menu</p>
                 <button><i class="fas fa-times" onclick="navbarToogle()"></i></button>
               </div>
-              <li class="active">
-                <a href="/" class="{{(request()->is('/')) ? 'active':''}}">
+              <li class="{{(request()->is('/')) ? 'active':''}}">
+                <a href="/">
                   <p><i class="fas fa-home"></i> Beranda</p>
                 </a>
               </li>
-              <li>
-                <a href="/keloladata" class="{{(request()->is('keloladata')) ? 'active':''}}">
+              <li class="{{(request()->is('keloladata')) ? 'active':''}}">
+                <a href="/keloladata" >
                   <p><i class="fas fa-tasks"></i> Kelola Data</p>
                 </a>
               </li>
-              <li>
-                <a href="/history" class="{{(request()->is('history')) ? 'active':''}}">
+              <li class="{{(request()->is('history')) ? 'active':''}}">
+                <a href="/history" >
                   <p><i class="fas fa-history"></i> Riwayat</p>
                 </a>
               </li>
-              <li>
-                <a href="/rekap" class="{{(request()->is('rekap')) ? 'active':''}}">
+              <li class="{{(request()->is('rekap')) ? 'active':''}}">
+                <a href="/rekap" >
                   <p><i class="fas fa-book-open"></i> Rekap</p>
                 </a>
               </li>
@@ -82,7 +84,7 @@
           @yield('container')
       </section>
     </div>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
       // Fungsi Keluarin Modals

@@ -8,15 +8,15 @@
 <section class="dashboard">
     <div class="dashboard-info">
         <div class="info-costumer">
-            <h4>Selamat datang, John!</h4>
+            <h4>Selamat datang, {{Auth::user()->nama_admin}}</h4>
             <p class="title">Informasi Pelanggan :</p>
-            <p>Jumlah total pengguna : 23</p>
-            <p>Jumlah total transaksi : 46</p>
-        </div>  
+            <p>Jumlah total pengguna : {{$userCount}}</p>
+            <p>Jumlah total transaksi : {{$transaksiCount}}</p>
+        </div>
         <div class="info-app">
             <h4>Ini adalah aplikasi Nebeng Admin</h4>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, placeat! Laborum similique saepe veritatis ipsum doloremque sequi tempore sunt asperiores culpa architecto?</p>
-        </div>  
+        </div>
     </div>
     <h4> Aktivitas Terbaru </h4>
     <div class="dashboard-activity">

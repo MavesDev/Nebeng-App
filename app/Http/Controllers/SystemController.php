@@ -22,7 +22,7 @@ class SystemController extends Controller
             if(Auth::check()){
                 return redirect('/')->with('status','Login Sukses');
             }
-            
+
         }else{
                 return redirect('/login')->with('status','Login Gagal');
         }
@@ -86,26 +86,47 @@ class SystemController extends Controller
     }
 
     public function tambahuser(Request $request){
-        $data = [
-            'nis'=>$request->nis,
-            'nama_lengkap'=>$request->nama_lengkap,
-            'email'=>$request->email,
-            'no_telp'=>$request->no_telp,
-            'jenis_kelamin'=>$request->jenis_kelamin,
-            'password'=>$request->password,
-            'tanggal_daftar'=>date('Y-m-d H:i:s')
-        ];
-        $user = UserData::create($data);
-        if($user){
-            return redirect('/keloladata')->with('status','Data Berhasil Ditambah');
-        }else{
-            return redirect('/keloladata')->with('status','Data Gagal Ditambah');
+        if($request->ajax()){
+            $user = [
+                'nis'=>$request->nis,
+                'nama_lengkap'=>$request->nama_lengkap,
+                'email'=>$request->email,
+                'password'=>$request->password,
+                'kendaraan'=>$request->kendaraan,
+                'no_telp'=>$request->no_telp,
+                'jenis_kelamin'=>$request->jenis_kelamin,
+                'tanggal_daftar'=>Carbon::now(),
+                'rating'=>0,
+                'role'=>'user'
+            ];
+            $data = UserData::create($user);
+            if($data){
+                return "Data Berhasil Ditambahkan";
+            }else{
+                return "Data Gagal Ditambahkan";
+            }
         }
     }
 
     public function searchuser(Request $request){
-        $data = UserData::where('nama_lengkap','like','%'.$request->search.'%')->get();
-        return view('content.Data',compact('data'));
+        if($request->ajax()){
+            $data = [];
+            $output = '';
+            $result = UserData::where('nama_lengkap','like','%'.$request->keyword.'%')->get();
+            if($result){
+                foreach($result as $rs){
+                    $output = '<tr onclick="editToogle()" value="'.$rs->id.'">' .
+                    '<td><img src="'.asset("image/None.png").'" alt=""></td>' .
+                    '<td>' .$rs->nama_lengkap. '</td>' .
+                    '<td>' .$rs->tanggal_daftar. '</td>' .
+                    '</tr></div>';
+
+                    $data[] = $output;
+                }
+            }
+            // return $output;
+            return Response(($result->isEmpty())?'<tr><td colspan="9" class="text-center">Data Tidak Ditemukan</td></tr>' : $data);
+        }
     }
 
     public function searchrekap(Request $request){

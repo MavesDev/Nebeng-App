@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\API\PemesananAPI;
 use App\Models\Riwayat;
 use App\Models\UserData;
 use Illuminate\Support\Facades\Auth;
@@ -11,8 +12,9 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function beranda(){
-        $userCount = DB::table('user_data')->count();
-        return view('Dashboard',compact('userCount'));
+        $userCount = UserData::count();
+        $transaksiCount = Riwayat::count();
+        return view('Dashboard',compact('userCount','transaksiCount'));
     }
     public function login(){
         return view('Login');

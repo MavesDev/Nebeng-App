@@ -34,6 +34,8 @@ Route::post('/keloladata/edit/{id}','SystemController@edituser')->middleware('au
 Route::post('/keloladata/hapus/{id}','SystemController@hapususer')->middleware('auth');
 Route::post('/keloladata/tambah','SystemController@tambahuser')->middleware('auth');
 Route::post('/keloladata','SystemController@searchuser')->middleware('auth');
+Route::post('/tambahuser','SystemController@tambahuser')->middleware('auth');
+Route::get('/searchuser','SystemController@searchuser')->middleware('auth');
 
 //post
 

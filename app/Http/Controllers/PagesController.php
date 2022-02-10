@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\API\PemesananAPI;
+use App\Models\Kendaraan;
 use App\Models\Riwayat;
 use App\Models\UserData;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,8 @@ class PagesController extends Controller
 
     public function kelolaData(){
         $data = UserData::all();
-        return view('content.Data',compact('data'));
+        $kendaraan = Kendaraan::all();
+        return view('content.Data',compact('data','kendaraan'));
     }
 
     public function detail($id)

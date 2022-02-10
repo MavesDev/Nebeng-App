@@ -59,20 +59,21 @@ class SystemController extends Controller
 
 
     public function edituser(Request $request,$id){
+        // dd($request->all());
         $user = [
             'nis'=>$request->nis,
             'nama_lengkap'=>$request->nama_lengkap,
             'email'=>$request->email,
             'password'=>$request->password,
             'no_telp'=>$request->no_telp,
+            'kendaraan'=>$request->kendaraan,
             'jenis_kelamin'=>$request->jenis_kelamin,
-            'password'=>$request->password
         ];
         $data = UserData::where('id',$id)->update($user);
         if($data){
-            return redirect('/keloladata/detail/'.$id)->with('status','Data Berhasil Diubah');
+            return redirect('/keloladata')->with('status','Data Berhasil Diubah');
         }else{
-            return redirect('/keloladata/detail/'.$id)->with('status','Data Gagal Diubah');
+            return redirect('/keloladata')->with('status','Data Gagal Diubah');
         }
     }
 

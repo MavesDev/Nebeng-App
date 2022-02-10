@@ -53,44 +53,50 @@
         </div>
 
         <div class="data-detail">
-            <form class="detail">
+            <form class="detail" action="" id="formedit" method="POST">
+                @csrf
                 <div class="detail-title">
                     <h3>Detail Data</h3>
-                    <a class="fas fa-trash"></a>
+                    <a class="fas fa-trash" href="" id="hapusdata"></a>
                 </div>
                 <div class="detail-data">
                     <label for="">NIS</label>
-                    <input type="text" placeholder="Masukan NIS">
+                    <input name="nis" type="text" placeholder="Masukan NIS" id="nis">
                 </div>
                 <div class="detail-data">
                     <label for="">Nama</label>
-                    <input type="text" placeholder="Masukan Nama">
+                    <input name="nama_lengkap" type="text" placeholder="Masukan Nama" id="nama_lengkap">
                 </div>
                 <div class="detail-data">
                     <label for="">Email</label>
-                    <input type="email" placeholder="Masukan Email">
+                    <input name="email" type="email" placeholder="Masukan Email" id="email">
                 </div>
                 <div class="detail-data">
                     <label for="">Password</label>
-                    <input type="text" placeholder="Masukan Password">
+                    <input name="password" type="text" placeholder="Masukan Password" id="password">
                 </div>
                 <div class="detail-data">
                     <label for="">Kendaraan</label>
-                    <input type="text" placeholder="Masukan Kendaraan">
+                    {{-- <input type="text" placeholder="Masukan Kendaraan" id="kendaraan"> --}}
+                    <select name="kendaraan" id="kendaraan">
+                        @foreach ($kendaraan as $kdr )
+                            <option value="{{$kdr->id}}">{{$kdr->type_kendaraan}} | {{$kdr->merk_kendaraan}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="detail-data">
                     <label for="">No Telepon</label>
-                    <input type="text" placeholder="Masukan Nomor Telepon">
+                    <input name="no_telp" type="text" placeholder="Masukan Nomor Telepon" id="no_telp">
                 </div>
                 <div class="detail-data">
                     <label for="">Jenis Kelamin</label>
-                    <select name="" id="">
-                        <option value="" selected>Laki laki</option>
-                        <option value="">Perempuan</option>
+                    <select name="jenis_kelamin" id="jenis_kelamin">
+                        <option value="laki-laki">Laki laki</option>
+                        <option value="perempuan">Perempuan</option>
                     </select>
                 </div>
                 <div class="detail-submit">
-                    <button type="button"> Edit </button>
+                    <button type="submit"> Edit </button>
                     <a href="#" onclick="editToogle()">Kembali</a>
                 </div>
             </form>
@@ -120,7 +126,12 @@
                 </div>
                 <div class="popup-data">
                     <label for="">Kendaraan</label>
-                    <input type="text" placeholder="Masukan Kendaraan" id="kendaraanTmbh">
+                    {{-- <input type="text" placeholder="Masukan Kendaraan" id="kendaraanTmbh"> --}}
+                    <select name="kendaraan" id="kendaraanTmbh">
+                        @foreach ($kendaraan as $kdr )
+                            <option value="{{$kdr->id}}">{{$kdr->type_kendaraan}} | {{$kdr->merk_kendaraan}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="popup-data">
                     <label for="">No Telepon</label>
@@ -160,7 +171,7 @@
                         var i;
                         // console.log(data.DataUserData);
                         for (var i = 0; i < data.DataUserData.length; i++) {
-                            html += '<tr onclick="editToogle()" value="'+data.DataUserData[i].id+'">' +
+                            html += '<tr onclick="editToogle('+data.DataUserData[i].id+')" value="'+data.DataUserData[i].id+'">' +
                                 '<td><img src="{{ url('image/None.png') }}" alt=""></td>' +
                                 '<td>' + data.DataUserData[i].nama_lengkap + '</td>' +
                                 '<td>' + data.DataUserData[i].tanggal_daftar + '</td>' +
@@ -169,11 +180,6 @@
                         $('#tabeluser').html(html);
                     }
                 });
-
-            //CARI CARA DELETE DAN UPDATE
-            $('.datauser').click(function(){
-                console.log("hello");
-            });
 
             //live search
             $('#search').on('keyup',function(){
@@ -194,7 +200,7 @@
                 var nama_lengkap = $('#nama_lengkapTmbh').val();
                 var email = $('#emailTmbh').val();
                 var password = $('#passwordTmbh').val();
-                var kendaraan = $('#kendaraanTmbh').val();
+                var kendaraan = $('#kendaraanTmbh option').filter(':selected').val();
                 var no_telp = $('#no_telpTmbh').val();
                 var jenis_kelamin = $('#jenis_kelaminTmbh').val();
                 // console.log(nis);
@@ -224,6 +230,25 @@
                                 background: "#2ecc71",
                             }
                         }).showToast();
+                        $.ajax({
+                            url: '/api/getuserdata',
+                            async: true,
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function(data) {
+                                var html = '';
+                                var i;
+                                // console.log(data.DataUserData);
+                                for (var i = 0; i < data.DataUserData.length; i++) {
+                                    html += '<tr onclick="editToogle('+data.DataUserData[i].id+')" value="'+data.DataUserData[i].id+'">' +
+                                        '<td><img src="{{ url('image/None.png') }}" alt=""></td>' +
+                                        '<td>' + data.DataUserData[i].nama_lengkap + '</td>' +
+                                        '<td>' + data.DataUserData[i].tanggal_daftar + '</td>' +
+                                        '</tr></div>';
+                        }
+                                $('#tabeluser').html(html);
+                            }
+                        });
                     },
                     error: function() {
                         Toastify({
@@ -243,7 +268,26 @@
             container.classList.toggle('active')
         }
 
-        function editToogle() {
+        function editToogle(id) {
+            if(id){
+                $.ajax({
+                    type: 'GET',
+                    url: window.location.origin + '/api/getuserdata/'+id,
+                    success: function(data) {
+                        // console.log(data);
+                        //set attr for edit
+                        $('#formedit').attr('action', '/keloladata/edit/'+id);
+                        $('#hapusdata').attr('href','keloladata/hapus/'+id);
+                        $('#nis').val(data.DataUserData.nis);
+                        $('#nama_lengkap').val(data.DataUserData.nama_lengkap);
+                        $('#email').val(data.DataUserData.email);
+                        $('#password').val(data.DataUserData.password);
+                        $('#kendaraan').val(data.DataUserData.kendaraan).change();
+                        $('#no_telp').val(data.DataUserData.no_telp);
+                        $('#jenis_kelamin').val(data.DataUserData.jenis_kelamin).change();
+                    }
+                });
+            }
             var container = document.querySelector('.data-detail');
             container.classList.toggle('active')
         }

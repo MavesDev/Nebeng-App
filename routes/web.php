@@ -31,7 +31,7 @@ Route::get('/keloladata/detail', 'PagesController@detail')->middleware('auth');
 Route::get('/keloladata','PagesController@kelolaData')->middleware('auth');
 Route::get('/keloladata/detail/{id}','PagesController@detail')->middleware('auth');
 Route::post('/keloladata/edit/{id}','SystemController@edituser')->middleware('auth');
-Route::post('/keloladata/hapus/{id}','SystemController@hapususer')->middleware('auth');
+Route::get('/keloladata/hapus/{id}','SystemController@hapususer')->middleware('auth');
 Route::post('/keloladata/tambah','SystemController@tambahuser')->middleware('auth');
 Route::post('/keloladata','SystemController@searchuser')->middleware('auth');
 Route::post('/tambahuser','SystemController@tambahuser')->middleware('auth');

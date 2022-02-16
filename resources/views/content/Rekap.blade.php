@@ -11,24 +11,37 @@
         <div class="data-filter">
             <div class="filters">
                 <div class="filter">
-                    <select name="" id="">
-                        <option value="">All</option>
+                    <select name="bulan" id="">
+                        <option value="01">Januari</option>
+                        <option value="02">Februari</option>
+                        <option value="03">Maret</option>
+                        <option value="04">April</option>
+                        <option value="05">Mei</option>
+                        <option value="06">Juni</option>
+                        <option value="07">Juli</option>
+                        <option value="08">Agustus</option>
+                        <option value="09">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">Desember</option>
                     </select>
                 </div>
                 <div class="filter">
-                    <select name="" id="">
-                        <option value="">All</option>
+                    <select name="tahun" id="">
+                        @for ($i = 2020; $i <= date('Y'); $i++)
+                        <option value="{{$i}}">{{$i}}</option>
+                        @endfor
                     </select>
                 </div>
             </div>
-            <form action="">
+            {{-- <form action="">
                 <input type="text" placeholder="Cari disini">
                 <button><i class="fas fa-search"></i></button>
-            </form>
+            </form> --}}
         </div>
-        <div class="data-plus">
+        {{-- <div class="data-plus">
             <button onclick="showRekap()">Filter</button>
-        </div>
+        </div> --}}
     </div>
     <div class="data-table">
         <table>
@@ -36,13 +49,28 @@
                     <tr class="none">
                         <th></th>
                         <th>Nama</th>
-                        <th>Nomor Transaksi</th>
-                        <th>Alamat</th>
+                        <th>Penumpang</th>
+                        <th>Alamat Jemput</th>
+                        <th>Alamat Tujuan</th>
+                        <th>Kendaraan</th>
                         <th>Biaya</th>
+                        <th>Tanggal Pemesanan</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($data as $rekap )
                     <tr>
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>{{$rekap->User->nama_lengkap}}</td>
+                        <td>{{$rekap->UserPenumpang->nama_lengkap}}</td>
+                        <td>{{$rekap->Pesanan->alamat_jemput}}</td>
+                        <td>{{$rekap->Pesanan->alamat_tujuan}}</td>
+                        <td>{{$rekap->User->Kendaraan->type_kendaraan ."|". $rekap->User->Kendaraan->merk_kendaraan}}</td>
+                        <td>{{$rekap->Pesanan->total_bayar}}</td>
+                        <td>{{$rekap->Pesanan->created_at}}</td>
+                    </tr>
+                    @endforeach
+                    {{-- <tr>
                         <td><img src="{{ url('image/None.png') }}" alt=""></td>
                         <td>Raqhin Kusmanadinata</td>
                         <td>098689765</td>
@@ -55,14 +83,7 @@
                         <td>098689765</td>
                         <td>Sanggar indah banjaran blok G2</td>
                         <td>Rp.5000</td>
-                    </tr>
-                    <tr>
-                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
-                        <td>Raqhin Kusmanadinata</td>
-                        <td>098689765</td>
-                        <td>Sanggar indah banjaran blok G2</td>
-                        <td>Rp.5000</td>
-                    </tr>
+                    </tr> --}}
                 </tbody>
         </table>
     </div>

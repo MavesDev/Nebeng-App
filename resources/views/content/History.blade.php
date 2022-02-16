@@ -7,7 +7,7 @@
 
 <section class="data">
     <h4> Riwayat </h4>
-    <div class="data-search">
+    {{-- <div class="data-search">
         <div class="data-filter">
             <div class="filters">
                 <div class="filter">
@@ -29,20 +29,33 @@
         <div class="data-plus">
             <button onclick="showRiwayat()">Filter</button>
         </div>
-    </div>
+    </div> --}}
     <div class="data-table">
         <table>
                 <thead>
                     <tr class="none">
                         <th></th>
                         <th>Nama</th>
-                        <th>Nomor Transaksi</th>
-                        <th>Alamat</th>
+                        <th>Penumpang</th>
+                        <th>Alamat Jemput</th>
+                        <th>Alamat Tujuan</th>
+                        <th>Kendaraan</th>
                         <th>Biaya</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ( $data as $riwayat )
                     <tr>
+                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
+                        <td>{{$riwayat->User->nama_lengkap}}</td>
+                        <td>{{$riwayat->UserPenumpang->nama_lengkap}}</td>
+                        <td>{{$riwayat->Pesanan->alamat_jemput}}</td>
+                        <td>{{$riwayat->Pesanan->alamat_tujuan}}</td>
+                        <td>{{$riwayat->User->Kendaraan->type_kendaraan ."|". $riwayat->User->Kendaraan->merk_kendaraan}}</td>
+                        <td>{{$riwayat->Pesanan->total_bayar}}</td>
+                    </tr>
+                    @endforeach
+                    {{-- <tr>
                         <td><img src="{{ url('image/None.png') }}" alt=""></td>
                         <td>Raqhin Kusmanadinata</td>
                         <td>098689765</td>
@@ -55,14 +68,7 @@
                         <td>098689765</td>
                         <td>Sanggar indah banjaran blok G2</td>
                         <td>Rp.5000</td>
-                    </tr>
-                    <tr>
-                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
-                        <td>Raqhin Kusmanadinata</td>
-                        <td>098689765</td>
-                        <td>Sanggar indah banjaran blok G2</td>
-                        <td>Rp.5000</td>
-                    </tr>
+                    </tr> --}}
                 </tbody>
         </table>
     </div>

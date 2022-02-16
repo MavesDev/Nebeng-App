@@ -6,6 +6,7 @@ use App\Http\Controllers\API\PemesananAPI;
 use App\Models\Kendaraan;
 use App\Models\Riwayat;
 use App\Models\UserData;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -51,7 +52,7 @@ class PagesController extends Controller
 
     public function history()
     {
-        $data = Riwayat::all();
+        $data = Riwayat::whereMonth('created_at',Carbon::now()->format('m'))->get();
         $dataonce = null;
         return view('content.History', compact('data','dataonce'));
     }

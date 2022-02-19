@@ -116,7 +116,7 @@ class SystemController extends Controller
             $result = UserData::where('nama_lengkap','like','%'.$request->keyword.'%')->get();
             if($result){
                 foreach($result as $rs){
-                    $output = '<tr onclick="editToogle()" value="'.$rs->id.'">' .
+                    $output = '<tr onclick="editToogle('.$rs->id.')" value="'.$rs->id.'">' .
                     '<td><img src="'.asset("image/None.png").'" alt=""></td>' .
                     '<td>' .$rs->nama_lengkap. '</td>' .
                     '<td>' .$rs->tanggal_daftar. '</td>' .
@@ -138,9 +138,51 @@ class SystemController extends Controller
         return view('content.Rekap',compact('data'));
     }
     public function filterrekap(Request $request){
-        $data = Riwayat::whereMonth('created_at','=',$request->bulan)
+        if($request->ajax()){
+            $data = [];
+                $output = '';
+                $result = Riwayat::whereMonth('created_at','=',$request->bulan)
                         ->whereYear('created_at','=',$request->tahun)
                         ->get();
-        return view('content.Rekap',compact('data'));
+                if($result){
+                    foreach($result as $rs){
+                        $output = '<tr><td><img src="'.url('image/None.png').'" alt=""></td>
+                        <td>'.$rs->User->nama_lengkap.'</td>'.
+                        '<td>'.$rs->UserPenumpang->nama_lengkap.'</td>'.
+                        '<td>'.$rs->Pesanan->alamat_jemput.'</td>'.
+                        '<td>'.$rs->Pesanan->alamat_tujuan.'</td>'.
+                        '<td>'.$rs->User->Kendaraan->type_kendaraan ."|". $rs->User->Kendaraan->merk_kendaraan.'</td>'.
+                        '<td>'.$rs->Pesanan->total_bayar.'</td>'.
+                        '<td>'.$rs->Pesanan->created_at.'</td></tr>';
+
+                        $data[] = $output;
+                    }
+                }
+                // return $output;
+                return Response(($result->isEmpty())?'<tr><td colspan="9" class="text-center">Data Tidak Ditemukan</td></tr>' : $data);
+        }
+    }
+
+    public function orderuser (Request $request){
+        if($request->ajax()){
+            if($request->orderName){
+                $data = [];
+                $output = '';
+                $result = UserData::orderBy('nama_lengkap',$request->orderName)->get();
+                if($result){
+                    foreach($result as $rs){
+                        $output = '<tr onclick="editToogle('.$rs->id.')" value="'.$rs->id.'">' .
+                        '<td><img src="'.asset("image/None.png").'" alt=""></td>' .
+                        '<td>' .$rs->nama_lengkap. '</td>' .
+                        '<td>' .$rs->tanggal_daftar. '</td>' .
+                        '</tr></div>';
+
+                        $data[] = $output;
+                    }
+                }
+                // return $output;
+                return Response(($result->isEmpty())?'<tr><td colspan="9" class="text-center">Data Tidak Ditemukan</td></tr>' : $data);
+                }
+        }
     }
 }

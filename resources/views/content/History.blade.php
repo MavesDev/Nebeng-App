@@ -7,8 +7,8 @@
 
 <section class="data">
     <h4> Riwayat </h4>
-    {{-- <div class="data-search">
-        <div class="data-filter">
+    <div class="data-search">
+        {{-- <div class="data-filter">
             <div class="filters">
                 <div class="filter">
                     <select name="" id="">
@@ -25,11 +25,11 @@
                 <input type="text" placeholder="Cari disini">
                 <button><i class="fas fa-search"></i></button>
             </form>
-        </div>
+        </div> --}}
         <div class="data-plus">
-            <button onclick="showRiwayat()">Filter</button>
+            <p style="font-size: 13px; margin: 0px">Total Transaksi Nebeng Bulan Ini: {{$data->count()}}</p>
         </div>
-    </div> --}}
+    </div>
     <div class="data-table">
         <table>
                 <thead>

@@ -11,7 +11,7 @@
         <div class="data-filter">
             <div class="filters">
                 <div class="filter">
-                    <select name="bulan" id="">
+                    <select name="bulan" id="bulan">
                         <option value="01">Januari</option>
                         <option value="02">Februari</option>
                         <option value="03">Maret</option>
@@ -27,11 +27,14 @@
                     </select>
                 </div>
                 <div class="filter">
-                    <select name="tahun" id="">
+                    <select name="tahun" id="tahun">
                         @for ($i = 2020; $i <= date('Y'); $i++)
                         <option value="{{$i}}">{{$i}}</option>
                         @endfor
                     </select>
+                </div>
+                <div class="data-plus">
+                    <button id="buttonFilter">Ok</button>
                 </div>
             </div>
             {{-- <form action="">
@@ -120,6 +123,24 @@
 
 <!--  Fungsi Keluarin Modals Show -->
 <script>
+    $(document).ready(function(){
+        $('#buttonFilter').click(function(){
+            var bulan = $('#bulan').val();
+            var tahun = $('#tahun').val();
+            $.ajax({
+                url: window.location.origin + "/filterRekap",
+                type: "GET",
+                data: {
+                    bulan: bulan,
+                    tahun: tahun
+                },
+                success: function(data){
+                    console.log(data);
+                    $('.data-table tbody').html(data);
+                }
+            });
+        });
+    });
     function showRekap() {
         var container = document.querySelector('.rekap-popup');
         container.classList.toggle('active')

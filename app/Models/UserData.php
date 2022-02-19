@@ -14,4 +14,13 @@ class UserData extends Model
     public function Kendaraan(){
         return $this->belongsTo(Kendaraan::class,'kendaraan');
     }
+
+    public function GetJWTIdentifier(){
+        return $this->getKey();
+    }
+
+    public function GetCustomClaims(){
+        return [];
+    }
+
 }

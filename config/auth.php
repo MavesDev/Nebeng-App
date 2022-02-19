@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'admin',
         ],
+        'api'=>[
+            'driver'=>'jwt',
+            'provider'=>'users',
+            'hash'=>false
+        ]
     ],
 
     /*
@@ -65,10 +70,10 @@ return [
             'model' => App\Models\AdminData::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'users' => [
+            'driver' => 'database',
+            'table' => 'user_data',
+        ],
     ],
 
     /*

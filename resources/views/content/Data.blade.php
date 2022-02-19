@@ -11,15 +11,19 @@
             <div class="data-filter">
                 <div class="filters">
                     <div class="filter">
-                        <select name="" id="">
-                            <option value="">All</option>
+                        <select name="orderName" id="orderName">
+                            <option value="" selected disabled>Urutkan Nama...</option>
+                            <option value="asc">Ascending</option>
+                            <option value="desc">Descending</option>
                         </select>
                     </div>
-                    <div class="filter">
-                        <select name="" id="">
-                            <option value="">All</option>
+                    {{-- <div class="filter">
+                        <select name="orderDate" id="orderDate">
+                            <option value="" selected disabled>Urutkan Tanggal Daftar...</option>
+                            <option value="desc">Terbaru</option>
+                            <option value="asc">Terlama</option>
                         </select>
-                    </div>
+                    </div> --}}
                 </div>
                 <form action="/keloladata" method="POST">
                     @csrf
@@ -260,6 +264,18 @@
                         }).showToast();
                     }
                 })
+            });
+
+            $('#orderName').on('change',function(){
+                let orderName = $(this).val();
+                $.ajax({
+                    type:'GET',
+                    url: window.location.origin + '/orderuser',
+                    data: {'orderName':orderName},
+                    success:function(data){
+                        $('#tabeluser').html(data);
+                    }
+                });
             });
         });
 

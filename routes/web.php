@@ -20,7 +20,8 @@ Route::get('/login','PagesController@login')->middleware('guest')->name('login')
 Route::get('/settings','PagesController@settings')->middleware('auth');
 Route::get('/rekap', 'PagesController@rekap')->middleware('auth');
 Route::post('/rekap','SystemController@searchrekap')->middleware('auth');
-Route::post('/rekap/filter','SystemController@filterrekap')->middleware('auth');
+// Route::post('/rekap/filter','SystemController@filterrekap')->middleware('auth');
+Route::get('/filterRekap','SystemController@filterRekap')->middleware('auth');
 Route::get('/data_user', 'PagesController@data_user')->middleware('auth');
 // Route::get('/feedback', 'PagesController@feedback');
 Route::get('/history', 'PagesController@history')->middleware('auth');
@@ -36,6 +37,7 @@ Route::post('/keloladata/tambah','SystemController@tambahuser')->middleware('aut
 Route::post('/keloladata','SystemController@searchuser')->middleware('auth');
 Route::post('/tambahuser','SystemController@tambahuser')->middleware('auth');
 Route::get('/searchuser','SystemController@searchuser')->middleware('auth');
+Route::get('/orderuser','SystemController@orderuser')->middleware('auth');
 
 //post
 

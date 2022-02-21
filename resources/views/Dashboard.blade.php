@@ -25,33 +25,23 @@
                     <tr class="none">
                         <th></th>
                         <th>Nama</th>
-                        <th>Nomor Transaksi</th>
-                        <th>Alamat</th>
+                        <th>Alamat Jemput</th>
+                        <th>Alamat Tujuan</th>
                         <th>Biaya</th>
+                        <th>Penumpang</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($data as $rwt )
                     <tr>
                         <td><img src="{{ url('image/None.png') }}" alt=""></td>
-                        <td>Raqhin Kusmanadinata</td>
-                        <td>098689765</td>
-                        <td>Sanggar indah banjaran blok G2</td>
-                        <td>Rp.5000</td>
+                        <td>{{$rwt->User->nama_lengkap}}</td>
+                        <td>{{$rwt->Pesanan->alamat_jemput}}</td>
+                        <td>{{$rwt->Pesanan->alamat_tujuan}}</td>
+                        <td>{{$rwt->Pesanan->total_bayar}}</td>
+                        <td>{{$rwt->UserPenumpang->nama_lengkap}}</td>
                     </tr>
-                    <tr>
-                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
-                        <td>Raqhin Kusmanadinata</td>
-                        <td>098689765</td>
-                        <td>Sanggar indah banjaran blok G2</td>
-                        <td>Rp.5000</td>
-                    </tr>
-                    <tr>
-                        <td><img src="{{ url('image/None.png') }}" alt=""></td>
-                        <td>Raqhin Kusmanadinata</td>
-                        <td>098689765</td>
-                        <td>Sanggar indah banjaran blok G2</td>
-                        <td>Rp.5000</td>
-                    </tr>
+                    @endforeach
                 </tbody>
         </table>
     </div>

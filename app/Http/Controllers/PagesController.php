@@ -16,7 +16,9 @@ class PagesController extends Controller
     public function beranda(){
         $userCount = UserData::count();
         $transaksiCount = Riwayat::count();
-        return view('Dashboard',compact('userCount','transaksiCount'));
+        $data = Riwayat::whereDate('created_at',Carbon::today()->toDateString())->get();
+        // dd($data);
+        return view('Dashboard',compact('userCount','transaksiCount','data'));
     }
     public function login(){
         return view('Login');
